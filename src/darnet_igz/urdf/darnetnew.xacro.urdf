@@ -1,0 +1,2875 @@
+<?xml version="1.0" ?>
+<robot name="darnetnew"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find darnetnew_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find darnetnew_description)/urdf/darnetnew.trans" />
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.11490191942179352 -0.08811411521808868 0.4285754030138091" rpy="0 0 0"/>
+      <mass value="0.04783342981131993"/>
+      <inertia ixx="0.00012" iyy="0.000191" izz="0.00024" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="BadanAtasRevisi_1">
+    <inertial>
+      <origin xyz="-0.06259339074336327 -0.06108835494549206 0.005762936141855413" rpy="0 0 0"/>
+      <mass value="0.031847275190689105"/>
+      <inertia ixx="5e-05" iyy="8.1e-05" izz="0.000121" ixy="-0.0" iyz="5e-06" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.177798 0.034597 -0.481242" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/BadanAtasRevisi_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.177798 0.034597 -0.481242" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/BadanAtasRevisi_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="BadanDepanRevisi_3DPrint_1">
+    <inertial>
+      <origin xyz="-0.032730061007183925 0.005663615482670779 -0.041214029177083" rpy="0 0 0"/>
+      <mass value="0.03802229773988109"/>
+      <inertia ixx="3.4e-05" iyy="9.8e-05" izz="6.4e-05" ixy="0.0" iyz="1e-06" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.147798 0.029595 -0.483242" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/BadanDepanRevisi_3DPrint_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.147798 0.029595 -0.483242" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/BadanDepanRevisi_3DPrint_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="TempatBatteryRevisi2_1">
+    <inertial>
+      <origin xyz="0.00017667571617335787 -0.047857480766390126 -0.038024075665795076" rpy="0 0 0"/>
+      <mass value="0.016941557534864572"/>
+      <inertia ixx="3.3e-05" iyy="9e-06" izz="3.8e-05" ixy="-0.0" iyz="-4e-06" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.115298 0.029597 -0.404695" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/TempatBatteryRevisi2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.115298 0.029597 -0.404695" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/TempatBatteryRevisi2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="SpaceMX64_2">
+    <inertial>
+      <origin xyz="0.01729959636593876 0.008613945109970225 -0.0024995396027711614" rpy="0 0 0"/>
+      <mass value="0.0036000900764554065"/>
+      <inertia ixx="1e-06" iyy="1e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.050798 0.089597 -0.404695" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SpaceMX64_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.050798 0.089597 -0.404695" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SpaceMX64_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="SpaceMX64_1">
+    <inertial>
+      <origin xyz="-0.017300403634061073 0.008613945109969823 -0.0024995396027708283" rpy="0 0 0"/>
+      <mass value="0.0036000900764554065"/>
+      <inertia ixx="1e-06" iyy="1e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.179798 0.089597 -0.404695" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SpaceMX64_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.179798 0.089597 -0.404695" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SpaceMX64_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-64T_2">
+    <inertial>
+      <origin xyz="-0.01730040375965193 0.02479645502078165 -0.01745179050411727" rpy="0 0 0"/>
+      <mass value="0.07240225558380499"/>
+      <inertia ixx="3e-05" iyy="1.7e-05" izz="2.5e-05" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.085398 0.111597 -0.399695" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.085398 0.111597 -0.399695" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-64T_1">
+    <inertial>
+      <origin xyz="-0.017300403759651112 0.0027964550207814076 -0.01745179050411727" rpy="0 0 0"/>
+      <mass value="0.07240225558380499"/>
+      <inertia ixx="3e-05" iyy="1.7e-05" izz="2.5e-05" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.179798 0.089597 -0.399695" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.179798 0.089597 -0.399695" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="PahaAtas3D_3">
+    <inertial>
+      <origin xyz="-4.036340476298861e-07 -0.0037563467783642973 -0.010402605928093445" rpy="0 0 0"/>
+      <mass value="0.008519664111309755"/>
+      <inertia ixx="6e-06" iyy="2e-06" izz="6e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.162498 0.071597 -0.359195" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/PahaAtas3D_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+      <kp>1e5</kp>
+      <kd>1e3</kd>
+      <origin xyz="-0.162498 0.071597 -0.359195" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/PahaAtas3D_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="PahaAtas3D_4">
+    <inertial>
+      <origin xyz="-4.0363404811560866e-07 -0.003756346778364089 -0.010402605928093445" rpy="0 0 0"/>
+      <mass value="0.008519664111309755"/>
+      <inertia ixx="6e-06" iyy="2e-06" izz="6e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.068098 0.071597 -0.359195" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/PahaAtas3D_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.068098 0.071597 -0.359195" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/PahaAtas3D_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="6_PR13_B_SPACER_PELV_1">
+    <inertial>
+      <origin xyz="-0.015000403634035542 -0.009365366775092657 0.002499939486701186" rpy="0 0 0"/>
+      <mass value="0.0018939893916768394"/>
+      <inertia ixx="0.0" iyy="0.0" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.130298 0.067597 -0.483242" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/6_PR13_B_SPACER_PELV_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.130298 0.067597 -0.483242" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/6_PR13_B_SPACER_PELV_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-28AT_AR_2">
+    <inertial>
+      <origin xyz="-0.014977946179001389 -0.015783560451416226 0.015280368795609844" rpy="0 0 0"/>
+      <mass value="0.0439903769719111"/>
+      <inertia ixx="1.3e-05" iyy="8e-06" izz="1e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.130298 0.067597 -0.488242" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.130298 0.067597 -0.488242" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="2_FR07_H104_1">
+    <inertial>
+      <origin xyz="2.0685672843662184e-06 -0.0010218695419875051 0.006993834055332382" rpy="0 0 0"/>
+      <mass value="0.004611932609017796"/>
+      <inertia ixx="1e-06" iyy="2e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.115298 0.072097 -0.525167" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/2_FR07_H104_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.115298 0.072097 -0.525167" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/2_FR07_H104_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-28AT_AR_4">
+    <inertial>
+      <origin xyz="-0.0202199743251381 -2.2524917938762656e-05 0.01128343247522512" rpy="0 0 0"/>
+      <mass value="0.0439903769719111"/>
+      <inertia ixx="1e-05" iyy="1.3e-05" izz="8e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.135798 0.072097 -0.553167" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.135798 0.072097 -0.553167" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-28AT_AR_3">
+    <inertial>
+      <origin xyz="0.014719927512307426 -0.015783560451416087 0.015022636486481222" rpy="0 0 0"/>
+      <mass value="0.0439903769719111"/>
+      <inertia ixx="1e-05" iyy="8e-06" izz="1.3e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.046524 0.067597 -0.487315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.046524 0.067597 -0.487315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="10_FR07_H102_3">
+    <inertial>
+      <origin xyz="-0.006061207664907364 -6.755027122384849e-08 -0.0026281000205751748" rpy="0 0 0"/>
+      <mass value="0.004952092458780469"/>
+      <inertia ixx="2e-06" iyy="1e-06" izz="2e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.038174 0.072097 -0.502315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/10_FR07_H102_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.038174 0.072097 -0.502315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/10_FR07_H102_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-28AT_AR_6">
+    <inertial>
+      <origin xyz="-2.2100633829229277e-05 -0.020219638153982887 -0.011283313957089425" rpy="0 0 0"/>
+      <mass value="0.0439903769719111"/>
+      <inertia ixx="1.3e-05" iyy="1e-05" izz="8e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.015674 0.051597 -0.486315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.015674 0.051597 -0.486315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="14_FR07_S101_3">
+    <inertial>
+      <origin xyz="0.012032947663707046 0.01499993245518745 -0.003785284890375329" rpy="0 0 0"/>
+      <mass value="0.0014582156856158806"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.007174 0.087097 -0.450515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/14_FR07_S101_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.007174 0.087097 -0.450515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/14_FR07_S101_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Hex_Spacer_MF_M3_L40mm_7">
+    <inertial>
+      <origin xyz="-0.011896 0.064319 -0.444515" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.011896 0.064319 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.011896 0.064319 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Hex_Spacer_MF_M3_L40mm_6">
+    <inertial>
+      <origin xyz="-0.011896 0.079875 -0.444515" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.011896 0.079875 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.011896 0.079875 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Hex_Spacer_MF_M3_L40mm_8">
+    <inertial>
+      <origin xyz="-0.027453 0.079875 -0.444515" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.027453 0.079875 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_8.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.027453 0.079875 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_8.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Hex_Spacer_MF_M3_L40mm_5">
+    <inertial>
+      <origin xyz="-0.027453 0.064319 -0.444515" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.027453 0.064319 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.027453 0.064319 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="14_FR07_S101_4">
+    <inertial>
+      <origin xyz="0.007778356739291604 -0.008245476620397402 -0.0022143570467558216" rpy="0 0 0"/>
+      <mass value="0.0014582156856158806"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.011896 0.064319 -0.404515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/14_FR07_S101_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.011896 0.064319 -0.404515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/14_FR07_S101_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-28AT_AR_8">
+    <inertial>
+      <origin xyz="0.014339927512303688 0.0012164395485890697 -0.01497736351351936" rpy="0 0 0"/>
+      <mass value="0.0439903769719111"/>
+      <inertia ixx="1e-05" iyy="8e-06" izz="1.3e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.004674 0.063597 -0.398515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_8.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.004674 0.063597 -0.398515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_8.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="10_FR07_H102_4">
+    <inertial>
+      <origin xyz="0.022500356733833268 -0.013371788410876821 -0.01643825648244157" rpy="0 0 0"/>
+      <mass value="0.004952092458780469"/>
+      <inertia ixx="1e-06" iyy="2e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.004056 0.051097 -0.383515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/10_FR07_H102_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.004056 0.051097 -0.383515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/10_FR07_H102_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FP04-F9_2">
+    <inertial>
+      <origin xyz="-0.005944467351273906 -6.746288361281216e-08 -0.009282173804208815" rpy="0 0 0"/>
+      <mass value="0.003206957183416586"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.018444 0.067097 -0.359015" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FP04-F9_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.018444 0.067097 -0.359015" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FP04-F9_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Tangan_2">
+    <inertial>
+      <origin xyz="-0.0024996431787862655 1.00276660150167e-05 -0.03734634571142559" rpy="0 0 0"/>
+      <mass value="0.01886998872333456"/>
+      <inertia ixx="2.5e-05" iyy="2.3e-05" izz="2e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.005944 0.067097 -0.340015" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Tangan_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.005944 0.067097 -0.340015" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Tangan_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-28AT_AR_1">
+    <inertial>
+      <origin xyz="-0.014719734780404059 -0.015783560451415823 0.014977721576390712" rpy="0 0 0"/>
+      <mass value="0.0439903769719111"/>
+      <inertia ixx="1e-05" iyy="8e-06" izz="1.3e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.184071 0.067597 -0.487315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.184071 0.067597 -0.487315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="10_FR07_H102_1">
+    <inertial>
+      <origin xyz="0.006061400396810329 -6.737551171143163e-08 -0.002628100020572899" rpy="0 0 0"/>
+      <mass value="0.004952092458780469"/>
+      <inertia ixx="2e-06" iyy="1e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.192421 0.072097 -0.502315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/10_FR07_H102_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.192421 0.072097 -0.502315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/10_FR07_H102_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-28AT_AR_5">
+    <inertial>
+      <origin xyz="-2.262154435872521e-05 -0.023069638153982427 -0.01128331395708665" rpy="0 0 0"/>
+      <mass value="0.0439903769719111"/>
+      <inertia ixx="1.3e-05" iyy="1e-05" izz="8e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.214921 0.049597 -0.486315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.214921 0.049597 -0.486315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="14_FR07_S101_1">
+    <inertial>
+      <origin xyz="-0.01203275493180228 -0.015000067380969803 -0.0037852848903724423" rpy="0 0 0"/>
+      <mass value="0.0014582156856158806"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.223421 0.057947 -0.450515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/14_FR07_S101_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.223421 0.057947 -0.450515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/14_FR07_S101_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Hex_Spacer_MF_M3_L40mm_4">
+    <inertial>
+      <origin xyz="-0.218699 0.065169 -0.444515" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.218699 0.065169 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.218699 0.065169 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Hex_Spacer_MF_M3_L40mm_3">
+    <inertial>
+      <origin xyz="-0.203143 0.065169 -0.444515" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.203143 0.065169 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.203143 0.065169 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Hex_Spacer_MF_M3_L40mm_1">
+    <inertial>
+      <origin xyz="-0.218699 0.080725 -0.444515" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.218699 0.080725 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.218699 0.080725 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Hex_Spacer_MF_M3_L40mm_2">
+    <inertial>
+      <origin xyz="-0.203143 0.080725 -0.444515" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.203143 0.080725 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.203143 0.080725 -0.444515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Hex_Spacer_MF_M3_L40mm_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="14_FR07_S101_2">
+    <inertial>
+      <origin xyz="-0.007778164171227786 0.007310523379595452 -0.0022143570467534346" rpy="0 0 0"/>
+      <mass value="0.0014582156856158806"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.218699 0.080725 -0.404515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/14_FR07_S101_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.218699 0.080725 -0.404515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/14_FR07_S101_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FP04-F9_1">
+    <inertial>
+      <origin xyz="0.005944660083189335 -6.746289712977749e-08 -0.009282173804210314" rpy="0 0 0"/>
+      <mass value="0.003206957183416586"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.211771 0.067947 -0.359215" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FP04-F9_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.211771 0.067947 -0.359215" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FP04-F9_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Tangan_1">
+    <inertial>
+      <origin xyz="0.002499835910714898 1.002766600737004e-05 -0.03734634571142442" rpy="0 0 0"/>
+      <mass value="0.01886998872333456"/>
+      <inertia ixx="2.5e-05" iyy="2.3e-05" izz="2e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.224271 0.067947 -0.340215" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Tangan_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.224271 0.067947 -0.340215" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Tangan_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="10_FR07_H102_2">
+    <inertial>
+      <origin xyz="-0.02250016417668127 -0.013371788410884468 -0.016438256482444624" rpy="0 0 0"/>
+      <mass value="0.004952092458780469"/>
+      <inertia ixx="1e-06" iyy="2e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.234271 0.051947 -0.383515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/10_FR07_H102_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.234271 0.051947 -0.383515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/10_FR07_H102_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-28AT_AR_7">
+    <inertial>
+      <origin xyz="0.015280265219602435 0.01821643954858139 -0.015022278423608926" rpy="0 0 0"/>
+      <mass value="0.0439903769719111"/>
+      <inertia ixx="1e-05" iyy="8e-06" izz="1.3e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.195921 0.081447 -0.398515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.195921 0.081447 -0.398515" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-64T_5">
+    <inertial>
+      <origin xyz="-4.03759651407265e-07 -0.024847556106279797 -0.015203256663834375" rpy="0 0 0"/>
+      <mass value="0.07240225558380499"/>
+      <inertia ixx="3e-05" iyy="2.5e-05" izz="1.7e-05" ixy="-0.0" iyz="-1e-06" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.162498 0.10445 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.162498 0.10445 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="SambunganServo_Revision_2">
+    <inertial>
+      <origin xyz="0.0010238478314664179 0.01120180674979851 -0.010999779147524313" rpy="0 0 0"/>
+      <mass value="0.001090617955389334"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.179798 0.11275 -0.30265" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.179798 0.11275 -0.30265" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="SambunganServo_Revision_1">
+    <inertial>
+      <origin xyz="-0.0010246550995613168 0.011201806749799079 -0.010999779147489175" rpy="0 0 0"/>
+      <mass value="0.001090617955389334"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.145198 0.11275 -0.30265" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.145198 0.11275 -0.30265" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-64T_6">
+    <inertial>
+      <origin xyz="-0.01745265453539349 0.017300192866770245 0.002796743336166141" rpy="0 0 0"/>
+      <mass value="0.07240225558380499"/>
+      <inertia ixx="2.5e-05" iyy="3e-05" izz="1.7e-05" ixy="0.0" iyz="-0.0" ixz="1e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.179498 0.09535 -0.30265" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.179498 0.09535 -0.30265" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="PahaBawah_1">
+    <inertial>
+      <origin xyz="0.02549983591096161 1.9299231801550576e-07 -0.04693927260375347" rpy="0 0 0"/>
+      <mass value="0.009633598501165654"/>
+      <inertia ixx="7e-06" iyy="1e-05" izz="5e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.137198 0.07805 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/PahaBawah_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.137198 0.07805 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/PahaBawah_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FR05-S101_3">
+    <inertial>
+      <origin xyz="-1.6408760711295045e-07 -0.0011402192746105683 -0.0026024532046020343" rpy="0 0 0"/>
+      <mass value="0.0027088256272474846"/>
+      <inertia ixx="0.0" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.162698 0.07805 -0.24965" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-S101_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.162698 0.07805 -0.24965" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-S101_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-64T_4">
+    <inertial>
+      <origin xyz="-4.037596519901321e-07 -0.02484755610627938 -0.015203256663834097" rpy="0 0 0"/>
+      <mass value="0.07240225558380499"/>
+      <inertia ixx="3e-05" iyy="2.5e-05" izz="1.7e-05" ixy="-0.0" iyz="-1e-06" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.068098 0.10445 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.068098 0.10445 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="SambunganServo_Revision_3">
+    <inertial>
+      <origin xyz="0.001023847831465613 0.011201806749799204 -0.010999779147524147" rpy="0 0 0"/>
+      <mass value="0.001090617955389334"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.085398 0.11275 -0.30265" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.085398 0.11275 -0.30265" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="SambunganServo_Revision_4">
+    <inertial>
+      <origin xyz="-0.001024655099561976 0.011201806749799273 -0.010999779147488786" rpy="0 0 0"/>
+      <mass value="0.001090617955389334"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.050798 0.11275 -0.30265" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.050798 0.11275 -0.30265" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-64T_3">
+    <inertial>
+      <origin xyz="-0.016548152732702284 0.01730019311797787 0.0027967433361663074" rpy="0 0 0"/>
+      <mass value="0.07240225558380499"/>
+      <inertia ixx="2.5e-05" iyy="3e-05" izz="1.7e-05" ixy="0.0" iyz="0.0" ixz="-1e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.085098 0.09535 -0.30265" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.085098 0.09535 -0.30265" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="PahaBawah_2">
+    <inertial>
+      <origin xyz="-0.025500643178509308 1.929923183069393e-07 -0.04693927260375297" rpy="0 0 0"/>
+      <mass value="0.009633598501165654"/>
+      <inertia ixx="7e-06" iyy="1e-05" izz="5e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.093398 0.07805 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/PahaBawah_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.093398 0.07805 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/PahaBawah_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FR05-S101_4">
+    <inertial>
+      <origin xyz="3.5682292187644293e-07 -0.0011402192746103323 -0.002402501381193134" rpy="0 0 0"/>
+      <mass value="0.0027088256272474846"/>
+      <inertia ixx="0.0" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.067897 0.07805 -0.24965" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-S101_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.067897 0.07805 -0.24965" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-S101_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FR05-S101_2">
+    <inertial>
+      <origin xyz="0.016999596364247277 0.0040977584800140215 -0.005140191414491679" rpy="0 0 0"/>
+      <mass value="0.0027088256272474846"/>
+      <inertia ixx="0.0" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.145498 0.06075 -0.32465" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-S101_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.145498 0.06075 -0.32465" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-S101_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FR05-F101_2">
+    <inertial>
+      <origin xyz="-4.036338798474315e-07 0.0017178964662172627 2.2085231721202803e-07" rpy="0 0 0"/>
+      <mass value="0.000978509160997224"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.162498 0.05405 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-F101_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.162498 0.05405 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-F101_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MF128ZZ_2">
+    <inertial>
+      <origin xyz="-4.03633754503252e-07 0.0019092518751118517 2.2085249362646664e-07" rpy="0 0 0"/>
+      <mass value="0.0002496937841073093"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.162498 0.04845 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MF128ZZ_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.162498 0.04845 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MF128ZZ_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="RX64-CAP_2">
+    <inertial>
+      <origin xyz="-4.0363404746335263e-07 0.0009472246924700778 2.2085266704330309e-07" rpy="0 0 0"/>
+      <mass value="8.833844382628926e-05"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.162498 0.04497 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/RX64-CAP_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.162498 0.04497 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/RX64-CAP_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FR05-S101_1">
+    <inertial>
+      <origin xyz="-0.01700040363575342 0.004097758480014264 -0.005140191414491124" rpy="0 0 0"/>
+      <mass value="0.0027088256272474846"/>
+      <inertia ixx="0.0" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.085098 0.06075 -0.32465" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-S101_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.085098 0.06075 -0.32465" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-S101_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FR05-F101_1">
+    <inertial>
+      <origin xyz="-4.036338806523432e-07 0.0017178964662175125 2.2085231776713954e-07" rpy="0 0 0"/>
+      <mass value="0.000978509160997224"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.068098 0.05405 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-F101_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.068098 0.05405 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-F101_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="HN05-i101_1">
+    <inertial>
+      <origin xyz="-4.0363404825438653e-07 0.00241919745979359 2.2085302814334185e-07" rpy="0 0 0"/>
+      <mass value="0.0012087762615787011"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.068098 0.05125 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/HN05-i101_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.068098 0.05125 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/HN05-i101_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="HN05-i101_2">
+    <inertial>
+      <origin xyz="-4.0363351316852203e-07 0.002419197459793465 2.2085249345993319e-07" rpy="0 0 0"/>
+      <mass value="0.0012087762615787011"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.162498 0.05125 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/HN05-i101_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.162498 0.05125 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/HN05-i101_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MF128ZZ_1">
+    <inertial>
+      <origin xyz="-4.036337552804081e-07 0.0019092518751120183 2.208524939040224e-07" rpy="0 0 0"/>
+      <mass value="0.0002496937841073093"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.068098 0.04865 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MF128ZZ_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.068098 0.04865 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MF128ZZ_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="RX64-CAP_1">
+    <inertial>
+      <origin xyz="-4.036338746848944e-07 0.0010972246924701792 2.208524940150447e-07" rpy="0 0 0"/>
+      <mass value="8.833844382628926e-05"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.068098 0.04517 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/RX64-CAP_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.068098 0.04517 -0.32065" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/RX64-CAP_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-64T_8">
+    <inertial>
+      <origin xyz="0.017452607722562546 0.011000192866771133 -0.030096589352505865" rpy="0 0 0"/>
+      <mass value="0.07240225558380499"/>
+      <inertia ixx="2.5e-05" iyy="3e-05" izz="1.7e-05" ixy="-0.0" iyz="0.0" ixz="1e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.050897 0.08905 -0.24315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_8.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.050897 0.08905 -0.24315" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_8.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Tungkak_1">
+    <inertial>
+      <origin xyz="0.025500075455422044 0.010088786747853684 -0.048147731418395734" rpy="0 0 0"/>
+      <mass value="0.019905401683360396"/>
+      <inertia ixx="3.2e-05" iyy="3.8e-05" izz="1.4e-05" ixy="-0.0" iyz="-5e-06" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.137398 0.07805 -0.19765" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Tungkak_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.137398 0.07805 -0.19765" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Tungkak_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Tungkak_2">
+    <inertial>
+      <origin xyz="-0.025499882723518774 0.010088786747854198 -0.048147779594986645" rpy="0 0 0"/>
+      <mass value="0.019905401683360396"/>
+      <inertia ixx="3.2e-05" iyy="3.8e-05" izz="1.4e-05" ixy="-0.0" iyz="-5e-06" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.093197 0.07805 -0.19785" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Tungkak_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.093197 0.07805 -0.19785" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Tungkak_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-64T_9">
+    <inertial>
+      <origin xyz="0.024847585009340478 1.9311797885834814e-07 0.01520377916764483" rpy="0 0 0"/>
+      <mass value="0.07240225558380499"/>
+      <inertia ixx="2.5e-05" iyy="3e-05" izz="1.7e-05" ixy="-0.0" iyz="-0.0" ixz="-1e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.137398 0.07805 -0.076521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_9.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.137398 0.07805 -0.076521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_9.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-64T_10">
+    <inertial>
+      <origin xyz="-0.024847392277437513 1.9286677170604616e-07 0.015203730991054168" rpy="0 0 0"/>
+      <mass value="0.07240225558380499"/>
+      <inertia ixx="2.5e-05" iyy="3e-05" izz="1.7e-05" ixy="-0.0" iyz="0.0" ixz="1e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.093197 0.07805 -0.076721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_10.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.093197 0.07805 -0.076721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_10.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-64T_7">
+    <inertial>
+      <origin xyz="-0.017452414990658444 0.011000193117978355 -0.030096541175914426" rpy="0 0 0"/>
+      <mass value="0.07240225558380499"/>
+      <inertia ixx="2.5e-05" iyy="3e-05" izz="1.7e-05" ixy="-0.0" iyz="-0.0" ixz="-1e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.179698 0.08905 -0.24295" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.179698 0.08905 -0.24295" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="SambunganServo_Revision_8">
+    <inertial>
+      <origin xyz="0.0013246082867303527 -0.006198193250200157 -0.010999746525290913" rpy="0 0 0"/>
+      <mass value="0.001090617955389334"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.084897 0.09535 -0.116721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_8.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.084897 0.09535 -0.116721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_8.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="SambunganServo_Revision_5">
+    <inertial>
+      <origin xyz="-0.0013238946442972674 -0.006198193250199907 -0.010999746525255497" rpy="0 0 0"/>
+      <mass value="0.001090617955389334"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.050897 0.09535 -0.116721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.050897 0.09535 -0.116721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-64T_12">
+    <inertial>
+      <origin xyz="0.01730035694682011 -0.016547556106278574 -0.02479626900894616" rpy="0 0 0"/>
+      <mass value="0.07240225558380499"/>
+      <inertia ixx="3e-05" iyy="2.5e-05" izz="1.7e-05" ixy="0.0" iyz="1e-06" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.050597 0.11275 -0.116721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_12.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.050597 0.11275 -0.116721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_12.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="SambunganServo_Revision_6">
+    <inertial>
+      <origin xyz="0.0013240873762004335 -0.006198193250200615 -0.010999698348700127" rpy="0 0 0"/>
+      <mass value="0.001090617955389334"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.179698 0.09535 -0.116521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.179698 0.09535 -0.116521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="SambunganServo_Revision_7">
+    <inertial>
+      <origin xyz="-0.0013244155548272074 -0.006198193250200393 -0.010999698348665113" rpy="0 0 0"/>
+      <mass value="0.001090617955389334"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.145698 0.09535 -0.116521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.145698 0.09535 -0.116521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/SambunganServo_Revision_7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MX-64T_11">
+    <inertial>
+      <origin xyz="-0.01730016396371009 -0.016547556106278824 -0.024796220832355345" rpy="0 0 0"/>
+      <mass value="0.07240225558380499"/>
+      <inertia ixx="3e-05" iyy="2.5e-05" izz="1.7e-05" ixy="0.0" iyz="1e-06" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.179998 0.11275 -0.116521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.179998 0.11275 -0.116521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MX-64T_11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="PahaAtas3D_2">
+    <inertial>
+      <origin xyz="3.56821216254688e-07 0.02909665322163736 -0.028141919744686078" rpy="0 0 0"/>
+      <mass value="0.008519664111309755"/>
+      <inertia ixx="6.16e-06" iyy="2.13e-06" izz="5.95e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.067897 0.10445 -0.076721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/PahaAtas3D_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.067897 0.10445 -0.076721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/PahaAtas3D_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="PahaAtas3D_1">
+    <inertial>
+      <origin xyz="-1.64089313414717e-07 0.02909665322163725 -0.028141871568095007" rpy="0 0 0"/>
+      <mass value="0.008519664111309755"/>
+      <inertia ixx="6.16e-06" iyy="2.13e-06" izz="5.95e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.162698 0.10445 -0.076521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/PahaAtas3D_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.162698 0.10445 -0.076521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/PahaAtas3D_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FR05-S101_5">
+    <inertial>
+      <origin xyz="-0.01700016408760832 0.0040977584800152775 -0.01685928608169711" rpy="0 0 0"/>
+      <mass value="0.0027088256272474846"/>
+      <inertia ixx="0.0" iyy="1e-06" izz="1e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.179698 0.06075 -0.094521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-S101_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.179698 0.06075 -0.094521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-S101_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FR05-F101_3">
+    <inertial>
+      <origin xyz="-1.6408948114166044e-07 0.0017178964662186713 3.016514940196169e-07" rpy="0 0 0"/>
+      <mass value="0.000978509160997224"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.162698 0.05405 -0.076521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-F101_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.162698 0.05405 -0.076521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-F101_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="HN05-i101_3">
+    <inertial>
+      <origin xyz="-1.6408931358125045e-07 0.002419197459794735 3.016507838238258e-07" rpy="0 0 0"/>
+      <mass value="0.0012087762615787011"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.162698 0.05125 -0.076521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/HN05-i101_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.162698 0.05125 -0.076521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/HN05-i101_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MF128ZZ_3">
+    <inertial>
+      <origin xyz="-1.6408931366451718e-07 0.0019092518751130522 3.016510247283444e-07" rpy="0 0 0"/>
+      <mass value="0.0002496937841073093"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.162698 0.04845 -0.076521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MF128ZZ_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.162698 0.04845 -0.076521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MF128ZZ_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="RX64-CAP_3">
+    <inertial>
+      <origin xyz="-1.6408931366451718e-07 0.0009472246924712088 3.0165149145222614e-07" rpy="0 0 0"/>
+      <mass value="8.833844382628926e-05"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.162698 0.04497 -0.076521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/RX64-CAP_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.162698 0.04497 -0.076521" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/RX64-CAP_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FR05-S101_6">
+    <inertial>
+      <origin xyz="0.017000356822921642 0.004097758480015458 -0.016859334258288117" rpy="0 0 0"/>
+      <mass value="0.0027088256272474846"/>
+      <inertia ixx="0.0" iyy="1e-06" izz="1e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.050897 0.06075 -0.094721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-S101_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.050897 0.06075 -0.094721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-S101_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FR05-F101_4">
+    <inertial>
+      <origin xyz="3.568210487081558e-07 0.0017178964662189905 2.534749030946859e-07" rpy="0 0 0"/>
+      <mass value="0.000978509160997224"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.067897 0.05405 -0.076721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-F101_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.067897 0.05405 -0.076721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/FR05-F101_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="HN05-i101_4">
+    <inertial>
+      <origin xyz="3.568212162408102e-07 0.002419197459795075 2.534741928295059e-07" rpy="0 0 0"/>
+      <mass value="0.0012087762615787011"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.067897 0.05125 -0.076721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/HN05-i101_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.067897 0.05125 -0.076721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/HN05-i101_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="MF128ZZ_4">
+    <inertial>
+      <origin xyz="3.568209233639763e-07 0.0019092518751133228 2.5347472740189225e-07" rpy="0 0 0"/>
+      <mass value="0.0002496937841073093"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.067897 0.04845 -0.076721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MF128ZZ_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.067897 0.04845 -0.076721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/MF128ZZ_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="RX64-CAP_4">
+    <inertial>
+      <origin xyz="3.5682121640734366e-07 0.0010972246924715531 2.534749010685289e-07" rpy="0 0 0"/>
+      <mass value="8.833844382628926e-05"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.067897 0.04497 -0.076721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/RX64-CAP_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.067897 0.04497 -0.076721" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/RX64-CAP_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Telapak_2">
+    <inertial>
+      <origin xyz="-0.024499643178810045 -6.746288917780507e-08 -0.0009999860700091942" rpy="0 0 0"/>
+      <mass value="0.022226064712366964"/>
+      <inertia ixx="3.6e-05" iyy="2.2e-05" izz="5.8e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.078897 0.071597 -0.038176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Telapak_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+      <kp>1e5</kp>
+      <kd>1e3</kd>
+      <origin xyz="-0.078897 0.071597 -0.038176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Telapak_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Telapak_1">
+    <inertial>
+      <origin xyz="0.02449983591065974 -6.74628894831164e-08 -0.0009999378934174713" rpy="0 0 0"/>
+      <mass value="0.022226064712366964"/>
+      <inertia ixx="3.6e-05" iyy="2.2e-05" izz="5.8e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.151698 0.071597 -0.037976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Telapak_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+      <kp>1e5</kp>
+      <kd>1e3</kd>
+      <origin xyz="-0.151698 0.071597 -0.037976" rpy="0 0 0"/>
+      <origin xyz="0.025 0 0.008" rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/Telapak_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_8">
+    <inertial>
+      <origin xyz="3.5682115813451265e-07 -6.746321515489762e-08 -0.012560837888493596" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.095397 0.011597 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_8.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.095397 0.011597 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_8.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_3">
+    <inertial>
+      <origin xyz="3.5682115813451265e-07 -1.3527508069266503e-07 -0.01256083788849403" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.095397 0.048668 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.095397 0.048668 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_2">
+    <inertial>
+      <origin xyz="3.568211580928793e-07 3.4865037246145647e-10 -0.012560837888494318" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.095397 0.094526 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.095397 0.094526 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_1">
+    <inertial>
+      <origin xyz="3.5682115802349035e-07 -6.746321506989617e-08 -0.012560837888494186" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.095397 0.131597 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.095397 0.131597 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_4">
+    <inertial>
+      <origin xyz="3.568212163899964e-07 -6.746321478713624e-08 -0.012560837888494106" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.013397 0.011597 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.013397 0.011597 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_7">
+    <inertial>
+      <origin xyz="3.568208905846415e-07 -1.352747544952626e-07 -0.012560837888493891" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.013397 0.048668 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.013397 0.048668 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_6">
+    <inertial>
+      <origin xyz="3.568212164472423e-07 3.486507610395151e-10 -0.012560837888494193" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.013397 0.094526 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.013397 0.094526 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_5">
+    <inertial>
+      <origin xyz="3.5682121640734366e-07 -6.746321504214059e-08 -0.012560837888494335" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.013397 0.131597 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.013397 0.131597 -0.036176" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_13">
+    <inertial>
+      <origin xyz="-1.6408931380329506e-07 -6.746256361357672e-08 -0.012560789711902168" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.135198 0.011597 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_13.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.135198 0.011597 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_13.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_14">
+    <inertial>
+      <origin xyz="-1.6408931388656178e-07 -1.3527442876276607e-07 -0.012560789711902248" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.135198 0.048668 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_14.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.135198 0.048668 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_14.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_15">
+    <inertial>
+      <origin xyz="-1.6408931391431736e-07 3.493021427658505e-10 -0.012560789711902463" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.135198 0.094526 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_15.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.135198 0.094526 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_15.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_11">
+    <inertial>
+      <origin xyz="-1.6408931413636196e-07 -6.746256367429204e-08 -0.012560789711902196" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.135198 0.131597 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.135198 0.131597 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_12">
+    <inertial>
+      <origin xyz="-1.6408937175693694e-07 -6.746321534918664e-08 -0.012560789711902498" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.217198 0.011597 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_12.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.217198 0.011597 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_12.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_9">
+    <inertial>
+      <origin xyz="-1.6408937189571482e-07 -1.3527442923461086e-07 -0.01256078971190271" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.217198 0.048668 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_9.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.217198 0.048668 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_9.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_10">
+    <inertial>
+      <origin xyz="-1.640893720344927e-07 3.4930172643221624e-10 -0.012560789711902862" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.217198 0.094526 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_10.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.217198 0.094526 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_10.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="pull_16">
+    <inertial>
+      <origin xyz="-1.6408937253409306e-07 -6.74625640628701e-08 -0.012560789711902505" rpy="0 0 0"/>
+      <mass value="0.004108025563836766"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.217198 0.131597 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_16.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.217198 0.131597 -0.035976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find darnetnew_description)/meshes/pull_16.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="Rigid 1" type="fixed">
+    <origin xyz="0.177798 -0.034597 0.481242" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="BadanAtasRevisi_1"/>
+  </joint>
+
+  <joint name="Rigid 2" type="fixed">
+    <origin xyz="-0.03 0.005002 0.002" rpy="0 0 0"/>
+    <parent link="BadanAtasRevisi_1"/>
+    <child link="BadanDepanRevisi_3DPrint_1"/>
+  </joint>
+
+  <joint name="Rigid 3" type="fixed">
+    <origin xyz="0.115298 -0.029597 0.404695" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="TempatBatteryRevisi2_1"/>
+  </joint>
+
+  <joint name="Rigid 4" type="fixed">
+    <origin xyz="0.050798 -0.089597 0.404695" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="SpaceMX64_2"/>
+  </joint>
+
+  <joint name="Rigid 5" type="fixed">
+    <origin xyz="0.179798 -0.089597 0.404695" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="SpaceMX64_1"/>
+  </joint>
+
+  <joint name="Rigid 6" type="fixed">
+    <origin xyz="0.0346 -0.022 -0.005" rpy="0 0 0"/>
+    <parent link="SpaceMX64_2"/>
+    <child link="MX-64T_2"/>
+  </joint>
+
+  <joint name="Rigid 7" type="fixed">
+    <origin xyz="0.0 0.0 -0.005" rpy="0 0 0"/>
+    <parent link="SpaceMX64_1"/>
+    <child link="MX-64T_1"/>
+  </joint>
+
+  <joint name="Paha Kanan Putar" type="continuous">
+    <origin xyz="-0.0173 0.018 -0.0405" rpy="0 0 0"/>
+    <parent link="MX-64T_1"/>
+    <child link="PahaAtas3D_3"/>
+    <axis xyz="0.0 -0.0 1.0"/>
+  </joint>
+
+  <joint name="Paha Kiri Putar" type="continuous">
+    <origin xyz="-0.0173 0.04 -0.0405" rpy="0 0 0"/>
+    <parent link="MX-64T_2"/>
+    <child link="PahaAtas3D_4"/>
+    <axis xyz="0.0 -0.0 1.0"/>
+  </joint>
+
+  <joint name="Rigid 10" type="fixed">
+    <origin xyz="-0.0475 -0.033 0.002" rpy="0 0 0"/>
+    <parent link="BadanAtasRevisi_1"/>
+    <child link="6_PR13_B_SPACER_PELV_1"/>
+  </joint>
+
+  <joint name="Rigid 11" type="fixed">
+    <origin xyz="0.0 0.0 0.005" rpy="0 0 0"/>
+    <parent link="6_PR13_B_SPACER_PELV_1"/>
+    <child link="MX-28AT_AR_2"/>
+  </joint>
+
+  <joint name="Leher Putar" type="continuous">
+    <origin xyz="-0.015 -0.0045 0.036925" rpy="0 0 0"/>
+    <parent link="MX-28AT_AR_2"/>
+    <child link="2_FR07_H104_1"/>
+    <axis xyz="-0.0 0.0 -1.0"/>
+  </joint>
+
+  <joint name="Kepala Putar" type="continuous">
+    <origin xyz="0.0205 0.0 0.028" rpy="0 0 0"/>
+    <parent link="2_FR07_H104_1"/>
+    <child link="MX-28AT_AR_4"/>
+    <axis xyz="-1.0 -0.0 -0.0"/>
+  </joint>
+
+  <joint name="Rigid 14" type="fixed">
+    <origin xyz="-0.131274 -0.033 0.006073" rpy="0 0 0"/>
+    <parent link="BadanAtasRevisi_1"/>
+    <child link="MX-28AT_AR_3"/>
+  </joint>
+
+  <joint name="Lengan Kiri" type="continuous">
+    <origin xyz="-0.00835 -0.0045 0.015" rpy="0 0 0"/>
+    <parent link="MX-28AT_AR_3"/>
+    <child link="10_FR07_H102_3"/>
+    <axis xyz="1.0 0.0 0.0"/>
+  </joint>
+
+  <joint name="Bahu Tangan Kiri" type="continuous">
+    <origin xyz="-0.0225 0.0205 -0.016" rpy="0 0 0"/>
+    <parent link="10_FR07_H102_3"/>
+    <child link="MX-28AT_AR_6"/>
+    <axis xyz="-0.0 1.0 0.0"/>
+  </joint>
+
+  <joint name="Rigid 17" type="fixed">
+    <origin xyz="-0.0085 -0.0355 -0.0358" rpy="0 0 0"/>
+    <parent link="MX-28AT_AR_6"/>
+    <child link="14_FR07_S101_3"/>
+  </joint>
+
+  <joint name="Rigid 18" type="fixed">
+    <origin xyz="0.004722 0.022778 -0.006" rpy="0 0 0"/>
+    <parent link="14_FR07_S101_3"/>
+    <child link="Hex_Spacer_MF_M3_L40mm_7"/>
+  </joint>
+
+  <joint name="Rigid 19" type="fixed">
+    <origin xyz="0.004722 0.007222 -0.006" rpy="0 0 0"/>
+    <parent link="14_FR07_S101_3"/>
+    <child link="Hex_Spacer_MF_M3_L40mm_6"/>
+  </joint>
+
+  <joint name="Rigid 20" type="fixed">
+    <origin xyz="0.020279 0.007222 -0.006" rpy="0 0 0"/>
+    <parent link="14_FR07_S101_3"/>
+    <child link="Hex_Spacer_MF_M3_L40mm_8"/>
+  </joint>
+
+  <joint name="Rigid 21" type="fixed">
+    <origin xyz="0.020279 0.022778 -0.006" rpy="0 0 0"/>
+    <parent link="14_FR07_S101_3"/>
+    <child link="Hex_Spacer_MF_M3_L40mm_5"/>
+  </joint>
+
+  <joint name="Rigid 22" type="fixed">
+    <origin xyz="0.0 0.0 -0.04" rpy="0 0 0"/>
+    <parent link="Hex_Spacer_MF_M3_L40mm_7"/>
+    <child link="14_FR07_S101_4"/>
+  </joint>
+
+  <joint name="Rigid 23" type="fixed">
+    <origin xyz="-0.007222 0.000722 -0.006" rpy="0 0 0"/>
+    <parent link="14_FR07_S101_4"/>
+    <child link="MX-28AT_AR_8"/>
+  </joint>
+
+  <joint name="Tangan Kiri" type="continuous">
+    <origin xyz="-0.00873 0.0125 -0.015" rpy="0 0 0"/>
+    <parent link="MX-28AT_AR_8"/>
+    <child link="10_FR07_H102_4"/>
+    <axis xyz="1.0 0.0 0.0"/>
+  </joint>
+
+  <joint name="Rigid 25" type="fixed">
+    <origin xyz="0.0225 -0.016 -0.0245" rpy="0 0 0"/>
+    <parent link="10_FR07_H102_4"/>
+    <child link="FP04-F9_2"/>
+  </joint>
+
+  <joint name="Rigid 26" type="fixed">
+    <origin xyz="-0.0125 0.0 -0.019" rpy="0 0 0"/>
+    <parent link="FP04-F9_2"/>
+    <child link="Tangan_2"/>
+  </joint>
+
+  <joint name="Rigid 27" type="fixed">
+    <origin xyz="0.006273 -0.033 0.006073" rpy="0 0 0"/>
+    <parent link="BadanAtasRevisi_1"/>
+    <child link="MX-28AT_AR_1"/>
+  </joint>
+
+  <joint name="Lengan Kanan" type="continuous">
+    <origin xyz="0.00835 -0.0045 0.015" rpy="0 0 0"/>
+    <parent link="MX-28AT_AR_1"/>
+    <child link="10_FR07_H102_1"/>
+    <axis xyz="-1.0 -0.0 -0.0"/>
+  </joint>
+
+  <joint name="Bahu Tangan Kanan" type="continuous">
+    <origin xyz="0.0225 0.0225 -0.016" rpy="0 0 0"/>
+    <parent link="10_FR07_H102_1"/>
+    <child link="MX-28AT_AR_5"/>
+    <axis xyz="0.0 -1.0 -0.0"/>
+  </joint>
+
+  <joint name="Rigid 30" type="fixed">
+    <origin xyz="0.0085 -0.00835 -0.0358" rpy="0 0 0"/>
+    <parent link="MX-28AT_AR_5"/>
+    <child link="14_FR07_S101_1"/>
+  </joint>
+
+  <joint name="Rigid 31" type="fixed">
+    <origin xyz="-0.004722 -0.007222 -0.006" rpy="0 0 0"/>
+    <parent link="14_FR07_S101_1"/>
+    <child link="Hex_Spacer_MF_M3_L40mm_4"/>
+  </joint>
+
+  <joint name="Rigid 32" type="fixed">
+    <origin xyz="-0.020278 -0.007222 -0.006" rpy="0 0 0"/>
+    <parent link="14_FR07_S101_1"/>
+    <child link="Hex_Spacer_MF_M3_L40mm_3"/>
+  </joint>
+
+  <joint name="Rigid 33" type="fixed">
+    <origin xyz="-0.004722 -0.022778 -0.006" rpy="0 0 0"/>
+    <parent link="14_FR07_S101_1"/>
+    <child link="Hex_Spacer_MF_M3_L40mm_1"/>
+  </joint>
+
+  <joint name="Rigid 34" type="fixed">
+    <origin xyz="-0.020278 -0.022778 -0.006" rpy="0 0 0"/>
+    <parent link="14_FR07_S101_1"/>
+    <child link="Hex_Spacer_MF_M3_L40mm_2"/>
+  </joint>
+
+  <joint name="Rigid 35" type="fixed">
+    <origin xyz="0.0 0.0 -0.04" rpy="0 0 0"/>
+    <parent link="Hex_Spacer_MF_M3_L40mm_1"/>
+    <child link="14_FR07_S101_2"/>
+  </joint>
+
+  <joint name="Rigid 38" type="fixed">
+    <origin xyz="-0.0225 -0.016 -0.0243" rpy="0 0 0"/>
+    <parent link="10_FR07_H102_2"/>
+    <child link="FP04-F9_1"/>
+  </joint>
+
+  <joint name="Rigid 39" type="fixed">
+    <origin xyz="0.0125 0.0 -0.019" rpy="0 0 0"/>
+    <parent link="FP04-F9_1"/>
+    <child link="Tangan_1"/>
+  </joint>
+
+  <joint name="Tangan Kanan" type="continuous">
+    <origin xyz="0.03835 0.0295 -0.015" rpy="0 0 0"/>
+    <parent link="MX-28AT_AR_7"/>
+    <child link="10_FR07_H102_2"/>
+    <axis xyz="-1.0 -0.0 -0.0"/>
+  </joint>
+
+  <joint name="Rigid 41" type="fixed">
+    <origin xyz="-0.022778 -0.000722 -0.006" rpy="0 0 0"/>
+    <parent link="14_FR07_S101_2"/>
+    <child link="MX-28AT_AR_7"/>
+  </joint>
+
+  <joint name="Paha Atas Kanan" type="continuous">
+    <origin xyz="0.0 -0.032853 -0.038545" rpy="0 0 0"/>
+    <parent link="PahaAtas3D_3"/>
+    <child link="MX-64T_5"/>
+    <axis xyz="-0.0 -1.0 -0.0"/>
+  </joint>
+
+  <joint name="Rigid 43" type="fixed">
+    <origin xyz="0.0173 -0.0083 -0.018" rpy="0 0 0"/>
+    <parent link="MX-64T_5"/>
+    <child link="SambunganServo_Revision_2"/>
+  </joint>
+
+  <joint name="Rigid 44" type="fixed">
+    <origin xyz="-0.0173 -0.0083 -0.018" rpy="0 0 0"/>
+    <parent link="MX-64T_5"/>
+    <child link="SambunganServo_Revision_1"/>
+  </joint>
+
+  <joint name="Rigid 45" type="fixed">
+    <origin xyz="-0.0003 0.0174 0.0" rpy="0 0 0"/>
+    <parent link="SambunganServo_Revision_2"/>
+    <child link="MX-64T_6"/>
+  </joint>
+
+  <joint name="Paha Bawah Kanan" type="continuous">
+    <origin xyz="-0.0423 0.0173 0.018" rpy="0 0 0"/>
+    <parent link="MX-64T_6"/>
+    <child link="PahaBawah_1"/>
+    <axis xyz="1.0 -0.0 0.0"/>
+  </joint>
+
+  <joint name="Rigid 47" type="fixed">
+    <origin xyz="0.0255 0.0 -0.071" rpy="0 0 0"/>
+    <parent link="PahaBawah_1"/>
+    <child link="FR05-S101_3"/>
+  </joint>
+
+  <joint name="Paha Atas Kiri" type="continuous">
+    <origin xyz="0.0 -0.032853 -0.038545" rpy="0 0 0"/>
+    <parent link="PahaAtas3D_4"/>
+    <child link="MX-64T_4"/>
+    <axis xyz="-0.0 -1.0 -0.0"/>
+  </joint>
+
+  <joint name="Rigid 49" type="fixed">
+    <origin xyz="0.0173 -0.0083 -0.018" rpy="0 0 0"/>
+    <parent link="MX-64T_4"/>
+    <child link="SambunganServo_Revision_3"/>
+  </joint>
+
+  <joint name="Rigid 50" type="fixed">
+    <origin xyz="-0.0173 -0.0083 -0.018" rpy="0 0 0"/>
+    <parent link="MX-64T_4"/>
+    <child link="SambunganServo_Revision_4"/>
+  </joint>
+
+  <joint name="Rigid 51" type="fixed">
+    <origin xyz="-0.0003 0.0174 0.0" rpy="0 0 0"/>
+    <parent link="SambunganServo_Revision_3"/>
+    <child link="MX-64T_3"/>
+  </joint>
+
+  <joint name="Paha Bawah Kiri" type="continuous">
+    <origin xyz="0.0083 0.0173 0.018" rpy="0 0 0"/>
+    <parent link="MX-64T_3"/>
+    <child link="PahaBawah_2"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+  </joint>
+
+  <joint name="Rigid 53" type="fixed">
+    <origin xyz="-0.025501 0.0 -0.071" rpy="0 0 0"/>
+    <parent link="PahaBawah_2"/>
+    <child link="FR05-S101_4"/>
+  </joint>
+
+  <joint name="Rigid 54" type="fixed">
+    <origin xyz="-0.034 0.0346 0.022" rpy="0 0 0"/>
+    <parent link="MX-64T_6"/>
+    <child link="FR05-S101_2"/>
+  </joint>
+
+  <joint name="Rigid 55" type="fixed">
+    <origin xyz="0.017 0.0067 -0.004" rpy="0 0 0"/>
+    <parent link="FR05-S101_2"/>
+    <child link="FR05-F101_2"/>
+  </joint>
+
+  <joint name="Rigid 57" type="fixed">
+    <origin xyz="0.0 0.0028 0.0" rpy="0 0 0"/>
+    <parent link="HN05-i101_2"/>
+    <child link="MF128ZZ_2"/>
+  </joint>
+
+  <joint name="Rigid 58" type="fixed">
+    <origin xyz="0.0 0.00348 0.0" rpy="0 0 0"/>
+    <parent link="MF128ZZ_2"/>
+    <child link="RX64-CAP_2"/>
+  </joint>
+
+  <joint name="Rigid 59" type="fixed">
+    <origin xyz="0.0 0.0346 0.022" rpy="0 0 0"/>
+    <parent link="MX-64T_3"/>
+    <child link="FR05-S101_1"/>
+  </joint>
+
+  <joint name="Rigid 60" type="fixed">
+    <origin xyz="-0.017 0.0067 -0.004" rpy="0 0 0"/>
+    <parent link="FR05-S101_1"/>
+    <child link="FR05-F101_1"/>
+  </joint>
+
+  <joint name="Rigid 61" type="fixed">
+    <origin xyz="0.0 0.0028 0.0" rpy="0 0 0"/>
+    <parent link="FR05-F101_1"/>
+    <child link="HN05-i101_1"/>
+  </joint>
+
+  <joint name="Rigid 62" type="fixed">
+    <origin xyz="0.0 0.0028 0.0" rpy="0 0 0"/>
+    <parent link="FR05-F101_2"/>
+    <child link="HN05-i101_2"/>
+  </joint>
+
+  <joint name="Rigid 63" type="fixed">
+    <origin xyz="0.0 0.0026 0.0" rpy="0 0 0"/>
+    <parent link="HN05-i101_1"/>
+    <child link="MF128ZZ_1"/>
+  </joint>
+
+  <joint name="Rigid 64" type="fixed">
+    <origin xyz="0.0 0.00348 0.0" rpy="0 0 0"/>
+    <parent link="MF128ZZ_1"/>
+    <child link="RX64-CAP_1"/>
+  </joint>
+
+  <joint name="Rigid 65" type="fixed">
+    <origin xyz="-0.017 -0.011 -0.0065" rpy="0 0 0"/>
+    <parent link="FR05-S101_4"/>
+    <child link="MX-64T_8"/>
+  </joint>
+
+  <joint name="Lutut Kanan" type="continuous">
+    <origin xyz="-0.0423 0.011 -0.0453" rpy="0 0 0"/>
+    <parent link="MX-64T_7"/>
+    <child link="Tungkak_1"/>
+    <axis xyz="1.0 -0.0 -0.0"/>
+  </joint>
+
+  <joint name="Lutut Kiri" type="continuous">
+    <origin xyz="0.0423 0.011 -0.0453" rpy="0 0 0"/>
+    <parent link="MX-64T_8"/>
+    <child link="Tungkak_2"/>
+    <axis xyz="-1.0 0.0 -0.0"/>
+  </joint>
+
+  <joint name="Kaki Kanan Atas" type="continuous">
+    <origin xyz="0.0 0.0 -0.121129" rpy="0 0 0"/>
+    <parent link="Tungkak_1"/>
+    <child link="MX-64T_9"/>
+    <axis xyz="1.0 -0.0 -0.0"/>
+  </joint>
+
+  <joint name="Kaki Kiri Atas" type="continuous">
+    <origin xyz="0.0 0.0 -0.121129" rpy="0 0 0"/>
+    <parent link="Tungkak_2"/>
+    <child link="MX-64T_10"/>
+    <axis xyz="-1.0 0.0 -0.0"/>
+  </joint>
+
+  <joint name="Rigid 71" type="fixed">
+    <origin xyz="0.017 -0.011 -0.0067" rpy="0 0 0"/>
+    <parent link="FR05-S101_3"/>
+    <child link="MX-64T_7"/>
+  </joint>
+
+  <joint name="Rigid 72" type="fixed">
+    <origin xyz="-0.0083 -0.0173 0.04" rpy="0 0 0"/>
+    <parent link="MX-64T_10"/>
+    <child link="SambunganServo_Revision_8"/>
+  </joint>
+
+  <joint name="Rigid 73" type="fixed">
+    <origin xyz="-0.0423 -0.0173 0.04" rpy="0 0 0"/>
+    <parent link="MX-64T_10"/>
+    <child link="SambunganServo_Revision_5"/>
+  </joint>
+
+  <joint name="Rigid 74" type="fixed">
+    <origin xyz="-0.0003 -0.0174 0.0" rpy="0 0 0"/>
+    <parent link="SambunganServo_Revision_5"/>
+    <child link="MX-64T_12"/>
+  </joint>
+
+  <joint name="Rigid 75" type="fixed">
+    <origin xyz="0.0423 -0.0173 0.04" rpy="0 0 0"/>
+    <parent link="MX-64T_9"/>
+    <child link="SambunganServo_Revision_6"/>
+  </joint>
+
+  <joint name="Rigid 76" type="fixed">
+    <origin xyz="0.0083 -0.0173 0.04" rpy="0 0 0"/>
+    <parent link="MX-64T_9"/>
+    <child link="SambunganServo_Revision_7"/>
+  </joint>
+
+  <joint name="Rigid 77" type="fixed">
+    <origin xyz="0.0003 -0.0174 0.0" rpy="0 0 0"/>
+    <parent link="SambunganServo_Revision_6"/>
+    <child link="MX-64T_11"/>
+  </joint>
+
+  <joint name="Kaki Kiri Bawah" type="continuous">
+    <origin xyz="0.0173 0.0083 -0.04" rpy="0 0 0"/>
+    <parent link="MX-64T_12"/>
+    <child link="PahaAtas3D_2"/>
+    <axis xyz="-0.0 -1.0 -0.0"/>
+  </joint>
+
+  <joint name="Kaki Kanan Bawah" type="continuous">
+    <origin xyz="-0.0173 0.0083 -0.04" rpy="0 0 0"/>
+    <parent link="MX-64T_11"/>
+    <child link="PahaAtas3D_1"/>
+    <axis xyz="-0.0 -1.0 -0.0"/>
+  </joint>
+
+  <joint name="Rigid 80" type="fixed">
+    <origin xyz="0.0423 0.0173 0.018" rpy="0 0 0"/>
+    <parent link="MX-64T_9"/>
+    <child link="FR05-S101_5"/>
+  </joint>
+
+  <joint name="Rigid 81" type="fixed">
+    <origin xyz="-0.017 0.0067 -0.018" rpy="0 0 0"/>
+    <parent link="FR05-S101_5"/>
+    <child link="FR05-F101_3"/>
+  </joint>
+
+  <joint name="Rigid 82" type="fixed">
+    <origin xyz="0.0 0.0028 0.0" rpy="0 0 0"/>
+    <parent link="FR05-F101_3"/>
+    <child link="HN05-i101_3"/>
+  </joint>
+
+  <joint name="Rigid 83" type="fixed">
+    <origin xyz="0.0 0.0028 0.0" rpy="0 0 0"/>
+    <parent link="HN05-i101_3"/>
+    <child link="MF128ZZ_3"/>
+  </joint>
+
+  <joint name="Rigid 84" type="fixed">
+    <origin xyz="0.0 0.00348 0.0" rpy="0 0 0"/>
+    <parent link="MF128ZZ_3"/>
+    <child link="RX64-CAP_3"/>
+  </joint>
+
+  <joint name="Rigid 85" type="fixed">
+    <origin xyz="-0.0423 0.0173 0.018" rpy="0 0 0"/>
+    <parent link="MX-64T_10"/>
+    <child link="FR05-S101_6"/>
+  </joint>
+
+  <joint name="Rigid 86" type="fixed">
+    <origin xyz="0.017 0.0067 -0.018" rpy="0 0 0"/>
+    <parent link="FR05-S101_6"/>
+    <child link="FR05-F101_4"/>
+  </joint>
+
+  <joint name="Rigid 87" type="fixed">
+    <origin xyz="0.0 0.0028 0.0" rpy="0 0 0"/>
+    <parent link="FR05-F101_4"/>
+    <child link="HN05-i101_4"/>
+  </joint>
+
+  <joint name="Rigid 88" type="fixed">
+    <origin xyz="0.0 0.0028 0.0" rpy="0 0 0"/>
+    <parent link="HN05-i101_4"/>
+    <child link="MF128ZZ_4"/>
+  </joint>
+
+  <joint name="Rigid 89" type="fixed">
+    <origin xyz="0.0 0.00348 0.0" rpy="0 0 0"/>
+    <parent link="MF128ZZ_4"/>
+    <child link="RX64-CAP_4"/>
+  </joint>
+
+  <joint name="Rigid 93" type="fixed">
+    <origin xyz="0.011 0.032853 -0.038545" rpy="0 0 0"/>
+    <parent link="PahaAtas3D_2"/>
+    <child link="Telapak_2"/>
+  </joint>
+
+  <joint name="Rigid 94" type="fixed">
+    <origin xyz="-0.011 0.032853 -0.038545" rpy="0 0 0"/>
+    <parent link="PahaAtas3D_1"/>
+    <child link="Telapak_1"/>
+  </joint>
+
+  <joint name="Rigid 95" type="fixed">
+    <origin xyz="0.0165 0.06 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_2"/>
+    <child link="pull_8"/>
+  </joint>
+
+  <joint name="Rigid 96" type="fixed">
+    <origin xyz="0.0165 0.022929 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_2"/>
+    <child link="pull_3"/>
+  </joint>
+
+  <joint name="Rigid 97" type="fixed">
+    <origin xyz="0.0165 -0.022929 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_2"/>
+    <child link="pull_2"/>
+  </joint>
+
+  <joint name="Rigid 98" type="fixed">
+    <origin xyz="0.0165 -0.06 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_2"/>
+    <child link="pull_1"/>
+  </joint>
+
+  <joint name="Rigid 99" type="fixed">
+    <origin xyz="-0.0655 0.06 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_2"/>
+    <child link="pull_4"/>
+  </joint>
+
+  <joint name="Rigid 100" type="fixed">
+    <origin xyz="-0.0655 0.022929 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_2"/>
+    <child link="pull_7"/>
+  </joint>
+
+  <joint name="Rigid 101" type="fixed">
+    <origin xyz="-0.0655 -0.022929 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_2"/>
+    <child link="pull_6"/>
+  </joint>
+
+  <joint name="Rigid 102" type="fixed">
+    <origin xyz="-0.0655 -0.06 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_2"/>
+    <child link="pull_5"/>
+  </joint>
+
+  <joint name="Rigid 103" type="fixed">
+    <origin xyz="-0.0165 0.06 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_1"/>
+    <child link="pull_13"/>
+  </joint>
+
+  <joint name="Rigid 104" type="fixed">
+    <origin xyz="-0.0165 0.022929 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_1"/>
+    <child link="pull_14"/>
+  </joint>
+
+  <joint name="Rigid 105" type="fixed">
+    <origin xyz="-0.0165 -0.022929 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_1"/>
+    <child link="pull_15"/>
+  </joint>
+
+  <joint name="Rigid 106" type="fixed">
+    <origin xyz="-0.0165 -0.06 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_1"/>
+    <child link="pull_11"/>
+  </joint>
+
+  <joint name="Rigid 107" type="fixed">
+    <origin xyz="0.0655 0.06 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_1"/>
+    <child link="pull_12"/>
+  </joint>
+
+  <joint name="Rigid 108" type="fixed">
+    <origin xyz="0.0655 0.022929 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_1"/>
+    <child link="pull_9"/>
+  </joint>
+
+  <joint name="Rigid 109" type="fixed">
+    <origin xyz="0.0655 -0.022929 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_1"/>
+    <child link="pull_10"/>
+  </joint>
+
+  <joint name="Rigid 110" type="fixed">
+    <origin xyz="0.0655 -0.06 -0.002" rpy="0 0 0"/>
+    <parent link="Telapak_1"/>
+    <child link="pull_16"/>
+  </joint>
+
+  <!-- ROS2 Control -->
+  <ros2_control name="GazeboSimSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <!-- Joint 1 -->
+    <joint name="Leher Putar">
+      <command_interface name="position">
+        <param name="min">-3.14159</param>
+        <param name="max">3.14159</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+    </joint>
+    <!-- Joint 2 -->
+    <joint name="Kepala Putar">
+      <command_interface name="position">
+        <param name="min">-3.14159</param>
+        <param name="max">3.14159</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+    </joint>
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find darnet_igz)/config/joint_controller.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+</robot>
