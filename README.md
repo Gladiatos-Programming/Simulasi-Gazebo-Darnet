@@ -1,3 +1,3 @@
-# Simulasi-Gazebo-Darnet-Coba
+# Simulasi-Gazebo-Darnet
 
-Repo buat belajar ROS2 Humble
+Repo buat simulasi gazebo robot Darnet dengan ROS2 Humble dan Gazebo Fortress.
