@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 100  # Hz
+    update_rate: 1000  # Hz
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
@@ -10,11 +10,32 @@ controller_manager:
 
 joint_trajectory_controller:
   ros__parameters:
-    joints: ["Kepala Putar", "Leher Putar", "Paha Atas Kanan", 
-      "Paha Atas Kiri", "Paha Bawah Kanan", "Paha Bawah Kiri",
-      "Paha Kanan Putar", "Paha Kiri Putar", "Lutut Kanan",
-      "Lutut Kiri", "Kaki Kanan Atas", "Kaki Kiri Atas", "Kaki Kanan Bawah", "Kaki Kiri Bawah", 
-      "Lengan Kiri", "Bahu Tangan Kiri", "Tangan Kiri", "Lengan Kanan", "Bahu Tangan Kanan", "Tangan Kanan"]
-    # joints: ["Kepala Putar", "Leher Putar"]
-    command_interfaces: ["position"]
-    state_interfaces: ["position"]
+    joints:
+      - Leher Putar
+      - Kepala Putar 
+      - Paha Kanan Putar
+      - Paha Kiri Putar
+      - Lengan Kiri
+      - Bahu Tangan Kiri
+      - Tangan Kiri
+      - Lengan Kanan
+      - Bahu Tangan Kanan
+      - Tangan Kanan
+      - Paha Atas Kanan
+      - Paha Bawah Kanan
+      - Paha Atas Kiri
+      - Paha Bawah Kiri
+      - Lutut Kanan
+      - Lutut Kiri
+      - Kaki Kanan Atas
+      - Kaki Kiri Atas
+      - Kaki Kiri Bawah
+      - Kaki Kanan Bawah
+    
+    command_interfaces:
+      - position
+    
+    state_interfaces:
+      - position
+      
+    allow_partial_joints_goal: true
