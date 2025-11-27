@@ -8,7 +8,7 @@
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
   <gravity>true</gravity>
 </gazebo>
 
@@ -16,721 +16,721 @@
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="BadanDepanRevisi_3DPrint_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="TempatBatteryRevisi2_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="SpaceMX64_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="SpaceMX64_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-64T_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-64T_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="PahaAtas3D_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="PahaAtas3D_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="6_PR13_B_SPACER_PELV_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-28AT_AR_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="2_FR07_H104_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-28AT_AR_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-28AT_AR_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="10_FR07_H102_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-28AT_AR_6">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="14_FR07_S101_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Hex_Spacer_MF_M3_L40mm_7">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Hex_Spacer_MF_M3_L40mm_6">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Hex_Spacer_MF_M3_L40mm_8">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Hex_Spacer_MF_M3_L40mm_5">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="14_FR07_S101_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-28AT_AR_8">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="10_FR07_H102_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="FP04-F9_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Tangan_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-28AT_AR_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="10_FR07_H102_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-28AT_AR_5">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="14_FR07_S101_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Hex_Spacer_MF_M3_L40mm_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Hex_Spacer_MF_M3_L40mm_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Hex_Spacer_MF_M3_L40mm_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Hex_Spacer_MF_M3_L40mm_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="14_FR07_S101_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="FP04-F9_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Tangan_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="10_FR07_H102_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-28AT_AR_7">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-64T_5">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="SambunganServo_Revision_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="SambunganServo_Revision_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-64T_6">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="PahaBawah_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="FR05-S101_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-64T_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="SambunganServo_Revision_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="SambunganServo_Revision_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-64T_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="PahaBawah_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="FR05-S101_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="FR05-S101_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="FR05-F101_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MF128ZZ_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="RX64-CAP_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="FR05-S101_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="FR05-F101_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="HN05-i101_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="HN05-i101_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MF128ZZ_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="RX64-CAP_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-64T_8">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Tungkak_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Tungkak_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-64T_9">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-64T_10">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-64T_7">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="SambunganServo_Revision_8">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="SambunganServo_Revision_5">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-64T_12">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="SambunganServo_Revision_6">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="SambunganServo_Revision_7">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MX-64T_11">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="PahaAtas3D_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="PahaAtas3D_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="FR05-S101_5">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="FR05-F101_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="HN05-i101_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MF128ZZ_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="RX64-CAP_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="FR05-S101_6">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="FR05-F101_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="HN05-i101_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="MF128ZZ_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="RX64-CAP_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Telapak_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="Telapak_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_8">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_3">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_2">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_4">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_7">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_6">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_5">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_13">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_14">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_15">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_11">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_12">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_9">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_10">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 <gazebo reference="pull_16">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
+  <self_collide>false</self_collide>
 </gazebo>
 
 </robot>

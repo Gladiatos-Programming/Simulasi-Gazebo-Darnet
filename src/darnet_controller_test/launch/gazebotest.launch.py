@@ -49,7 +49,8 @@ def generate_launch_description():
             "-topic", "robot_description", 
             "-name", "darnetnew", 
             "-allow_renaming", "true",
-            "-z", "0.5"  # TAMBAHKAN INI - spawn 0.5 meter di atas ground
+            "-z", "0.5",  # TAMBAHKAN INI - spawn 0.5 meter di atas ground
+            "-R", "-1.047",
         ],
     )
 

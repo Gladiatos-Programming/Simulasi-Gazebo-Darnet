@@ -15,6 +15,7 @@ setup(
         (os.path.join('share', package_name, 'config'), glob('config/*')),
         (os.path.join('share', package_name, 'urdf'),   glob('urdf/*')),
         (os.path.join('share', package_name, 'worlds'), glob('worlds/*.world')),
+        (os.path.join('share', package_name, 'scripts'), glob('scripts/*.py')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -25,6 +26,9 @@ setup(
     entry_points={
         'console_scripts': [
             'joint_publisher = darnet_controller_test.joint_publisher:main',
+            'CalcMass = darnet_controller_test.CalcMass:main',
+            'Bangkit = darnet_controller_test.Bangkit:main',
+            'Centerized = darnet_controller_test.Centerized:main',
         ],
     },
 )

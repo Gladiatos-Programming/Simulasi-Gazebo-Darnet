@@ -2826,4 +2826,245 @@
   <child link="pull_16"/>
 </joint>
 
+
+<!-- ROS2 Control -->
+<ros2_control name="GazeboSystem" type="system">
+  <hardware>
+    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+  </hardware>
+    
+  <!-- Joint 1 -->
+  <joint name="Leher Putar">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+  <!-- Joint 2 -->
+  <joint name="Kepala Putar">
+    <command_interface name="position">
+      <param name="min">-1.5708</param>
+      <param name="max">1.5708</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+      <param name="min">-1.5708</param>
+      <param name="max">1.5708</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 3 -->
+  <joint name="Paha Atas Kanan">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 4 -->
+  <joint name="Paha Atas Kiri">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+  
+  <!-- Joint 5 -->
+  <joint name="Paha Kanan Putar">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 6 -->
+  <joint name="Paha Kiri Putar">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 7 -->
+  <joint name="Paha Bawah Kanan">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 8 -->
+  <joint name="Paha Bawah Kiri">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 9 -->
+  <joint name="Lutut Kanan">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 10 -->
+  <joint name="Lutut Kiri">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 11 -->
+  <joint name="Kaki Kanan Atas">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 12 -->
+  <joint name="Kaki Kiri Atas">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 13 -->
+  <joint name="Kaki Kanan Bawah">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 14 -->
+  <joint name="Kaki Kiri Bawah">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 15 -->
+  <joint name="Lengan Kiri">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 16 -->
+  <joint name="Bahu Tangan Kiri">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 17 -->
+  <joint name="Tangan Kiri">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 18 -->
+  <joint name="Lengan Kanan">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 19 -->
+  <joint name="Bahu Tangan Kanan">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+  <!-- Joint 20 -->
+  <joint name="Tangan Kanan">
+    <command_interface name="position">
+      <param name="min">-3.14159</param>
+      <param name="max">3.14159</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0</param>
+    </state_interface>
+  </joint>
+
+
+</ros2_control>
+
+
+
+
+
+<gazebo>
+  <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+    <parameters>$(find darnetnew_description)/config/joint_controller.yaml</parameters>
+  </plugin>
+</gazebo>
+
 </robot>

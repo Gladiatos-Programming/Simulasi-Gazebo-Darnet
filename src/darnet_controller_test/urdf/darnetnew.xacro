@@ -8,7 +8,7 @@
   <link name="base_link">
     <inertial>
       <origin xyz="0.11490191942179352 -0.08811411521808868 0.4285754030138091" rpy="0 0 0"/>
-      <mass value="0.04783342981131993"/>
+      <mass value="1.34928"/>
       <inertia ixx="0.00012" iyy="0.000191" izz="0.00024" ixy="0.0" iyz="0.0" ixz="-0.0"/>
     </inertial>
     <visual>
@@ -176,7 +176,7 @@
   <link name="PahaAtas3D_3">
     <inertial>
       <origin xyz="-4.036340476298861e-07 -0.0037563467783642973 -0.010402605928093445" rpy="0 0 0"/>
-      <mass value="0.008519664111309755"/>
+      <mass value="0.07430625"/>
       <inertia ixx="6e-06" iyy="2e-06" izz="6e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
@@ -201,7 +201,7 @@
   <link name="PahaAtas3D_4">
     <inertial>
       <origin xyz="-4.0363404811560866e-07 -0.003756346778364089 -0.010402605928093445" rpy="0 0 0"/>
-      <mass value="0.008519664111309755"/>
+      <mass value="0.07430625"/>
       <inertia ixx="6e-06" iyy="2e-06" izz="6e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
@@ -330,10 +330,11 @@
   <link name="MX-28AT_AR_6">
     <inertial>
       <origin xyz="-2.2100633829229277e-05 -0.020219638153982887 -0.011283313957089425" rpy="0 0 0"/>
-      <mass value="0.0439903769719111"/>
+      <mass value="0.0576525"/>
       <inertia ixx="1.3e-05" iyy="1e-05" izz="8e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
     </inertial>
     <visual>
+      <!-- <origin xyz="-0.015674 0.0758 -0.51712" rpy="0 0 0"/> -->
       <origin xyz="-0.015674 0.051597 -0.486315" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_6.stl" scale="0.001 0.001 0.001"/>
@@ -355,6 +356,7 @@
       <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
+      <!-- <origin xyz="-0.007174 0.110940 -0.481320" rpy="0 0 0"/> -->
       <origin xyz="-0.007174 0.087097 -0.450515" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find darnetnew_description)/meshes/14_FR07_S101_3.stl" scale="0.001 0.001 0.001"/>
@@ -376,7 +378,7 @@
       </geometry>
       <material name="silver"/>
     </visual>
-</link>
+  </link>
 
   <link name="Hex_Spacer_MF_M3_L40mm_6">
     <inertial>
@@ -391,7 +393,7 @@
       </geometry>
       <material name="silver"/>
     </visual>
-</link>
+  </link>
 
   <link name="Hex_Spacer_MF_M3_L40mm_8">
     <inertial>
@@ -406,7 +408,7 @@
       </geometry>
       <material name="silver"/>
     </visual>
-</link>
+  </link>
 
   <link name="Hex_Spacer_MF_M3_L40mm_5">
     <inertial>
@@ -421,7 +423,7 @@
       </geometry>
       <material name="silver"/>
     </visual>
-</link>
+  </link>
 
   <link name="14_FR07_S101_4">
     <inertial>
@@ -431,6 +433,7 @@
     </inertial>
     <visual>
       <origin xyz="-0.011896 0.064319 -0.404515" rpy="0 0 0"/>
+      <!-- <origin xyz="-0.011896 0.064319 -0.404515" rpy="0 0 0"/> -->
       <geometry>
         <mesh filename="file://$(find darnetnew_description)/meshes/14_FR07_S101_4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -441,10 +444,11 @@
   <link name="MX-28AT_AR_8">
     <inertial>
       <origin xyz="0.014339927512303688 0.0012164395485890697 -0.01497736351351936" rpy="0 0 0"/>
-      <mass value="0.0439903769719111"/>
+      <mass value="0.0576525"/>
       <inertia ixx="1e-05" iyy="8e-06" izz="1.3e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
+      <!-- <origin xyz="-0.004674 0.087440 -0.429320" rpy="0 0 0"/> -->
       <origin xyz="-0.004674 0.063597 -0.398515" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find darnetnew_description)/meshes/MX-28AT_AR_8.stl" scale="0.001 0.001 0.001"/>
@@ -466,6 +470,8 @@
       <inertia ixx="1e-06" iyy="2e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
     </inertial>
     <visual>
+      <!-- <origin xyz="0.004056 0.07494 -0.414320" rpy="0 0 0"/> -->
+      <!-- <origin xyz="0.004056 0.07494 -0.383515" rpy="0 0 0"/> -->
       <origin xyz="0.004056 0.051097 -0.383515" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find darnetnew_description)/meshes/10_FR07_H102_4.stl" scale="0.001 0.001 0.001"/>
@@ -481,6 +487,7 @@
       <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
     </inertial>
     <visual>
+      <!-- <origin xyz="-0.018444 0.090940 -0.389820" rpy="0 0 0"/> -->
       <origin xyz="-0.018444 0.067097 -0.359015" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find darnetnew_description)/meshes/FP04-F9_2.stl" scale="0.001 0.001 0.001"/>
@@ -496,6 +503,7 @@
       <inertia ixx="2.5e-05" iyy="2.3e-05" izz="2e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
+      <!-- <origin xyz="-0.005944 0.090940 -0.370820" rpy="0 0 0"/> -->
       <origin xyz="-0.005944 0.067097 -0.340015" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find darnetnew_description)/meshes/Tangan_2.stl" scale="0.001 0.001 0.001"/>
@@ -549,7 +557,7 @@
   <link name="MX-28AT_AR_5">
     <inertial>
       <origin xyz="-2.262154435872521e-05 -0.023069638153982427 -0.01128331395708665" rpy="0 0 0"/>
-      <mass value="0.0439903769719111"/>
+      <mass value="0.0576525"/>
       <inertia ixx="1.3e-05" iyy="1e-05" izz="8e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
     </inertial>
     <visual>
@@ -711,7 +719,7 @@
   <link name="MX-28AT_AR_7">
     <inertial>
       <origin xyz="0.015280265219602435 0.01821643954858139 -0.015022278423608926" rpy="0 0 0"/>
-      <mass value="0.0439903769719111"/>
+      <mass value="0.0576525"/>
       <inertia ixx="1e-05" iyy="8e-06" izz="1.3e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
     </inertial>
     <visual>
@@ -732,7 +740,7 @@
   <link name="MX-64T_5">
     <inertial>
       <origin xyz="-4.03759651407265e-07 -0.024847556106279797 -0.015203256663834375" rpy="0 0 0"/>
-      <mass value="0.07240225558380499"/>
+      <mass value="0.07430625"/>
       <inertia ixx="3e-05" iyy="2.5e-05" izz="1.7e-05" ixy="-0.0" iyz="-1e-06" ixz="-0.0"/>
     </inertial>
     <visual>
@@ -783,7 +791,7 @@
   <link name="MX-64T_6">
     <inertial>
       <origin xyz="-0.01745265453539349 0.017300192866770245 0.002796743336166141" rpy="0 0 0"/>
-      <mass value="0.07240225558380499"/>
+      <mass value="0.07430625"/>
       <inertia ixx="2.5e-05" iyy="3e-05" izz="1.7e-05" ixy="0.0" iyz="-0.0" ixz="1e-06"/>
     </inertial>
     <visual>
@@ -804,7 +812,7 @@
   <link name="PahaBawah_1">
     <inertial>
       <origin xyz="0.02549983591096161 1.9299231801550576e-07 -0.04693927260375347" rpy="0 0 0"/>
-      <mass value="0.009633598501165654"/>
+      <mass value="0.07430625"/>
       <inertia ixx="7e-06" iyy="1e-05" izz="5e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
     </inertial>
     <visual>
@@ -840,7 +848,7 @@
   <link name="MX-64T_4">
     <inertial>
       <origin xyz="-4.037596519901321e-07 -0.02484755610627938 -0.015203256663834097" rpy="0 0 0"/>
-      <mass value="0.07240225558380499"/>
+      <mass value="0.07430625"/>
       <inertia ixx="3e-05" iyy="2.5e-05" izz="1.7e-05" ixy="-0.0" iyz="-1e-06" ixz="-0.0"/>
     </inertial>
     <visual>
@@ -891,7 +899,7 @@
   <link name="MX-64T_3">
     <inertial>
       <origin xyz="-0.016548152732702284 0.01730019311797787 0.0027967433361663074" rpy="0 0 0"/>
-      <mass value="0.07240225558380499"/>
+      <mass value="0.07430625"/>
       <inertia ixx="2.5e-05" iyy="3e-05" izz="1.7e-05" ixy="0.0" iyz="0.0" ixz="-1e-06"/>
     </inertial>
     <visual>
@@ -912,7 +920,7 @@
   <link name="PahaBawah_2">
     <inertial>
       <origin xyz="-0.025500643178509308 1.929923183069393e-07 -0.04693927260375297" rpy="0 0 0"/>
-      <mass value="0.009633598501165654"/>
+      <mass value="0.07430625"/>
       <inertia ixx="7e-06" iyy="1e-05" izz="5e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
     </inertial>
     <visual>
@@ -1098,7 +1106,7 @@
   <link name="MX-64T_8">
     <inertial>
       <origin xyz="0.017452607722562546 0.011000192866771133 -0.030096589352505865" rpy="0 0 0"/>
-      <mass value="0.07240225558380499"/>
+      <mass value="0.07430625"/>
       <inertia ixx="2.5e-05" iyy="3e-05" izz="1.7e-05" ixy="-0.0" iyz="0.0" ixz="1e-06"/>
     </inertial>
     <visual>
@@ -1119,7 +1127,7 @@
   <link name="Tungkak_1">
     <inertial>
       <origin xyz="0.025500075455422044 0.010088786747853684 -0.048147731418395734" rpy="0 0 0"/>
-      <mass value="0.019905401683360396"/>
+      <mass value="0.297225"/>
       <inertia ixx="3.2e-05" iyy="3.8e-05" izz="1.4e-05" ixy="-0.0" iyz="-5e-06" ixz="-0.0"/>
     </inertial>
     <visual>
@@ -1140,7 +1148,7 @@
   <link name="Tungkak_2">
     <inertial>
       <origin xyz="-0.025499882723518774 0.010088786747854198 -0.048147779594986645" rpy="0 0 0"/>
-      <mass value="0.019905401683360396"/>
+      <mass value="0.297225"/>
       <inertia ixx="3.2e-05" iyy="3.8e-05" izz="1.4e-05" ixy="-0.0" iyz="-5e-06" ixz="-0.0"/>
     </inertial>
     <visual>
@@ -1161,7 +1169,7 @@
   <link name="MX-64T_9">
     <inertial>
       <origin xyz="0.024847585009340478 1.9311797885834814e-07 0.01520377916764483" rpy="0 0 0"/>
-      <mass value="0.07240225558380499"/>
+      <mass value="0.07430625"/>
       <inertia ixx="2.5e-05" iyy="3e-05" izz="1.7e-05" ixy="-0.0" iyz="-0.0" ixz="-1e-06"/>
     </inertial>
     <visual>
@@ -1182,7 +1190,7 @@
   <link name="MX-64T_10">
     <inertial>
       <origin xyz="-0.024847392277437513 1.9286677170604616e-07 0.015203730991054168" rpy="0 0 0"/>
-      <mass value="0.07240225558380499"/>
+      <mass value="0.07430625"/>
       <inertia ixx="2.5e-05" iyy="3e-05" izz="1.7e-05" ixy="-0.0" iyz="0.0" ixz="1e-06"/>
     </inertial>
     <visual>
@@ -1203,7 +1211,7 @@
   <link name="MX-64T_7">
     <inertial>
       <origin xyz="-0.017452414990658444 0.011000193117978355 -0.030096541175914426" rpy="0 0 0"/>
-      <mass value="0.07240225558380499"/>
+      <mass value="0.07430625"/>
       <inertia ixx="2.5e-05" iyy="3e-05" izz="1.7e-05" ixy="-0.0" iyz="-0.0" ixz="-1e-06"/>
     </inertial>
     <visual>
@@ -1326,7 +1334,7 @@
   <link name="PahaAtas3D_2">
     <inertial>
       <origin xyz="3.56821216254688e-07 0.02909665322163736 -0.028141919744686078" rpy="0 0 0"/>
-      <mass value="0.008519664111309755"/>
+      <mass value="0.07430625"/>
       <inertia ixx="6.16e-06" iyy="2.13e-06" izz="5.95e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
@@ -1347,7 +1355,7 @@
   <link name="PahaAtas3D_1">
     <inertial>
       <origin xyz="-1.64089313414717e-07 0.02909665322163725 -0.028141871568095007" rpy="0 0 0"/>
-      <mass value="0.008519664111309755"/>
+      <mass value="0.07430625"/>
       <inertia ixx="6.16e-06" iyy="2.13e-06" izz="5.95e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
@@ -1912,7 +1920,9 @@
   </joint>
 
   <joint name="Bahu Tangan Kiri" type="continuous">
-    <origin xyz="-0.0225 -0.0045 0.015" rpy="0 0 0"/>
+    <!-- <origin xyz="-0.0225 0.019343 -0.015805" rpy="0 0 0"/> -->
+    <!-- <origin xyz="-0.0225 -0.0045 0.015" rpy="0 0 0"/> -->
+    <origin xyz="-0.0225 0.0205 -0.016" rpy="0 0 0"/>
     <parent link="10_FR07_H102_3"/>
     <child link="MX-28AT_AR_6"/>
     <axis xyz="-0.0 1.0 0.0"/>
@@ -2504,11 +2514,13 @@
   <!-- Joint 2 -->
   <joint name="Kepala Putar">
     <command_interface name="position">
-      <param name="min">-3.14159</param>
-      <param name="max">3.14159</param>
+      <param name="min">-1.5708</param>
+      <param name="max">1.5708</param>
     </command_interface>
     <state_interface name="position">
       <param name="initial_value">0</param>
+      <param name="min">-1.5708</param>
+      <param name="max">1.5708</param>
     </state_interface>
   </joint>
 

@@ -26,11 +26,11 @@ class JointPublisher(Node):
 
         # Add names of the joints you want to control
         msg.joint_names = [
-            "Kepala Putar", "Leher Putar", "Paha Atas Kanan", 
-            "Paha Atas Kiri", "Paha Bawah Kanan", "Paha Bawah Kiri",
-            "Paha Kanan Putar", "Paha Kiri Putar", "Lutut Kanan",
-            "Lutut Kiri", "Kaki Kanan Atas", "Kaki Kiri Atas", "Kaki Kanan Bawah", "Kaki Kiri Bawah", 
-            "Lengan Kiri", "Bahu Tangan Kiri", "Tangan Kiri", "Lengan Kanan", "Bahu Tangan Kanan", "Tangan Kanan",
+            'Kepala Putar', 'Leher Putar', 'Paha Atas Kanan', 
+            'Paha Atas Kiri', 'Paha Bawah Kanan', 'Paha Bawah Kiri',
+            'Paha Kanan Putar', 'Paha Kiri Putar', 'Lutut Kanan',
+            'Lutut Kiri', 'Kaki Kanan Atas', 'Kaki Kiri Atas', 'Kaki Kanan Bawah', 'Kaki Kiri Bawah', 
+            'Lengan Kiri', 'Bahu Tangan Kiri', 'Tangan Kiri', 'Lengan Kanan', 'Bahu Tangan Kanan', 'Tangan Kanan',
         ]
 
         pos1 = 1.5 * (1.0 - math.cos(self.count * 0.1))
