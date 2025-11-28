@@ -1,0 +1,224 @@
+<?xml version="1.0" ?>
+<robot name="darnet" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="Leher Putar_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Leher Putar">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Leher Putar_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Kepala Putar_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Kepala Putar">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Kepala Putar_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Lengan Kiri_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Lengan Kiri">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Lengan Kiri_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Bahu Tangan Kiri_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Bahu Tangan Kiri">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Bahu Tangan Kiri_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Tangan kiri_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Tangan kiri">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Tangan kiri_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Lengan Kanan _tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Lengan Kanan ">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Lengan Kanan _actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Bahu Tangan Kanan_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Bahu Tangan Kanan">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Bahu Tangan Kanan_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Tangan Kanan_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Tangan Kanan">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Tangan Kanan_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Paha Kiri Putar_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Paha Kiri Putar">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Paha Kiri Putar_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Paha Atas Kanan_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Paha Atas Kanan">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Paha Atas Kanan_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Paha Kanan Putar_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Paha Kanan Putar">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Paha Kanan Putar_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Paha Atas Kiri_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Paha Atas Kiri">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Paha Atas Kiri_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Paha Bawah Kiri _tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Paha Bawah Kiri ">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Paha Bawah Kiri _actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Paha Bawah Kanan _tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Paha Bawah Kanan ">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Paha Bawah Kanan _actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Lutut Kiri_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Lutut Kiri">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Lutut Kiri_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Lutut Kanan_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Lutut Kanan">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Lutut Kanan_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Kaki Kiri Atas_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Kaki Kiri Atas">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Kaki Kiri Atas_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Kaki Kiri Bawah_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Kaki Kiri Bawah">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Kaki Kiri Bawah_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Kaki Kanan Atas_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Kaki Kanan Atas">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Kaki Kanan Atas_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Kaki Kanan Bawah_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Kaki Kanan Bawah">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Kaki Kanan Bawah_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

@@ -1,0 +1,151 @@
+<?xml version="1.0" ?>
+<robot name="darnet" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<gazebo reference="base_link">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>  <!-- Pakai 1 bukan true untuk Fortress -->
+</gazebo>
+
+<gazebo reference="Konektor_Leher_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Kepala_4">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Konektor_Bahu__3">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Lengan_Kiri_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Tangan_Kiri_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Konektor_Bahu__1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Lengan_Kanan_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Tangan_Kanan_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Paha_Atas_4">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Paha_Atas_3">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Paha_Kanan_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Paha_Kiri_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Lutut_Kiri__1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Lutut_Kanan_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Betis_2">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Betis_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Mata_Kaki_Kiri_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Kaki_Kiri_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Mata_Kaki_Kanan_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+<gazebo reference="Kaki_Kanan_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <self_collide>1</self_collide>
+</gazebo>
+
+</robot>
