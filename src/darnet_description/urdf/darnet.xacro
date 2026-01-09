@@ -446,184 +446,252 @@
   </collision>
 </link>
 
-<joint name="Leher Putar" type="continuous">
+<link name="End_Effector_Tangan_Kanan_1">
+  <inertial>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <mass value="0.001"/> <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="0" iyz="0" ixz="0"/>
+  </inertial>
+  
+</link>
+
+<link name="End_Effector_Kaki_Kanan_1">
+  <inertial>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <mass value="0.001"/> 
+    <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="0" iyz="0" ixz="0"/>
+  </inertial>
+  
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+       <box size="0.01 0.01 0.01"/> 
+    </geometry>
+    <material name="blue">
+        <color rgba="0 0 1 0.5"/>
+    </material>
+  </visual>
+</link>
+
+<link name="End_Effector_Kaki_Kiri_1">
+  <inertial>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <mass value="0.001"/> 
+    <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="0" iyz="0" ixz="0"/>
+  </inertial>
+  
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+       <box size="0.01 0.01 0.01"/> 
+    </geometry>
+    <material name="blue">
+        <color rgba="0 0 1 0.5"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="Leher Putar" type="revolute">
   <origin xyz="0.125659 -0.060429 0.520233" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Konektor_Leher_1"/>
   <axis xyz="0.0 0.0 -1.0"/>
   <dynamics damping="0.5"/>
-  <limit effort="10" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="10" velocity="6"/>
 </joint>
 
-<joint name="Kepala Putar" type="continuous">
+<joint name="Kepala Putar" type="revolute">
   <origin xyz="0.0225 0.0 0.028" rpy="0 0 0"/>
   <parent link="Konektor_Leher_1"/>
   <child link="Kepala_4"/>
   <axis xyz="-1.0 -0.0 -0.0"/>
   <dynamics damping="0.5"/>
-  <limit effort="10" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="10" velocity="6"/>
 </joint>
 
-<joint name="Lengan Kiri" type="continuous">
+<joint name="Lengan Kiri" type="revolute">
   <origin xyz="0.048157 -0.060473 0.495956" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Konektor_Bahu__3"/>
   <axis xyz="1.0 0.000471 0.0"/>
   <dynamics damping="1.5"/>
-  <limit effort="10" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="10" velocity="6"/>
 </joint>
 
-<joint name="Bahu Tangan Kiri" type="continuous">
+<joint name="Bahu Tangan Kiri" type="revolute">
   <origin xyz="-0.02251 0.02249 -0.016" rpy="0 0 0"/>
   <parent link="Konektor_Bahu__3"/>
   <child link="Lengan_Kiri_1"/>
   <axis xyz="-0.000471 1.0 0.0"/>
   <dynamics damping="1.5"/>
-  <limit effort="10" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="10" velocity="6"/>
 </joint>
 
-<joint name="Tangan Kiri" type="continuous">
+<joint name="Tangan Kiri" type="revolute">
   <origin xyz="-0.023341 -0.019361 -0.1028" rpy="0 0 0"/>
   <parent link="Lengan_Kiri_1"/>
   <child link="Tangan_Kiri_1"/>
   <axis xyz="1.0 0.000471 0.0"/>
   <dynamics damping="0.3"/>
-  <limit effort="10" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="10" velocity="6"/>
 </joint>
 
-<joint name="Lengan Kanan " type="continuous">
+<joint name="Lengan Kanan" type="revolute">
   <origin xyz="0.202784 -0.0604 0.495956" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Konektor_Bahu__1"/>
   <axis xyz="-1.0 -0.000471 -0.0"/>
   <dynamics damping="1.5"/>
-  <limit effort="10" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="10" velocity="6"/>
 </joint>
 
-<joint name="Bahu Tangan Kanan" type="continuous">
+<joint name="Bahu Tangan Kanan" type="revolute">
   <origin xyz="0.022489 0.022511 -0.016" rpy="0 0 0"/>
   <parent link="Konektor_Bahu__1"/>
   <child link="Lengan_Kanan_1"/>
   <axis xyz="0.000471 -1.0 -0.0"/>
   <dynamics damping="1.5"/>
-  <limit effort="10" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="10" velocity="6"/>
 </joint>
 
-<joint name="Tangan Kanan" type="continuous">
+<joint name="Tangan Kanan" type="revolute">
   <origin xyz="0.023359 -0.019339 -0.1028" rpy="0 0 0"/>
   <parent link="Lengan_Kanan_1"/>
   <child link="Tangan_Kanan_1"/>
   <axis xyz="-1.0 -0.000471 -0.0"/>
   <dynamics damping="0.3"/>
-  <limit effort="10" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159" effort="10" velocity="6"/>
 </joint>
 
-<joint name="Paha Kiri Putar" type="continuous">
+<joint name="Paha Kiri Putar" type="revolute">
   <origin xyz="0.078463 -0.069966 0.351036" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Paha_Atas_4"/>
   <axis xyz="-0.0 -0.0 1.0"/>
   <dynamics damping="5.0"/>
-  <limit effort="40" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="40" velocity="6"/>
 </joint>
 
-<joint name="Paha Atas Kanan" type="continuous">
+<joint name="Paha Atas Kanan" type="revolute">
   <origin xyz="0.172863 -0.069922 0.351036" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Paha_Atas_3"/>
   <axis xyz="-0.0 -0.0 1.0"/>
   <dynamics damping="5.0"/>
-  <limit effort="40" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="40" velocity="6"/>
 </joint>
 
-<joint name="Paha Kanan Putar" type="continuous">
+<joint name="Paha Kanan Putar" type="revolute">
   <origin xyz="0.0 -0.032853 -0.036545" rpy="0 0 0"/>
   <parent link="Paha_Atas_3"/>
   <child link="Paha_Kanan_1"/>
   <axis xyz="0.0 -1.0 -0.0"/>
   <dynamics damping="5.0"/>
-  <limit effort="40" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="40" velocity="6"/>
 </joint>
 
-<joint name="Paha Atas Kiri" type="continuous">
+<joint name="Paha Atas Kiri" type="revolute">
   <origin xyz="0.0 -0.032853 -0.036545" rpy="0 0 0"/>
   <parent link="Paha_Atas_4"/>
   <child link="Paha_Kiri_1"/>
   <axis xyz="0.0 -1.0 -0.0"/>
   <dynamics damping="5.0"/>
-  <limit effort="40" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="40" velocity="6"/>
 </joint>
 
-<joint name="Paha Bawah Kiri " type="continuous">
+<joint name="Paha Bawah Kiri" type="revolute">
   <origin xyz="0.0253 0.0264 0.0" rpy="0 0 0"/>
   <parent link="Paha_Kiri_1"/>
   <child link="Lutut_Kiri__1"/>
   <axis xyz="-1.0 0.0 -0.0"/>
   <dynamics damping="3.0"/>
-  <limit effort="55" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="55" velocity="6"/>
 </joint>
 
-<joint name="Paha Bawah Kanan " type="continuous">
+<joint name="Paha Bawah Kanan" type="revolute">
   <origin xyz="-0.0253 0.0264 0.0" rpy="0 0 0"/>
   <parent link="Paha_Kanan_1"/>
   <child link="Lutut_Kanan_1"/>
   <axis xyz="1.0 0.0 0.0"/>
   <dynamics damping="3.0"/>
-  <limit effort="55" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="55" velocity="6"/>
 </joint>
 
-<joint name="Lutut Kiri" type="continuous">
+<joint name="Lutut Kiri" type="revolute">
   <origin xyz="-0.0002 0.0 -0.1228" rpy="0 0 0"/>
   <parent link="Lutut_Kiri__1"/>
   <child link="Betis_2"/>
   <axis xyz="-1.0 -0.0 -0.0"/>
   <dynamics damping="3.0"/>
-  <limit effort="55" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="55" velocity="6"/>
 </joint>
 
-<joint name="Lutut Kanan" type="continuous">
+<joint name="Lutut Kanan" type="revolute">
   <origin xyz="0.000201 0.0 -0.123" rpy="0 0 0"/>
   <parent link="Lutut_Kanan_1"/>
   <child link="Betis_1"/>
   <axis xyz="1.0 0.0 0.0"/>
   <dynamics damping="3.0"/>
-  <limit effort="55" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="55" velocity="6"/>
 </joint>
 
-<joint name="Kaki Kiri Atas" type="continuous">
+<joint name="Kaki Kiri Atas" type="revolute">
   <origin xyz="0.0 0.0 -0.121129" rpy="0 0 0"/>
   <parent link="Betis_2"/>
   <child link="Mata_Kaki_Kiri_1"/>
   <axis xyz="-1.0 -0.0 -0.0"/>
   <dynamics damping="1.0"/>
-  <limit effort="25" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="25" velocity="6"/>
 </joint>
 
-<joint name="Kaki Kiri Bawah" type="continuous">
+<joint name="Kaki Kiri Bawah" type="revolute">
   <origin xyz="-0.0253 -0.0264 0.0" rpy="0 0 0"/>
   <parent link="Mata_Kaki_Kiri_1"/>
   <child link="Kaki_Kiri_1"/>
   <axis xyz="0.0 -1.0 0.0"/>
   <dynamics damping="1.0"/>
-  <limit effort="25" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="25" velocity="6"/>
 </joint>
 
-<joint name="Kaki Kanan Atas" type="continuous">
+<joint name="Kaki Kanan Atas" type="revolute">
   <origin xyz="0.0 0.0 -0.121129" rpy="0 0 0"/>
   <parent link="Betis_1"/>
   <child link="Mata_Kaki_Kanan_1"/>
   <axis xyz="1.0 0.0 0.0"/>
   <dynamics damping="1.0"/>
-  <limit effort="25" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="25" velocity="6"/>
 </joint>
 
-<joint name="Kaki Kanan Bawah" type="continuous">
+<joint name="Kaki Kanan Bawah" type="revolute">
   <origin xyz="0.0253 -0.0264 0.0" rpy="0 0 0"/>
   <parent link="Mata_Kaki_Kanan_1"/>
   <child link="Kaki_Kanan_1"/>
   <axis xyz="0.0 -1.0 0.0"/>
   <dynamics damping="1.0"/>
-  <limit effort="25" velocity="6"/>
+  <limit lower="-3.14159" upper="3.14159"  effort="25" velocity="6"/>
+</joint>
+
+<joint name="joint_end_effector_kanan" type="fixed">
+  <parent link="Tangan_Kanan_1"/>
+  
+  <child link="End_Effector_Tangan_Kanan_1"/>
+  
+  <origin xyz="-0.005 -0.015 -0.15" rpy="0 0 0"/> 
+</joint>
+
+<joint name="joint_tapak_kaki_kanan" type="fixed">
+  <parent link="Kaki_Kanan_1"/>
+  
+  <child link="End_Effector_Kaki_Kanan_1"/>
+  
+  <origin xyz="0.013 0.0325 -0.069" rpy="0 0 0"/> 
+</joint>
+
+<joint name="joint_tapak_kaki_kiri" type="fixed">
+  <parent link="Kaki_Kiri_1"/>
+  
+  <child link="End_Effector_Kaki_Kiri_1"/>
+  
+  <origin xyz="-0.013 0.0325 -0.069" rpy="0 0 0"/>
 </joint>
 
 <!-- ROS2 Control -->

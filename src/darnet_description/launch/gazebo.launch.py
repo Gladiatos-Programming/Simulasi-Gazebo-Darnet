@@ -10,6 +10,7 @@ import os, xacro
 
 def generate_launch_description():
     share_dir = get_package_share_directory('darnet_description')
+    rviz_config_file = os.path.join(share_dir, 'config', 'rvizuntukdarnet.rviz')
 
     xacro_file = os.path.join(share_dir, 'urdf', 'darnet.xacro')
     robot_description_config = xacro.process_file(xacro_file)
@@ -50,7 +51,7 @@ def generate_launch_description():
             "-topic", "robot_description", 
             "-name", "darnetnew", 
             "-allow_renaming", "true",
-            "-z", "0.5",  # TAMBAHKAN INI - spawn 0.5 meter di atas ground
+            "-z", "0.5",  # spawn 0.5 meter di atas ground
         ],
     )
 
@@ -72,6 +73,14 @@ def generate_launch_description():
         arguments=["joint_trajectory_controller", "--controller-manager", "/controller_manager"],
     )
 
+    rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        arguments=['-d', rviz_config_file],
+        output='screen'
+    )
+
     return LaunchDescription([
         gui_arg,
         gazebo,
@@ -81,5 +90,6 @@ def generate_launch_description():
         gz_spawn_entity,
         load_joint_state_broadcaster,
         load_joint_trajectory_controller,
+        rviz_node,
     ])
     

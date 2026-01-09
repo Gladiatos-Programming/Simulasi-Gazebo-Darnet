@@ -28,6 +28,10 @@ setup(
         'console_scripts': [
             'Bangkit = darnet_description.Bangkit:main',
             'Centerized = darnet_description.Centerized:main',
+            'Jalan = darnet_description.Jalan:main',
+            'PinnochioIK = darnet_description.PinnochioIK:main',
+            'VisualTargetInteractive = darnet_description.InteractiveMarkerForCordinates:main',
+            'SineWaveTarget = darnet_description.SineWaveTarget:main',
         ],
     },
 )

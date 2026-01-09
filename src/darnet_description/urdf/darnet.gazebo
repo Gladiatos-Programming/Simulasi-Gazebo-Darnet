@@ -5,7 +5,7 @@
   <material>Gazebo/Silver</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <self_collide>1</self_collide>  <!-- Pakai 1 bukan true untuk Fortress -->
+  <self_collide>1</self_collide>  
 </gazebo>
 
 <gazebo reference="Konektor_Leher_1">

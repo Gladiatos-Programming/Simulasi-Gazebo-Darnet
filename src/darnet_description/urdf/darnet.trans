@@ -56,12 +56,12 @@
   </actuator>
 </transmission>
 
-<transmission name="Lengan Kanan _tran">
+<transmission name="Lengan Kanan_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Lengan Kanan ">
+  <joint name="Lengan Kanan">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Lengan Kanan _actr">
+  <actuator name="Lengan Kanan_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
@@ -133,23 +133,23 @@
   </actuator>
 </transmission>
 
-<transmission name="Paha Bawah Kiri _tran">
+<transmission name="Paha Bawah Kiri_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Paha Bawah Kiri ">
+  <joint name="Paha Bawah Kiri">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Paha Bawah Kiri _actr">
+  <actuator name="Paha Bawah Kiri_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Paha Bawah Kanan _tran">
+<transmission name="Paha Bawah Kanan_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Paha Bawah Kanan ">
+  <joint name="Paha Bawah Kanan">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Paha Bawah Kanan _actr">
+  <actuator name="Paha Bawah Kanan_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
