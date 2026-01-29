@@ -397,9 +397,11 @@
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.078263 0.102819 -0.070562" rpy="0 0 0"/>
+    <!-- <origin xyz="-0.078263 0.102819 -0.070562" rpy="0 0 0"/> -->
+    <origin xyz="-0.014 0.032 -0.0393" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find darnet_description)/meshes/Kaki_Kiri_1.stl" scale="0.001 0.001 0.001"/>
+      <!-- <mesh filename="file://$(find darnet_description)/meshes/Kaki_Kiri_1.stl" scale="0.001 0.001 0.001"/> -->
+      <box size="0.1 0.135 0.0025"/>
     </geometry>
   </collision>
 </link>
@@ -439,9 +441,11 @@
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.173064 0.102775 -0.070362" rpy="0 0 0"/>
+    <!-- <origin xyz="-0.173064 0.102775 -0.070362" rpy="0 0 0"/> -->
+    <origin xyz="0.014 0.032 -0.0393" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find darnet_description)/meshes/Kaki_Kanan_1.stl" scale="0.001 0.001 0.001"/>
+      <!-- <mesh filename="file://$(find darnet_description)/meshes/Kaki_Kanan_1.stl" scale="0.001 0.001 0.001"/> -->
+      <box size="0.1 0.135 0.0025"/>
     </geometry>
   </collision>
 </link>
@@ -451,6 +455,16 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <mass value="0.001"/> <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="0" iyz="0" ixz="0"/>
   </inertial>
+
+    <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+       <box size="0.01 0.01 0.01"/> 
+    </geometry>
+    <material name="blue">
+        <color rgba="0 0 1 0.5"/>
+    </material>
+  </visual>
   
 </link>
 
@@ -473,6 +487,24 @@
 </link>
 
 <link name="End_Effector_Kaki_Kiri_1">
+  <inertial>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <mass value="0.001"/> 
+    <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="0" iyz="0" ixz="0"/>
+  </inertial>
+  
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+       <box size="0.01 0.01 0.01"/> 
+    </geometry>
+    <material name="blue">
+        <color rgba="0 0 1 0.5"/>
+    </material>
+  </visual>
+</link>
+
+<link name="End_Effector_Tangan_Kiri_1">
   <inertial>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <mass value="0.001"/> 
@@ -692,6 +724,14 @@
   <child link="End_Effector_Kaki_Kiri_1"/>
   
   <origin xyz="-0.013 0.0325 -0.069" rpy="0 0 0"/>
+</joint>
+
+<joint name="joint_end_effector_kiri" type="fixed">
+  <parent link="Tangan_Kiri_1"/>
+  
+  <child link="End_Effector_Tangan_Kiri_1"/>
+  
+  <origin xyz="0.005 -0.015 -0.15" rpy="0 0 0"/> 
 </joint>
 
 <!-- ROS2 Control -->
