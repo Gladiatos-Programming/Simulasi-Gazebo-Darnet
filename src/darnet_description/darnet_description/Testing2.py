@@ -12,8 +12,9 @@ class DualLegWalker(Node):
         super().__init__('dual_leg_walker')
         
         # ================= CONFIGURATION =================
-        self.speed = 2.0        # Kecepatan Jalan
+        self.speed = 5.0        # Kecepatan Jalan
         self.step_height = 0.09  # Tinggi angkat kaki (5 cm)
+        self.walking_state = 0   
         
         # --- KAKI KANAN (RIGHT) ---
         self.topic_right = '/target_pose/right_leg'
@@ -44,6 +45,7 @@ class DualLegWalker(Node):
         # Subscription
         self.speed_pub = self.create_subscription(Int64, '/speed_step', self.callback_change_speed_step, 10)
         self.step_height_pub = self.create_subscription(Int64, '/step_height', self.callback_change_step_height, 10)
+        self.startwalking = self.create_subscription(Int64, '/start_walking', self.callback_start_walking, 10)
 
         self.reset_client = self.create_client(Trigger, '/reset_ik_memory')
         self.reset_ik_node()
@@ -52,6 +54,13 @@ class DualLegWalker(Node):
         # self.set_ik_speed(5000000)
 
         time.sleep(0.5)
+    def callback_start_walking(self, msg):
+        """Callback untuk memulai jalan"""
+        self.walking_state = msg.data
+        if self.walking_state == 1:
+            self.get_logger().info("🚶 Starting Walking...")
+        else:
+            self.get_logger().info("🛑 Stopping Walking...")
 
     def callback_change_speed_step(self, msg):
         """Callback untuk ubah speed dan step height dari luar"""
@@ -100,33 +109,36 @@ class DualLegWalker(Node):
         # y_left = max(-0.05, raw_y_left1, raw_y_left2)
 
         # === HITUNG MATEMATIKA V2 ===
-        raw_z_right = math.sin(self.speed * elapsed - 0.6) * (self.step_height2 + 0.08) - 0.13
+        raw_z_right = math.sin(self.speed * elapsed - 0.5) * (self.step_height2 + 0.08) - 0.13
         z_right = max(0, raw_z_right)
 
-        raw_z_left = math.sin(self.speed * elapsed + math.pi - 0.6) * (self.step_height2 + 0.08) - 0.13
+        raw_z_left = math.sin(self.speed * elapsed + math.pi - 0.5) * (self.step_height2 + 0.08) - 0.13
         z_left = max(0, raw_z_left)
 
-        raw_x_right = 0.02 * math.sin(self.speed * elapsed - 0.6) * 3 - 0.02
+        raw_x_right = 0.02 * math.sin(self.speed * elapsed - 0.5) * 3 - 0.02
         x_right = max(-0.05,min(raw_x_right,0.01))
 
-        raw_x_left = 0.02 * math.sin(self.speed * elapsed - 0.6) * 3 + 0.02
+        raw_x_left = 0.02 * math.sin(self.speed * elapsed - 0.5) * 3 + 0.02
         x_left = max(-0.01,min(raw_x_left,0.05))
 
         # raw_y_right = math.sin(self.speed/2 * elapsed + 0.39) * (self.step_height2 + 0.08) - 0.13
         # raw_y_right2 = math.sin(self.speed/2 * elapsed + 0.39 + 3.14) * (self.step_height2 + 0.08) - 0.13
 
-        y_right = math.sin(self.speed * elapsed - 1.57 - 0.6) * 0.025
+        y_right = math.sin(self.speed * elapsed - 1.57 - 0.5) * 0.035
         # y_right = max(0.0, raw_y_right)
 
         # raw_y_left = math.sin(self.speed/2 * elapsed + 0.39 + 1.85) * (self.step_height2 + 0.08) - 0.13
         # raw_y_left2 = math.sin(self.speed/2 * elapsed + 0.39 + 1.85 + 3.14) * (self.step_height2 + 0.08) - 0.13 
         # y_left = max(0.0, raw_y_left, raw_y_left2)
-        y_left = math.sin(self.speed * elapsed - 1.57 + 3.14 - 0.6) * 0.025
+        y_left = math.sin(self.speed * elapsed - 1.57 + 3.14 - 0.5) * 0.035
 
         # === PUBLISH KANAN ===
         msg_r = Pose()
         msg_r.position.x = self.base_right['x'] + x_right
-        msg_r.position.y = self.base_right['y'] + y_right
+        if self.walking_state == 1:
+            msg_r.position.y = self.base_right['y'] + y_right
+        else:
+            msg_r.position.y = self.base_right['y'] 
         msg_r.position.z = self.base_right['z'] + z_right
         msg_r.orientation.w = self.default_quat['w']
         msg_r.orientation.x = self.default_quat['x']
@@ -137,7 +149,10 @@ class DualLegWalker(Node):
         # === PUBLISH KIRI ===
         msg_l = Pose()
         msg_l.position.x = self.base_left['x'] + x_left
-        msg_l.position.y = self.base_left['y'] + y_left  
+        if self.walking_state == 1:
+            msg_l.position.y = self.base_left['y'] + y_left
+        else:
+            msg_l.position.y = self.base_left['y']   
         msg_l.position.z = self.base_left['z'] + z_left
         msg_l.orientation.w = self.default_quat['w']
         msg_l.orientation.x = self.default_quat['x']

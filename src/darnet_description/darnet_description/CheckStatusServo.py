@@ -9,7 +9,7 @@ class StatusChecker(Node):
         super().__init__('status_checker_node')
         
         # --- SETUP SERIAL ---
-        self.port = '/dev/ttyACM1' # Sesuaikan
+        self.port = '/dev/ttyACM0' # Sesuaikan
         self.baud = 115200
         
         try:

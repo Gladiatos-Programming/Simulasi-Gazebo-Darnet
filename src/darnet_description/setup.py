@@ -5,7 +5,7 @@ from glob import glob
 package_name = 'darnet_description'
 
 setup(
-    name=package_name,                 # ← wajib underscore
+    name=package_name,         
     version='0.0.0',
     packages=find_packages(exclude=['test']),
     data_files=[
@@ -37,6 +37,7 @@ setup(
             'ComsROS2OpenRBot = darnet_description.ComsROS2OpenRB:main',
             'CheckStatusServo = darnet_description.CheckStatusServo:main',
             'ComsROS2OpenRBDARPUT = darnet_description.ComsROS2OpenRBDARPUT:main',
+            'Jalan_Launcher = darnet_description.Jalan_Launcher:main',
         ],
     },
 )

@@ -73,13 +73,13 @@ class RobotInitController(Node):
         
         # Target IK untuk KAKI KANAN (dalam meter, world frame)
         self.target_right_leg_2 = {
-            'position': {'x': 0.21, 'y': -0.04, 'z': 0.01},
+            'position': {'x': 0.19, 'y': -0.04, 'z': 0.01},
             'orientation': {'x': 0.0, 'y': 0.0, 'z': 0.0, 'w': 1.0}
         }
         
         # Target IK untuk KAKI KIRI (dalam meter, world frame)
         self.target_left_leg_2 = {
-            'position': {'x': 0.045, 'y': -0.04, 'z': 0.01},
+            'position': {'x': 0.065, 'y': -0.04, 'z': 0.01},
             'orientation': {'x': 0.0, 'y': 0.0, 'z': 0.0, 'w': 1.0}
         }
 

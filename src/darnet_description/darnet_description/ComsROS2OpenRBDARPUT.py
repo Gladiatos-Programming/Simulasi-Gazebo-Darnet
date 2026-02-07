@@ -11,7 +11,7 @@ class RosToOpenRB(Node):
         super().__init__('ros_to_openrb_bridge')
         
         # --- 1. SETUP SERIAL ---
-        self.serial_port = '/dev/ttyACM1'
+        self.serial_port = '/dev/ttyACM0'
         self.baud_rate = 115200
         
         try:
@@ -58,6 +58,7 @@ class RosToOpenRB(Node):
             'Bahu Tangan Kiri',
             'Lengan Kanan',
             'Paha Atas Kanan',
+            'Paha Bawah Kanan',
             'Paha Bawah Kiri',
             'Kaki Kiri Bawah',
             'Kaki Kanan Bawah',
