@@ -58,9 +58,9 @@ class DualLegWalker(Node):
         """Callback untuk memulai jalan"""
         self.walking_state = msg.data
         if self.walking_state == 1:
-            self.get_logger().info("🚶 Starting Walking...")
+            self.get_logger().info("Starting Walking...")
         else:
-            self.get_logger().info("🛑 Stopping Walking...")
+            self.get_logger().info("Stopping Walking...")
 
     def callback_change_speed_step(self, msg):
         """Callback untuk ubah speed dan step height dari luar"""

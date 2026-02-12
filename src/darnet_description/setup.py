@@ -38,6 +38,8 @@ setup(
             'CheckStatusServo = darnet_description.CheckStatusServo:main',
             'ComsROS2OpenRBDARPUT = darnet_description.ComsROS2OpenRBDARPUT:main',
             'Jalan_Launcher = darnet_description.Jalan_Launcher:main',
+            'imu_reader = darnet_description.imu_reader:main',
+            'Camera_testing = darnet_description.Camera_testing:main',
         ],
     },
 )

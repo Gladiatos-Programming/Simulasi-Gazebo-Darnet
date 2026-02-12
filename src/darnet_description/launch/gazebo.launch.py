@@ -39,7 +39,11 @@ def generate_launch_description():
     gazebo_bridge = Node(
         package="ros_gz_bridge",
         executable="parameter_bridge",
-        arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"],
+        arguments=[
+            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
+            '/camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image',
+            '/camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo'
+                   ],
         output="screen",
     )
 
@@ -81,6 +85,19 @@ def generate_launch_description():
         output='screen'
     )
 
+    imu_broadcaster_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["imu_sensor_broadcaster", "--controller-manager", "/controller_manager"],
+    )
+
+    imu_reader = Node(
+        package='darnet_description',
+        executable='imu_reader',
+        name='imu_reader',
+        output='screen'
+    )
+
     return LaunchDescription([
         gui_arg,
         gazebo,
@@ -90,6 +107,8 @@ def generate_launch_description():
         gz_spawn_entity,
         load_joint_state_broadcaster,
         load_joint_trajectory_controller,
+        imu_broadcaster_spawner,
+        imu_reader,
         rviz_node,
     ])
     
