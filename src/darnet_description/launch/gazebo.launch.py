@@ -39,7 +39,11 @@ def generate_launch_description():
     gazebo_bridge = Node(
         package="ros_gz_bridge",
         executable="parameter_bridge",
-        arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"],
+        arguments=[
+            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
+            '/camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image',
+            '/camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo'
+                   ],
         output="screen",
     )
 
@@ -48,10 +52,63 @@ def generate_launch_description():
         executable="create",
         output="screen",
         arguments=[
-            "-topic", "robot_description", 
-            "-name", "darnetnew", 
+            "-topic", "robot_description",
+            "-name", "darnetnew",
             "-allow_renaming", "true",
             "-z", "0.5",  # spawn 0.5 meter di atas ground
+        ],
+    )
+
+    # Spawn orange ball
+    gz_spawn_ball = Node(
+        package="ros_gz_sim",
+        executable="create",
+        output="screen",
+        arguments=[
+            "-name", "orange_ball",
+            "-x", "2.0",  # 2 meter di depan
+            "-y", "0.0",
+            "-z", "0.5",  # 0.5 meter di atas ground
+            "-string",
+            """<?xml version="1.0" ?>
+            <sdf version="1.6">
+                <model name="orange_ball">
+                    <static>false</static>
+                    <link name="ball_link">
+                        <pose>0 0 0 0 0 0</pose>
+                        <inertial>
+                            <mass>0.5</mass>
+                            <inertia>
+                                <ixx>0.01</ixx>
+                                <ixy>0</ixy>
+                                <ixz>0</ixz>
+                                <iyy>0.01</iyy>
+                                <iyz>0</iyz>
+                                <izz>0.01</izz>
+                            </inertia>
+                        </inertial>
+                        <collision name="collision">
+                            <geometry>
+                                <sphere>
+                                    <radius>0.15</radius>
+                                </sphere>
+                            </geometry>
+                        </collision>
+                        <visual name="visual">
+                            <geometry>
+                                <sphere>
+                                    <radius>0.15</radius>
+                                </sphere>
+                            </geometry>
+                            <material>
+                                <ambient>1.0 0.5 0.0 1</ambient>
+                                <diffuse>1.0 0.5 0.0 1</diffuse>
+                                <specular>0.5 0.5 0.5 1</specular>
+                            </material>
+                        </visual>
+                    </link>
+                </model>
+            </sdf>"""
         ],
     )
 
@@ -81,6 +138,19 @@ def generate_launch_description():
         output='screen'
     )
 
+    imu_broadcaster_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["imu_sensor_broadcaster", "--controller-manager", "/controller_manager"],
+    )
+
+    imu_reader = Node(
+        package='darnet_description',
+        executable='imu_reader',
+        name='imu_reader',
+        output='screen'
+    )
+
     return LaunchDescription([
         gui_arg,
         gazebo,
@@ -88,8 +158,11 @@ def generate_launch_description():
         gazebo_bridge,
         robot_state_publisher,
         gz_spawn_entity,
+        gz_spawn_ball,
         load_joint_state_broadcaster,
         load_joint_trajectory_controller,
+        imu_broadcaster_spawner,
+        imu_reader,
         rviz_node,
     ])
     

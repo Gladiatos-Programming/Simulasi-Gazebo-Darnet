@@ -522,6 +522,7 @@
   </visual>
 </link>
 
+<!-- LINK SENSOR IMU -->
 <joint name="imu_joint" type="fixed">
     <parent link="base_link"/>
     <child link="imu_link"/>
@@ -548,6 +549,43 @@
       <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
     </inertial>
   </link>
+
+<!-- LINK KAMERA -->
+<joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="0.125659 -0.060429 0.6020233" rpy="0 0 1.5707"/>
+  </joint>
+
+  <link name="camera_link">
+    <visual>
+      <geometry>
+        <box size="0.02 0.05 0.02"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+    
+    <collision>
+      <geometry>
+        <box size="0.02 0.05 0.02"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+
+  <joint name="camera_optical_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_link_optical"/>
+    <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707"/>
+  </joint>
+
+  <link name="camera_link_optical"></link>
 
 <joint name="Leher Putar" type="revolute">
   <origin xyz="0.125659 -0.060429 0.520233" rpy="0 0 0"/>
@@ -988,6 +1026,18 @@
     </state_interface>
   </joint>
 
+  <sensor name="imu_sensor">
+    <state_interface name="orientation.x"/>
+    <state_interface name="orientation.y"/>
+    <state_interface name="orientation.z"/>
+    <state_interface name="orientation.w"/>
+    <state_interface name="angular_velocity.x"/>
+    <state_interface name="angular_velocity.y"/>
+    <state_interface name="angular_velocity.z"/>
+    <state_interface name="linear_acceleration.x"/>
+    <state_interface name="linear_acceleration.y"/>
+    <state_interface name="linear_acceleration.z"/>
+  </sensor>
 
 </ros2_control>
 
@@ -1002,9 +1052,10 @@
 <gazebo reference="imu_link">
     <sensor name="imu_sensor" type="imu">
       <always_on>true</always_on>
-      <update_rate>100</update_rate> <visualize>true</visualize>
+      <update_rate>100</update_rate> 
+      <visualize>true</visualize>
       
-      <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+      <plugin filename="libignition-gazebo-imu-system.so" name="ignition::gazebo::systems::Imu">
         <ros>
           <namespace>/</namespace>
           <remapping>~/out:=imu/data</remapping>
@@ -1015,6 +1066,35 @@
       
       <pose>0 0 0 0 0 0</pose>
     </sensor>
+</gazebo>
+
+<gazebo reference="camera_link">
+    <sensor name="camera" type="camera">
+      <update_rate>30.0</update_rate>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+
+      <plugin filename="libignition-gazebo-sensors-system.so"
+            name="ignition::gazebo::systems::Sensors">
+        <render_engine>ogre2</render_engine>
+    </plugin>
+      
+      <topic>camera/image_raw</topic> 
+      
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>360</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+      </camera>
+      
+      </sensor>
   </gazebo>
 
 

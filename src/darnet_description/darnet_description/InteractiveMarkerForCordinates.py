@@ -10,7 +10,7 @@ class VisualTargetInteractive(Node):
         super().__init__('visual_target_interactive')
         
         # Publisher untuk mengirim command ke IK Pinocchio
-        self.ik_pub = self.create_publisher(Pose, '/target_pose/right_leg', 10)
+        self.ik_pub = self.create_publisher(Pose, '/target_pose/left_arm', 10)
         
         # Server Interactive Marker
         self.server = InteractiveMarkerServer(self, "target_controls")
