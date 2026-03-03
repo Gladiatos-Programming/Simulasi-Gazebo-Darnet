@@ -73,24 +73,24 @@ class RobotInitController(Node):
         
         # Target IK untuk KAKI KANAN (dalam meter, world frame)
         self.target_right_leg_2 = {
-            'position': {'x': 0.21, 'y': -0.04, 'z': 0.01},
+            'position': {'x': 0.19, 'y': -0.04, 'z': 0.01},
             'orientation': {'x': 0.0, 'y': 0.0, 'z': 0.0, 'w': 1.0}
         }
         
         # Target IK untuk KAKI KIRI (dalam meter, world frame)
         self.target_left_leg_2 = {
-            'position': {'x': 0.045, 'y': -0.04, 'z': 0.01},
+            'position': {'x': 0.065, 'y': -0.04, 'z': 0.01},
             'orientation': {'x': 0.0, 'y': 0.0, 'z': 0.0, 'w': 1.0}
         }
 
         # Target MANUAL untuk TANGAN & KEPALA (dalam radian)
         self.target_arms_head = {
-            'Lengan Kiri': 0.3,
-            'Lengan Kanan': -0.3,
-            'Bahu Tangan Kiri': 0.0,
-            'Bahu Tangan Kanan': 0.0,
-            'Tangan Kiri': 1.2,
-            'Tangan Kanan': -1.2,
+            'Lengan Kiri': 0.0,
+            'Lengan Kanan': 0.0,
+            'Bahu Tangan Kiri': 0.3,
+            'Bahu Tangan Kanan': 0.3,
+            'Tangan Kiri': 0.0,
+            'Tangan Kanan': 0.0,
             'Leher Putar': 0.0,
             'Kepala Putar': 0.0
         }
@@ -308,14 +308,12 @@ def main(args=None):
     try:
         # Tunggu sebentar untuk semua koneksi ready
         controller.get_logger().info('⏳ Initializing ROS connections...')
-        time.sleep(1.5)
         
         # Execute main sequence
         controller.execute_initialization()
         
         # Keep node alive untuk monitoring (optional)
         controller.get_logger().info('Node will shutdown in 3 seconds...')
-        time.sleep(3.0)
         
     except KeyboardInterrupt:
         controller.get_logger().info('\n⚠️  Interrupted by user')

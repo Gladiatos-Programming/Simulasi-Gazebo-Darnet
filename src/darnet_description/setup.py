@@ -46,6 +46,9 @@ setup(
             'Jalan_Launcher = darnet_description.Jalan_Launcher:main',
             'imu_reader = darnet_description.imu_reader:main',
             'Camera_testing = darnet_description.Camera_testing:main',
+            'Odom_imu = darnet_description.Odom_imu:main',
+            'DiffPinnochioIK = darnet_description.DiffPinnochioIK:main',
+            'Fall_Detector = darnet_description.Fall_detector:main',
         ],
     },
 )

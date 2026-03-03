@@ -66,9 +66,9 @@ def generate_launch_description():
         output="screen",
         arguments=[
             "-name", "orange_ball",
-            "-x", "2.0",  # 2 meter di depan
-            "-y", "0.0",
-            "-z", "0.5",  # 0.5 meter di atas ground
+            "-x", "0.0",  
+            "-y", "2.0",#  2 meter di depan
+            "-z", "0.5",  
             "-string",
             """<?xml version="1.0" ?>
             <sdf version="1.6">
@@ -90,14 +90,14 @@ def generate_launch_description():
                         <collision name="collision">
                             <geometry>
                                 <sphere>
-                                    <radius>0.15</radius>
+                                    <radius>0.14</radius>
                                 </sphere>
                             </geometry>
                         </collision>
                         <visual name="visual">
                             <geometry>
                                 <sphere>
-                                    <radius>0.15</radius>
+                                    <radius>0.14</radius>
                                 </sphere>
                             </geometry>
                             <material>
@@ -115,7 +115,8 @@ def generate_launch_description():
     robot_state_publisher = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
-        parameters=[{'robot_description': robot_urdf}],
+        parameters=[{'robot_description': robot_urdf, 
+                     'use_sim_time': True}],
     )
 
     load_joint_state_broadcaster = Node(
@@ -135,6 +136,7 @@ def generate_launch_description():
         executable='rviz2',
         name='rviz2',
         arguments=['-d', rviz_config_file],
+        parameters=[{'use_sim_time': True}],
         output='screen'
     )
 
@@ -151,6 +153,21 @@ def generate_launch_description():
         output='screen'
     )
 
+    odom_publisher = Node(
+        package='darnet_description',
+        executable='Odom_imu',
+        name='Odom_imu',
+        parameters=[{'use_sim_time': True}],
+        output='screen'
+    )
+
+    fall_detector = Node(
+        package='darnet_description',
+        executable='Fall_Detector',
+        name='Fall_Detector',
+        output='screen'
+    )
+
     return LaunchDescription([
         gui_arg,
         gazebo,
@@ -163,6 +180,8 @@ def generate_launch_description():
         load_joint_trajectory_controller,
         imu_broadcaster_spawner,
         imu_reader,
+        odom_publisher,
+        # fall_detector,
         rviz_node,
     ])
     

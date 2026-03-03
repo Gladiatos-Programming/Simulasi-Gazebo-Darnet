@@ -12,6 +12,10 @@ from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from builtin_interfaces.msg import Duration
 from std_msgs.msg import Int32, Int64
 from std_srvs.srv import Trigger
+from visualization_msgs.msg import Marker
+
+# IMPORT TF2 ROS
+from tf2_ros import Buffer, TransformListener, TransformException
 
 class DiagnosticIKCalculator(Node):
     def __init__(self):
@@ -20,7 +24,15 @@ class DiagnosticIKCalculator(Node):
         # --- 1. CONFIG GLOBAL ---
         self.STANCE_WIDTH = 0.12 
         
-        # --- 2. LOAD MODEL ---
+        # --- 2. TF LISTENER (ODOM KE BASE) ---
+        # Ini yang bikin robot bisa baca posisi dirinya dari odom
+        self.tf_buffer = Buffer()
+        self.tf_listener = TransformListener(self.tf_buffer, self)
+        
+        self.odom_frame = 'odom'
+        self.base_frame = 'base_center' # Pastikan ini nama root link di URDF lu
+        
+        # --- 3. LOAD MODEL ---
         try:
             share_dir = get_package_share_directory('darnet_description')
             xacro_file = os.path.join(share_dir, 'urdf', 'darnet.xacro')
@@ -33,46 +45,22 @@ class DiagnosticIKCalculator(Node):
             self.get_logger().error(f"❌ Error loading URDF: {e}")
             raise e
 
-        # --- 3. STATE MEMORY (SOLUSI MASALAH KAMU) ---
-        # Kita simpan "Target Terakhir" untuk setiap joint di seluruh robot
+        # --- 4. STATE MEMORY ---
         self.global_joint_targets = {} 
-        
-        # Inisialisasi awal target dengan posisi Neutral (Nol)
         for i in range(self.model.nq):
             name = self.model.names[i]
-            # Abaikan 'universe'
             if name != "universe":
                 self.global_joint_targets[name] = 0.0
 
-        # --- 4. CONFIG GROUPS ---
+        # --- 5. CONFIG GROUPS ---
         self.target_config = {
-            'RightArm': {
-                'joints': ['Bahu Tangan Kanan', 'Lengan Kanan', 'Tangan Kanan'], 
-                'ee_link': 'End_Effector_Tangan_Kanan_1',
-                'topic': '/target_pose/right_arm',
-                'solve_rotation': False 
-            },
-            'RightLeg': {
-                'joints': ['Paha Kanan Putar','Paha Atas Kanan', 'Paha Bawah Kanan', 'Lutut Kanan', 'Kaki Kanan Atas', 'Kaki Kanan Bawah'], 
-                'ee_link': 'End_Effector_Kaki_Kanan_1', 
-                'topic': '/target_pose/right_leg',
-                'solve_rotation': True
-            },
-            'LeftLeg': {
-                'joints': ['Paha Kiri Putar','Paha Atas Kiri', 'Paha Bawah Kiri', 'Lutut Kiri', 'Kaki Kiri Atas', 'Kaki Kiri Bawah'], 
-                'ee_link': 'End_Effector_Kaki_Kiri_1', 
-                'topic': '/target_pose/left_leg',
-                'solve_rotation': True
-            },
-            'LeftArm': {
-                'joints': ['Bahu Tangan Kiri', 'Lengan Kiri', 'Tangan Kiri'], 
-                'ee_link': 'End_Effector_Tangan_Kiri_1',
-                'topic': '/target_pose/left_arm',
-                'solve_rotation': False
-            }
+            'RightArm': {'joints': ['Bahu Tangan Kanan', 'Lengan Kanan', 'Tangan Kanan'], 'ee_link': 'End_Effector_Tangan_Kanan_1', 'topic': '/target_pose/right_arm', 'solve_rotation': False},
+            'RightLeg': {'joints': ['Paha Kanan Putar','Paha Atas Kanan', 'Paha Bawah Kanan', 'Lutut Kanan', 'Kaki Kanan Atas', 'Kaki Kanan Bawah'], 'ee_link': 'End_Effector_Kaki_Kanan_1', 'topic': '/target_pose/right_leg', 'solve_rotation': True},
+            'LeftLeg': {'joints': ['Paha Kiri Putar','Paha Atas Kiri', 'Paha Bawah Kiri', 'Lutut Kiri', 'Kaki Kiri Atas', 'Kaki Kiri Bawah'], 'ee_link': 'End_Effector_Kaki_Kiri_1', 'topic': '/target_pose/left_leg', 'solve_rotation': True},
+            'LeftArm': {'joints': ['Bahu Tangan Kiri', 'Lengan Kiri', 'Tangan Kiri'], 'ee_link': 'End_Effector_Tangan_Kiri_1', 'topic': '/target_pose/left_arm', 'solve_rotation': False}
         }
 
-        # --- 5. PRE-PROCESS GROUPS ---
+        # --- 6. PRE-PROCESS GROUPS ---
         self.groups_data = {} 
         self.all_monitored_joints = [] 
 
@@ -89,10 +77,7 @@ class DiagnosticIKCalculator(Node):
                     self.get_logger().error(f"❌ Joint '{name}' NOT FOUND!")
             
             ee_name = config['ee_link']
-            if self.model.existFrame(ee_name):
-                ee_frame_id = self.model.getFrameId(ee_name)
-            else:
-                ee_frame_id = -1
+            ee_frame_id = self.model.getFrameId(ee_name) if self.model.existFrame(ee_name) else -1
 
             self.groups_data[group_name] = {
                 'joint_names': joint_names,
@@ -100,13 +85,10 @@ class DiagnosticIKCalculator(Node):
                 'ee_frame_id': ee_frame_id,
                 'solve_rotation': config['solve_rotation']
             }
-            self.create_subscription(
-                Pose, config['topic'], 
-                lambda msg, g=group_name: self.callback_generic_target(msg, g), 10
-            )
+            self.create_subscription(Pose, config['topic'], lambda msg, g=group_name: self.callback_generic_target(msg, g), 10)
             self.get_logger().info(f"✅ {group_name} Ready.")
 
-        # --- 6. ROS COMMS ---
+        # --- 7. ROS COMMS ---
         self.joint_state_received = False
         self.current_joint_states = {}
         
@@ -114,73 +96,44 @@ class DiagnosticIKCalculator(Node):
         self.joint_cmd_pub = self.create_publisher(JointTrajectory, '/joint_trajectory_controller/joint_trajectory', 10)
 
         self.q_current = pin.neutral(self.model)
-        
-        # Timer untuk inisialisasi awal target dari joint state nyata
         self.init_timer = self.create_timer(1.0, self.initialize_targets_once)
         self.initialized = False
 
-
         self.current_duration_ns = 50000000 
-        
-        # Subscriber untuk mengubah speed dari node lain
-        self.speed_sub = self.create_subscription(
-            Int64, 
-            '/servo_speed_ns', 
-            self.callback_change_speed, 
-            10
-        )
-        self.callback_change_speed(Int64(data=self.current_duration_ns))  # Set default speed
+        self.speed_sub = self.create_subscription(Int64, '/servo_speed_ns', self.callback_change_speed, 10)
+        self.callback_change_speed(Int64(data=self.current_duration_ns))
 
-        self.reset_service = self.create_service(
-            Trigger, 
-            '/reset_ik_memory', 
-            self.callback_reset_memory
-        )
+        self.reset_service = self.create_service(Trigger, '/reset_ik_memory', self.callback_reset_memory)
         self.get_logger().info("🔘 Reset Service Ready: /reset_ik_memory")
 
+        self.debug_marker_pub = self.create_publisher(Marker, '/debug_ik_markers', 10)
 
     def callback_change_speed(self, msg):
-        """Menerima request durasi dalam nanoseconds"""
         self.current_duration_ns = msg.data
-        self.get_logger().info(f"🐢 Speed Updated to: {self.current_duration_ns} ns")
 
     def callback_reset_memory(self, request, response):
-        """Fungsi ini dipanggil saat service /reset_ik_memory dijalankan"""
-        self.get_logger().warn("♻️ RESETTING MEMORY...")
-        
-        # 1. Update posisi robot terbaru dari sensor
         self.update_q_from_states()
-        
-        # 2. Timpa semua target di memori dengan posisi saat ini
         if self.current_joint_states:
             for name, pos in self.current_joint_states.items():
                 self.global_joint_targets[name] = pos
-            
             response.success = True
-            response.message = "Memory Reset & Synced to Current Pose!"
-            self.get_logger().info("✅ Memory Reset Done.")
+            response.message = "Memory Reset & Synced!"
         else:
             response.success = False
             response.message = "Failed: No Joint States received yet!"
-            self.get_logger().error("❌ Cannot Reset: No Joint States!")
-            
         return response
 
-
-
     def initialize_targets_once(self):
-        """Ambil posisi robot saat ini sebagai target awal agar tidak kaget saat start"""
         if self.joint_state_received and not self.initialized:
             for name, pos in self.current_joint_states.items():
                 self.global_joint_targets[name] = pos
             self.initialized = True
             self.init_timer.cancel()
-            self.get_logger().info("✅ Global Targets Initialized from Current State.")
+            self.get_logger().info("✅ Global Targets Initialized.")
 
     def joint_state_callback(self, msg):
         self.joint_state_received = True
         for i, name in enumerate(msg.name):
-            # Update posisi saat ini untuk keperluan IK Calculation
             if name in self.all_monitored_joints:
                 self.current_joint_states[name] = msg.position[i]
 
@@ -197,20 +150,25 @@ class DiagnosticIKCalculator(Node):
             self.get_logger().warn("⚠️ Tunggu inisialisasi joint state...")
             return
 
+        # =================================================================
+        # PERBAIKAN: HAPUS SEMUA LOGIKA TF ODOM DI SINI!
+        # Langsung baca msg dari WalkingNode sebagai koordinat LOKAL badan.
+        # =================================================================
+
+        self.publish_debug_marker(msg, group_name)
+
         target_pos = np.array([msg.position.x, msg.position.y, msg.position.z])
         target_quat = pin.Quaternion(msg.orientation.w, msg.orientation.x, msg.orientation.y, msg.orientation.z)
+        
+        # Jadikan SE3 langsung (otomatis relatif terhadap base_center/pelvis)
         target_SE3 = pin.SE3(target_quat.matrix(), target_pos)
 
-        # Update model internal dengan posisi real robot saat ini sebelum hitung IK
         self.update_q_from_states()
-        
-        # Hitung IK hanya untuk group yang dipanggil
         self.solve_and_update_global(group_name, target_SE3)
 
     def solve_and_update_global(self, group_name, target_SE3):
         group_info = self.groups_data[group_name]
         
-        # 1. Hitung Solusi IK
         q_solusi, success, err = self.compute_ik(
             target_SE3, 
             group_info['joint_ids'], 
@@ -221,21 +179,15 @@ class DiagnosticIKCalculator(Node):
         status = "✅" if success else "⚠️ (LIMIT)"
         self.get_logger().info(f"🎯 {group_name} Updated: {status} Err: {err:.4f}")
 
-        # 2. UPDATE MEMORY GLOBAL (Hanya joint milik grup ini yang diupdate)
         for i, j_name in enumerate(group_info['joint_names']):
             j_id = self.model.getJointId(j_name)
             idx_q = self.model.joints[j_id].idx_q
-            # Simpan nilai target baru ke memory global
             self.global_joint_targets[j_name] = float(q_solusi[idx_q])
 
-        # 3. PUBLISH SEMUA JOINT (Lama + Baru)
         self.publish_all_joints()
 
     def publish_all_joints(self):
-        """Mengirim perintah untuk SEMUA joint yang terdaftar, bukan cuma yang baru diupdate"""
         msg = JointTrajectory()
-        
-        # Kumpulkan semua joint yang pernah kita sentuh/monitor
         all_active_joints = self.all_monitored_joints
         msg.joint_names = all_active_joints
         
@@ -243,8 +195,6 @@ class DiagnosticIKCalculator(Node):
         target_values = []
         
         for name in all_active_joints:
-            # Ambil nilai dari Memory Global. 
-            # Jika joint ini tidak sedang diupdate, dia akan pakai nilai terakhir (diam/lanjut gerak).
             val = self.global_joint_targets.get(name, 0.0)
             target_values.append(val)
             
@@ -255,7 +205,6 @@ class DiagnosticIKCalculator(Node):
         self.joint_cmd_pub.publish(msg)
 
     def compute_ik(self, target_SE3, joint_ids, ee_frame_id, solve_rotation):
-        # ... (SAMA SEPERTI SEBELUMNYA, TIDAK ADA PERUBAHAN DI ALGORITMA IK) ...
         q = self.q_current.copy()
         eps = 1e-3 
         max_iter = 500
@@ -296,6 +245,42 @@ class DiagnosticIKCalculator(Node):
             q = np.clip(q, self.model.lowerPositionLimit, self.model.upperPositionLimit)
             
         return q, False, final_err
+    
+    def publish_debug_marker(self, pose_msg, group_name):
+        m = Marker()
+        # Pakai base_frame ('base_center') agar markernya nempel & ikut muter sama badan
+        m.header.frame_id = self.odom_frame 
+        m.header.stamp = self.get_clock().now().to_msg()
+        m.ns = "ik_target"
+        m.type = Marker.SPHERE
+        m.action = Marker.ADD
+
+        # Langsung copy pose dari pesan target
+        m.pose = pose_msg 
+
+        # Ukuran bola 4 cm
+        m.scale.x = 0.04
+        m.scale.y = 0.04
+        m.scale.z = 0.04
+        m.color.a = 0.8 # Agak transparan
+
+        # Bedakan warna dan ID berdasarkan kaki/tangan
+        if group_name == 'RightLeg':
+            m.id = 1
+            m.color.r = 1.0; m.color.g = 0.0; m.color.b = 0.0 # Merah
+        elif group_name == 'LeftLeg':
+            m.id = 2
+            m.color.r = 0.0; m.color.g = 1.0; m.color.b = 0.0 # Hijau
+        elif group_name == 'RightArm':
+            m.id = 3
+            m.color.r = 1.0; m.color.g = 1.0; m.color.b = 0.0 # Kuning
+        elif group_name == 'LeftArm':
+            m.id = 4
+            m.color.r = 0.0; m.color.g = 1.0; m.color.b = 1.0 # Cyan
+        else:
+            return 
+
+        self.debug_marker_pub.publish(m)
 
 def main(args=None):
     rclpy.init(args=args)

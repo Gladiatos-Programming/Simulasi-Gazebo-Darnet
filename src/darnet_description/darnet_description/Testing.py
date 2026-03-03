@@ -1,328 +1,278 @@
 #!/usr/bin/env python3
-"""
-Robot Initialization Controller
-================================
-Script ini menggerakkan robot ke posisi awal dengan:
-- Kaki menggunakan Inverse Kinematics (target pose)
-- Tangan menggunakan joint angles langsung (manual)
-
-Author: Gladiatos 2025
-"""
-
 import rclpy
 from rclpy.node import Node
-from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
-from sensor_msgs.msg import JointState
-from builtin_interfaces.msg import Duration
 from geometry_msgs.msg import Pose
+import math
 import time
-from std_msgs.msg import Int64
-from std_srvs.srv import Trigger
 
-class RobotInitController(Node):
+class WalkingNode(Node):
     def __init__(self):
-        super().__init__('robot_init_controller')
+        super().__init__('walking_pattern_generator')
         
-        # ====================================================================
-        # PUBLISHERS & SUBSCRIBERS
-        # ====================================================================
-        
-        # Publisher untuk manual joint commands (tangan, kepala)
-        self.joint_pub = self.create_publisher(
-            JointTrajectory,
-            '/joint_trajectory_controller/joint_trajectory',
-            10
-        )
-        
-        # Publisher untuk IK targets (kaki)
-        self.ik_right_leg_pub = self.create_publisher(
-            Pose, 
-            '/target_pose/right_leg', 
-            10
-        )
-        self.ik_left_leg_pub = self.create_publisher(
-            Pose, 
-            '/target_pose/left_leg', 
-            10
-        )
-        
-        # Subscriber untuk monitoring
-        self.joint_state_sub = self.create_subscription(
-            JointState,
-            '/joint_states',
-            self.joint_state_callback,
-            10
-        )
-        
-        self.current_positions = {}
-        
-        # ====================================================================
-        # KONFIGURASI TARGET POSISI
-        # ====================================================================
-        
-        self.target_right_leg = {
-            'position': {'x': 0.21, 'y': -0.06, 'z': 0.01},
-            'orientation': {'x': 0.0, 'y': 0.0, 'z': 0.0, 'w': 1.0}
-        }
-        
-        # Target IK untuk KAKI KIRI (dalam meter, world frame)
-        self.target_left_leg = {
-            'position': {'x': 0.045, 'y': -0.06, 'z': 0.01},
-            'orientation': {'x': 0.0, 'y': 0.0, 'z': 0.0, 'w': 1.0}
-        }
-        
-        # Target IK untuk KAKI KANAN (dalam meter, world frame)
-        self.target_right_leg_2 = {
-            'position': {'x': 0.19, 'y': -0.04, 'z': 0.01},
-            'orientation': {'x': 0.0, 'y': 0.0, 'z': 0.0, 'w': 1.0}
-        }
-        
-        # Target IK untuk KAKI KIRI (dalam meter, world frame)
-        self.target_left_leg_2 = {
-            'position': {'x': 0.065, 'y': -0.04, 'z': 0.01},
-            'orientation': {'x': 0.0, 'y': 0.0, 'z': 0.0, 'w': 1.0}
-        }
+        # Publisher ke topik yang dibaca oleh script Differential IK
+        self.pub_right = self.create_publisher(Pose, '/target_pose/right_leg', 10)
+        self.pub_left = self.create_publisher(Pose, '/target_pose/left_leg', 10)
+        self.sub_right = self.create_subscription(Pose, '/target_pose/right_leg', self.right_cb, 10)
+        self.sub_left = self.create_subscription(Pose, '/target_pose/left_leg', self.left_cb, 10)
+        self.default_quat = {'x': 0.0, 'y': 0.0, 'z': 0.0, 'w': 1.0}
 
-        # Target MANUAL untuk TANGAN & KEPALA (dalam radian)
-        self.target_arms_head = {
-            'Lengan Kiri': 0.0,
-            'Lengan Kanan': 0.0,
-            'Bahu Tangan Kiri': 0.3,
-            'Bahu Tangan Kanan': 0.3,
-            'Tangan Kiri': 0.0,
-            'Tangan Kanan': 0.0,
-            'Leher Putar': 0.0,
-            'Kepala Putar': 0.0
-        }
-        
-        self.get_logger().info('✅ Robot Initialization Controller Ready!')
-        self.get_logger().info('   - Right Leg IK Target: ' + 
-                              f"({self.target_right_leg['position']['x']:.2f}, " +
-                              f"{self.target_right_leg['position']['y']:.2f}, " +
-                              f"{self.target_right_leg['position']['z']:.2f})")
-        self.get_logger().info('   - Left Leg IK Target: ' + 
-                              f"({self.target_left_leg['position']['x']:.2f}, " +
-                              f"{self.target_left_leg['position']['y']:.2f}, " +
-                              f"{self.target_left_leg['position']['z']:.2f})")
-        
-        self.speed_pub = self.create_publisher(Int64, '/servo_speed_ns', 10)
-        
-        
-        self.reset_client = self.create_client(Trigger, '/reset_ik_memory')
-        self.reset_ik_node()
+        # Config
+        self.T = 1.5
+        self.stepheight = 0.06
+        self.landrate = 0.30
+        self.forward = 0.025
+        self.z_threshold = 0.01
+        self.stance_width = 0.15
+        self.walk_phase = "IDLE"
+        self.shift_x_leg = 0.06
+        self.UVCcorrection = 0.0
+        self.forward0_stance = 0.0
+        self.forward0_swing = 0.0
 
-        # Wait untuk koneksi
-        time.sleep(3.0)
+        self.starting_position()
 
-    def set_ik_speed(self, nanosecond):
-        """Helper function untuk set speed dalam detik"""
-        msg = Int64()
-        # Detik ke Nanosekon (1 detik = 1 milyar ns)
-        msg.data = int(nanosecond)
-        self.speed_pub.publish(msg)
-        self.get_logger().info(f"🐢 Setting IK Speed to {nanosecond} nanoseconds...")
-        # Kasih jeda dikit biar message speed sampai duluan sebelum target pose
-        time.sleep(0.1)
+        # # Timer berjalan di 50 Hz (0.02 detik)
+        self.timer = self.create_timer(0.02, self.timer_callback)
+        
+        
+    def right_cb(self, msg):
+        self.z_right = msg.position.z
+        self.x_right = msg.position.x
+        self.y_right = msg.position.y
 
-    def joint_state_callback(self, msg):
-        """Update posisi joint saat ini untuk monitoring"""
-        for i, name in enumerate(msg.name):
-            if i < len(msg.position):
-                self.current_positions[name] = msg.position[i]
+    def left_cb(self, msg):
+        self.z_left = msg.position.z
+        self.x_left = msg.position.x
+        self.y_left = msg.position.y
 
-    def send_leg_ik_targets(self):
-        """
-        Kirim target IK ke Pinocchio untuk kedua kaki
-        Pinocchio IK node akan menghitung joint angles yang diperlukan
-        """
-        self.get_logger().info('\n🦵 STEP 1: Sending IK Targets for Legs...')
-        
-        # Kaki Kanan
-        msg_right = Pose()
-        msg_right.position.x = self.target_right_leg['position']['x']
-        msg_right.position.y = self.target_right_leg['position']['y']
-        msg_right.position.z = self.target_right_leg['position']['z']
-        msg_right.orientation.x = self.target_right_leg['orientation']['x']
-        msg_right.orientation.y = self.target_right_leg['orientation']['y']
-        msg_right.orientation.z = self.target_right_leg['orientation']['z']
-        msg_right.orientation.w = self.target_right_leg['orientation']['w']
-        
-        self.ik_right_leg_pub.publish(msg_right)
-        self.get_logger().info(f'   ✅ Right leg target published')
-        
-        # Kaki Kiri
-        msg_left = Pose()
-        msg_left.position.x = self.target_left_leg['position']['x']
-        msg_left.position.y = self.target_left_leg['position']['y']
-        msg_left.position.z = self.target_left_leg['position']['z']
-        msg_left.orientation.x = self.target_left_leg['orientation']['x']
-        msg_left.orientation.y = self.target_left_leg['orientation']['y']
-        msg_left.orientation.z = self.target_left_leg['orientation']['z']
-        msg_left.orientation.w = self.target_left_leg['orientation']['w']
-        
-        self.ik_left_leg_pub.publish(msg_left)
-        self.get_logger().info(f'   ✅ Left leg target published')
+    def starting_position(self):
+        pose_r = Pose()
+        pose_l = Pose()
 
-        time.sleep(1.1)
+        pose_r.position.x = 0.055
+        pose_l.position.x = -0.055
+        toleransi = 0.001
+        while abs(pose_l.position.x + (self.stance_width/2)) > toleransi or abs(pose_r.position.x - (self.stance_width/2)) > toleransi:
+            pose_r.position.y = 0.0
+            pose_l.position.y = 0.0
+            pose_r.position.x += 0.0001 * (self.stance_width/2 - pose_r.position.x) 
+            pose_l.position.x -= 0.0001 * (self.stance_width/2 + pose_l.position.x)
+            pose_r.position.z = 0.007
+            pose_l.position.z = 0.007
 
-        # Kirim target IK kedua (dengan orientasi berbeda)
-        self.get_logger().info('\n🦵 STEP 1b: Sending 2')
-        msg_right2 = Pose()
-        msg_right2.position.x = self.target_right_leg_2['position']['x']
-        msg_right2.position.y = self.target_right_leg_2['position']['y']
-        msg_right2.position.z = self.target_right_leg_2['position']['z']
-        msg_right2.orientation.x = self.target_right_leg_2['orientation']['x']
-        msg_right2.orientation.y = self.target_right_leg_2['orientation']['y']
-        msg_right2.orientation.z = self.target_right_leg_2['orientation']['z']
-        msg_right2.orientation.w = self.target_right_leg_2['orientation']['w']
+            pose_r.orientation.w = self.default_quat['w']
+            pose_r.orientation.x = self.default_quat['x']
+            pose_r.orientation.y = self.default_quat['y']
+            pose_r.orientation.z = self.default_quat['z']
 
-        self.ik_right_leg_pub.publish(msg_right2)
-        self.get_logger().info(f'   ✅ Right leg target published')
-        
-        
-        msg_left2 = Pose()
-        msg_left2.position.x = self.target_left_leg_2['position']['x']
-        msg_left2.position.y = self.target_left_leg_2['position']['y']
-        msg_left2.position.z = self.target_left_leg_2['position']['z']
-        msg_left2.orientation.x = self.target_left_leg_2['orientation']['x']
-        msg_left2.orientation.y = self.target_left_leg_2['orientation']['y']
-        msg_left2.orientation.z = self.target_left_leg_2['orientation']['z']
-        msg_left2.orientation.w = self.target_left_leg_2['orientation']['w']
+            pose_l.orientation.w = self.default_quat['w']
+            pose_l.orientation.x = self.default_quat['x']
+            pose_l.orientation.y = self.default_quat['y']
+            pose_l.orientation.z = self.default_quat['z']
 
-        self.ik_left_leg_pub.publish(msg_left2)
-        self.get_logger().info(f'   ✅ Left leg target published')
-        time.sleep(0.5)
-        
-        self.set_ik_speed(50000000)  # Kembali ke 0.5 detik
-        
+            self.pub_right.publish(pose_r)
+            self.pub_left.publish(pose_l)
+        print("starting position reached")
 
-    def send_arms_head_commands(self, duration=2.0):
-        """
-        Kirim command manual untuk tangan dan kepala
-        
-        Args:
-            duration: Waktu eksekusi gerakan (detik)
-        """
-        self.get_logger().info('\n💪 STEP 2: Sending Manual Commands for Arms & Head...')
-        
-        # Buat trajectory message
-        msg = JointTrajectory()
-        msg.joint_names = list(self.target_arms_head.keys())
-        
-        # Buat trajectory point
-        point = JointTrajectoryPoint()
-        point.positions = list(self.target_arms_head.values())
-        point.time_from_start = Duration(sec=int(duration))
-        
-        msg.points.append(point)
-        
-        # Publish
-        self.joint_pub.publish(msg)
-        
-        self.get_logger().info(f'   ✅ Arms & Head commands published')
-        self.get_logger().info(f'      Joints: {msg.joint_names}')
-        self.get_logger().info(f'      Positions (rad): {[f"{p:.2f}" for p in point.positions]}')
-        self.get_logger().info(f'      Duration: {duration}s')
+        # while pose_l.position.x != (self.stance_width/2) and pose_r.position.x != -(self.stance_width/2):
 
-    def execute_initialization(self):
-        """
-        Main execution function
-        Sequence:
-        1. Kirim target IK untuk kaki
-        2. Tunggu IK compute & execute
-        3. Kirim command manual untuk tangan & kepala
-        4. Tunggu selesai
-        """
-        self.get_logger().info('\n' + '='*70)
-        self.get_logger().info('🤖 ROBOT INITIALIZATION SEQUENCE')
-        self.get_logger().info('='*70)
-        
-        self.get_logger().info("🐢 Setting Initial Speed...")
-        self.set_ik_speed(1000000000) # Set speed 1 detik DI SINI
-        time.sleep(0.5) # Beri jeda agar IK node memproses speed
+        #     pose_r.position.y = 0.0
+        #     pose_l.position.y = 0.0
+        #     pose_r.position.x = self.x_right 
+        #     pose_l.position.x = self.x_right
+        #     pose_r.position.z = 0.001
+        #     pose_l.position.z = 0.001
 
-        # ================================================================
-        # STEP 1: IK untuk Kaki
-        # ================================================================
-        self.send_leg_ik_targets()
-        
-        # Tunggu IK selesai
-        # Breakdown:
-        # - IK compute time: ~0.1-0.5s
-        # - IK execution: 1.0s (dari IK node Duration)
-        # - Safety buffer: 1.5s
-        # Total: 3.0s
-        ik_wait_time = 0.1
-        self.get_logger().info(f'\n⏳ Waiting {ik_wait_time}s for IK to complete...')
-        
-        for i in range(int(ik_wait_time * 2)):  # Update setiap 0.5s
-            time.sleep(0.5)
-            progress = (i + 1) * 0.5
-            bar_length = 20
-            filled = int(bar_length * progress / ik_wait_time)
-            bar = '█' * filled + '░' * (bar_length - filled)
-            self.get_logger().info(f'   [{bar}] {progress:.1f}s / {ik_wait_time}s')
-        
-        self.get_logger().info('   ✅ IK execution completed!\n')
-        
-        # ================================================================
-        # STEP 2: Manual Commands untuk Tangan & Kepala
-        # ================================================================
-        arm_duration = 2.0
-        self.send_arms_head_commands(duration=arm_duration)
-        
-        # Tunggu arm movement selesai
-        arm_wait_time = arm_duration + 1.0  # Duration + buffer
-        self.get_logger().info(f'\n⏳ Waiting {arm_wait_time}s for arm movement to complete...')
-        time.sleep(arm_wait_time)
-        self.get_logger().info('   ✅ Arm movement completed!\n')
-        
-        # ================================================================
-        # SELESAI
-        # ================================================================
-        self.get_logger().info('='*70)
-        self.get_logger().info('✅ INITIALIZATION SEQUENCE COMPLETED!')
-        self.get_logger().info('='*70)
-        self.get_logger().info('\n📊 Final Status:')
-        self.get_logger().info('   - Legs positioned via IK ✅')
-        self.get_logger().info('   - Arms & Head positioned ✅')
-        self.get_logger().info('   - Robot ready for next task! 🚀\n')
+        #     pose_r.orientation.w = self.default_quat['w']
+        #     pose_r.orientation.x = self.default_quat['x']
+        #     pose_r.orientation.y = self.default_quat['y']
+        #     pose_r.orientation.z = self.default_quat['z']
 
-    def reset_ik_node(self):
-        """Fungsi untuk menekan tombol reset di Node IK"""
-        self.get_logger().info("🔄 Requesting IK Memory Reset...")
-        
-        # Tunggu service tersedia
-        if not self.reset_client.wait_for_service(timeout_sec=2.0):
-            self.get_logger().error("❌ Reset Service not available!")
-            return
+        #     pose_l.orientation.w = self.default_quat['w']
+        #     pose_l.orientation.x = self.default_quat['x']
+        #     pose_l.orientation.y = self.default_quat['y']
+        #     pose_l.orientation.z = self.default_quat['z']
 
-        # Tekan tombolnya
-        req = Trigger.Request()
-        future = self.reset_client.call_async(req)
+        #     self.pub_right.publish(pose_r)
+        #     self.pub_left.publish(pose_l)
+
+    def timer_callback(self):
+
+        right_contact = self.z_right <= self.z_threshold
+        left_contact = self.z_left <= self.z_threshold
+
+        if right_contact and left_contact:
+            current_state = "DOUBLE"
+            
+        elif right_contact and not left_contact:
+            current_state = "RIGHT"
+            
+        elif left_contact and not right_contact:
+            current_state = "LEFT"
+            
+        else:
+            current_state = "NONE"
+        
+        pose_r = Pose()
+        pose_l = Pose()
+
+        print(f"Current State: {current_state}")
+
+        if self.walk_phase == "IDLE":
+            self.rightnowposition_x = self.x_right
+            self.rightnowposition_z = self.z_right
+            self.leftnowposition_x = self.x_left
+            self.leftnowposition_z = self.z_left
+            self.rightnowposition_y = self.y_right
+            self.leftnowposition_y = self.y_left
+            
+            self.walk_phase = "SHIFT_OUT"
+            self.stance_leg = "RIGHT"         
+            self.start_time = time.time()      
+
+
+        # PENGAMAN POSISI (Setiap frame harus di-set awal dulu)
+        if self.walk_phase != "IDLE":
+            pose_r.position.x = self.rightnowposition_x
+            pose_l.position.x = self.leftnowposition_x
+            pose_r.position.z = self.rightnowposition_z
+            pose_l.position.z = self.leftnowposition_z
+            pose_r.position.y = self.rightnowposition_y
+            pose_l.position.y = self.leftnowposition_y
+
+        # =========================================================
+        # FASE JALAN KONTINU (Gabungan Goyang & Angkat Kaki)
+        # =========================================================
+        if self.walk_phase == "SHIFT_OUT":  # Kita tetap pakai nama state ini
+            t = time.time() - self.start_time
+
+            # KONDISI RESET (1 Langkah Selesai Penuh)
+            if t >= self.T:
+                self.stance_leg = "LEFT" if self.stance_leg == "RIGHT" else "RIGHT"
+                self.start_time = time.time()
+                
+                # Sumbu X tetap ngikutin posisi terakhir karena badannya emang geser
+                self.rightnowposition_x = self.x_right
+                self.leftnowposition_x = self.x_left
+                
+                # --- PERBAIKAN: Kunci sumbu Z selalu kembali ke lantai dasar ---
+                self.rightnowposition_z = 0.007 
+                self.leftnowposition_z = 0.007
+                # ---------------------------------------------------------------
+
+                if self.stance_leg == "RIGHT":
+                    self.forward0_stance = self.y_right  # Stance di awal langkah
+                    self.forward0_swing = self.y_left    # Swing di awal langkah
+                elif self.stance_leg == "LEFT":
+                    self.forward0_stance = self.y_left
+                    self.forward0_swing = self.y_right
+                
+                # print(f"Step completed. New stance leg: {self.stance_leg}")
+                t = 0.0
+
+           # ---------------------------------------------------------
+            # 1. PERHITUNGAN SUMBU X (Swaying / Goyang Badan)
+            # Jalan penuh dari 0 -> Max (di T/2) -> 0 (di T)
+            # ---------------------------------------------------------
+            p_x = t / self.T  
+            k = self.shift_x_leg * math.sin(math.pi * p_x)
+            if self.stance_leg == "RIGHT":
+                pose_r.position.x = self.rightnowposition_x - k
+                pose_l.position.x = self.leftnowposition_x - (k/1.5)
+            elif self.stance_leg == "LEFT":
+                pose_l.position.x = self.leftnowposition_x + k
+                pose_r.position.x = self.rightnowposition_x + (k/1.5)
+
+            # ---------------------------------------------------------
+            # 2. PERHITUNGAN SUMBU Z & Y (Menggunakan Rumus Lu)
+            # ---------------------------------------------------------
+            t_start_swing = self.T * self.landrate        
+            t_end_swing = self.T * (1.0 - self.landrate)  
+
+            # Ambil nilai yang udah di-snapshot tadi
+            forward0 = self.forward0_stance
+            target_stance = -(self.forward - self.UVCcorrection)
+            target_swing = (self.forward - self.UVCcorrection)
+
+            if t <= t_start_swing:
+                # Fase Nunggu Awal (Double Support)
+                htau = 0.0
+                dy_stance = self.forward0_stance
+                dy_swing = self.forward0_swing
+                
+            elif t >= t_end_swing:
+                # Fase Nunggu Akhir (Double Support setelah mendarat)
+                htau = 0.0
+                dy_stance = -(self.forward - self.UVCcorrection)
+                dy_swing = (self.forward - self.UVCcorrection)
+                
+            else:
+                t_active = t - t_start_swing
+                swing_duration = t_end_swing - t_start_swing
+                
+                up_duration = swing_duration * 0.40  
+                down_duration = swing_duration * 0.60 
+
+                if t_active < up_duration:
+                    # FASE NAIK Z
+                    p_z = t_active / up_duration 
+                    ease = p_z * p_z * p_z * (p_z * (p_z * 6.0 - 15.0) + 10.0)
+                    htau = self.stepheight * ease
+
+                    # Fase langkah pertama
+                    dy_stance = forward0 * (1.0 - t_active / up_duration)
+                    dy_swing = self.forward0_swing * (1.0 - t_active / up_duration)
+
+                    # dy_stance = forward0 * (1.0 - 2.0 * t_active/swing_duration)
+                    # dy_swing = self.forward0_swing * (1.0 - 2.0 * t_active/swing_duration) * -1.0
+                else:
+                    # FASE TURUN Z
+                    p_z = (t_active - up_duration) / down_duration 
+                    ease = p_z * p_z * p_z * (p_z * (p_z * 6.0 - 15.0) + 10.0)
+                    if p_z > 0.9:
+                        ease = ease + (1.0 - ease) * 0.5 
+                    htau = self.stepheight * (1.0 - ease)
+
+                    # Fase langkah terakhir
+                    progress_y = (t_active - up_duration) / down_duration
+                    dy_stance = target_stance * progress_y
+                    dy_swing = target_swing * progress_y
+
+            # Terapkan hasil htau dan dy ke masing-masing kaki
+            if self.stance_leg == "RIGHT":
+                pose_r.position.y = dy_stance
+                pose_l.position.y = dy_swing
+                pose_l.position.z = self.leftnowposition_z + htau
+            elif self.stance_leg == "LEFT":
+                pose_l.position.y = dy_stance
+                pose_r.position.y = dy_swing
+                pose_r.position.z = self.rightnowposition_z + htau
+
+
+        pose_r.orientation.w = self.default_quat['w']
+        pose_r.orientation.x = self.default_quat['x']
+        pose_r.orientation.y = self.default_quat['y']
+        pose_r.orientation.z = self.default_quat['z']
+
+        pose_l.orientation.w = self.default_quat['w']
+        pose_l.orientation.x = self.default_quat['x']
+        pose_l.orientation.y = self.default_quat['y']
+        pose_l.orientation.z = self.default_quat['z']
+
+        self.pub_right.publish(pose_r)
+        self.pub_left.publish(pose_l)
+
 
 def main(args=None):
     rclpy.init(args=args)
-    controller = RobotInitController()
-    
+    node = WalkingNode()
     try:
-        # Tunggu sebentar untuk semua koneksi ready
-        controller.get_logger().info('⏳ Initializing ROS connections...')
-        
-        # Execute main sequence
-        controller.execute_initialization()
-        
-        # Keep node alive untuk monitoring (optional)
-        controller.get_logger().info('Node will shutdown in 3 seconds...')
-        
+        rclpy.spin(node)
     except KeyboardInterrupt:
-        controller.get_logger().info('\n⚠️  Interrupted by user')
-    except Exception as e:
-        controller.get_logger().error(f'\n❌ Error occurred: {e}')
+        pass
     finally:
-        controller.destroy_node()
+        node.destroy_node()
         rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()

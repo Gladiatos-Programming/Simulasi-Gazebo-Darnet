@@ -26,6 +26,16 @@
   </collision>
 </link>
 
+<link name="base_center">
+    <visual>
+      <geometry>
+         <box size="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="red"/>
+        <color rgba="1 0 0 0.5"/>
+    </visual>
+  </link>
+
 <link name="Konektor_Leher_1">
   <inertial>
     <origin xyz="2.0688434280435875e-06 -0.001021810988626845 0.006993774196732749" rpy="0 0 0"/>
@@ -552,9 +562,9 @@
 
 <!-- LINK KAMERA -->
 <joint name="camera_joint" type="fixed">
-    <parent link="base_link"/>
+    <parent link="Kepala_4"/>
     <child link="camera_link"/>
-    <origin xyz="0.125659 -0.060429 0.6020233" rpy="0 0 1.5707"/>
+    <origin xyz="-0.0225 0 0.05379" rpy="0 0 1.5707"/>
   </joint>
 
   <link name="camera_link">
@@ -586,6 +596,12 @@
   </joint>
 
   <link name="camera_link_optical"></link>
+
+<joint name="center_to_base" type="fixed">
+    <parent link="base_center"/>
+    <child link="base_link"/>
+    <origin xyz="-0.125659 0.060429 -0.03189" rpy="0 0 0"/>
+  </joint>
 
 <joint name="Leher Putar" type="revolute">
   <origin xyz="0.125659 -0.060429 0.520233" rpy="0 0 0"/>
@@ -780,7 +796,7 @@
   
   <child link="End_Effector_Kaki_Kanan_1"/>
   
-  <origin xyz="0.013 0.0325 -0.069" rpy="0 0 0"/> 
+  <origin xyz="0.013 0.0325 -0.04" rpy="0 0 0"/> 
 </joint>
 
 <joint name="joint_tapak_kaki_kiri" type="fixed">
@@ -788,7 +804,7 @@
   
   <child link="End_Effector_Kaki_Kiri_1"/>
   
-  <origin xyz="-0.013 0.0325 -0.069" rpy="0 0 0"/>
+  <origin xyz="-0.013 0.0325 -0.04" rpy="0 0 0"/>
 </joint>
 
 <joint name="joint_end_effector_kiri" type="fixed">

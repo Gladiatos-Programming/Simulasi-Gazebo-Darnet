@@ -30,7 +30,7 @@ class VisualTargetInteractive(Node):
     def create_interactive_marker(self):
         # 1. Setup Marker Utama
         int_marker = InteractiveMarker()
-        int_marker.header.frame_id = "base_link"
+        int_marker.header.frame_id = "odom"
         int_marker.name = "ik_target_marker"
         int_marker.scale = 0.2
         int_marker.pose = self.current_pose
