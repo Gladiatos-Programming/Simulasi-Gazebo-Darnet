@@ -1,0 +1,23 @@
+{
+  "_comment": "1 = no flip, -1 = flip. Edit and save, then just re-run `ros2 run darnet_description KudaPose` -- no rebuild needed, this file is read fresh every run.",
+  "Paha Kanan Putar": 1,
+  "Paha Atas Kanan": 1,
+  "Paha Bawah Kanan": -1,
+  "Lutut Kanan": -1,
+  "Kaki Kanan Atas": 1,
+  "Kaki Kanan Bawah": 1,
+  "Paha Kiri Putar": 1,
+  "Paha Atas Kiri": 1,
+  "Paha Bawah Kiri": -1,
+  "Lutut Kiri": -1,
+  "Kaki Kiri Atas": 1,
+  "Kaki Kiri Bawah": 1,
+  "Lengan Kiri": -1,
+  "Bahu Tangan Kiri": -1,
+  "Tangan Kiri": -1,
+  "Lengan Kanan": -1,
+  "Bahu Tangan Kanan": 1,
+  "Tangan Kanan": -1,
+  "Leher Putar": 1,
+  "Kepala Putar": 1
+}
