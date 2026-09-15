@@ -1,0 +1,169 @@
+<mujoco model="darnet">
+  <compiler angle="radian" />
+
+  <option gravity="0 0 -9.81" />
+
+  <asset>
+    <mesh name="base_link" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Konektor_Leher_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Konektor_Leher_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Kepala_4" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Kepala_4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Konektor_Bahu__3" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Konektor_Bahu__3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Lengan_Kiri_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Lengan_Kiri_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Tangan_Kiri_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Tangan_Kiri_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Konektor_Bahu__1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Konektor_Bahu__1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Lengan_Kanan_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Lengan_Kanan_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Tangan_Kanan_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Tangan_Kanan_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Paha_Atas_4" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Paha_Atas_4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Paha_Atas_3" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Paha_Atas_3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Paha_Kanan_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Paha_Kanan_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Paha_Kiri_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Paha_Kiri_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Lutut_Kiri__1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Lutut_Kiri__1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Lutut_Kanan_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Lutut_Kanan_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Betis_2" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Betis_2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Betis_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Betis_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Mata_Kaki_Kiri_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Mata_Kaki_Kiri_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Kaki_Kiri_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Kaki_Kiri_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Mata_Kaki_Kanan_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Mata_Kaki_Kanan_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="Kaki_Kanan_1" content_type="model/stl" file="/home/ariqmau/gladitos/Simulasi-Gazebo-Darnet/src/darnet_description/meshes/Kaki_Kanan_1.stl" scale="0.001 0.001 0.001" />
+  </asset>
+
+    <asset>
+    <texture name="skybox" type="skybox" builtin="gradient" rgb1="0.45 0.55 0.65" rgb2="0.06 0.07 0.09" width="512" height="512" />
+    <texture name="groundtex" type="2d" builtin="checker" rgb1="0.2 0.2 0.22" rgb2="0.3 0.3 0.32" width="300" height="300" />
+    <material name="groundmat" texture="groundtex" texrepeat="6 6" reflectance="0.1" />
+  </asset>
+  <worldbody>
+    <light directional="true" pos="0 0 3" dir="0 0 -1" diffuse="0.7 0.7 0.7" />
+    <geom name="ground" type="plane" size="2 2 0.05" material="groundmat" group="1" />
+
+    <body name="base_link" pos="0 0 0"><freejoint name="root" /><inertial pos="0.12558372774814963 -0.07386522357602478 0.43247306079321574" mass="1.2606121985073475" fullinertia="0.00507 0.006653 0.003975 -1e-06 1e-06 -0.00033" /><geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="base_link" />
+    <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="base_link" />
+    <geom size="0.005 0.005 0.005" pos="0.125659 -0.060429 0.432023" type="box" contype="0" conaffinity="0" group="1" rgba="0 0 0 1" density="0" />
+    <body name="Konektor_Leher_1" pos="0.125659 -0.060429 0.520233">
+      <inertial pos="2.06884e-06 -0.00102181 0.00699377" quat="0.5 0.5 0.5 0.5" mass="0.00461193" diaginertia="2e-06 2e-06 1e-06" />
+      <joint name="Leher Putar" range="-3.14159 3.14159" actuatorfrcrange="-10 10" damping="0.5" axis="0 0 -1" />
+      <geom pos="-0.125659 0.060429 -0.520233" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Konektor_Leher_1" />
+      <geom pos="-0.125659 0.060429 -0.520233" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Konektor_Leher_1" />
+      <body name="Kepala_4" pos="0.0225 0 0.028">
+        <inertial pos="-0.0230044 -1.98836e-05 0.0161701" quat="0.706934 -0.013991 -0.0137411 0.707008" mass="0.0869832" diaginertia="0.000137994 0.000134022 0.000113972" />
+        <joint name="Kepala Putar" range="-3.14159 3.14159" actuatorfrcrange="-10 10" damping="0.5" axis="-1 0 0" />
+        <geom pos="-0.148159 0.060429 -0.548233" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Kepala_4" />
+        <geom pos="-0.148159 0.060429 -0.548233" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Kepala_4" />
+        <geom size="0.01 0.025 0.01" pos="-0.0225 0 0.05379" quat="0.707141 0 0 0.707073" type="box" contype="0" conaffinity="0" group="1" rgba="0.8 0.8 0.8 1" density="0" />
+        <geom size="0.01 0.025 0.01" pos="-0.0225 0 0.05379" quat="0.707141 0 0 0.707073" type="box" rgba="0.8 0.8 0.8 1" />
+      </body>
+    </body>
+    <body name="Konektor_Bahu__3" pos="0.048157 -0.060473 0.495956">
+      <inertial pos="-0.00606108 -2.42562e-06 -0.00262816" quat="0.707107 0.707107 0 0" mass="0.0133706" diaginertia="5e-06 5e-06 2e-06" />
+      <joint name="Lengan Kiri" range="-3.14159 3.14159" actuatorfrcrange="-10 10" damping="1.5" axis="1 0.000471 0" />
+      <geom pos="-0.048157 0.060473 -0.495956" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Konektor_Bahu__3" />
+      <geom pos="-0.048157 0.060473 -0.495956" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Konektor_Bahu__3" />
+      <body name="Lengan_Kiri_1" pos="-0.02251 0.02249 -0.016">
+        <inertial pos="-0.000130861 -0.0265068 -0.0575102" quat="0.997288 -0.0417453 0.00390884 0.0604798" mass="0.171165" diaginertia="0.000371134 0.000362137 3.87284e-05" />
+        <joint name="Bahu Tangan Kiri" range="-3.14159 3.14159" actuatorfrcrange="-10 10" damping="1.5" axis="-0.000471 1 0" />
+        <geom pos="-0.025647 0.037983 -0.479956" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Lengan_Kiri_1" />
+        <geom pos="-0.025647 0.037983 -0.479956" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Lengan_Kiri_1" />
+        <body name="Tangan_Kiri_1" pos="-0.023341 -0.019361 -0.1028">
+          <inertial pos="0.0111126 -0.0154869 -0.0664703" quat="0.99203 -0.00431193 0.0472334 0.116738" mass="0.0279625" diaginertia="0.00015368 0.000153272 0.000104598" />
+          <joint name="Tangan Kiri" range="-3.14159 3.14159" actuatorfrcrange="-10 10" damping="0.3" axis="1 0.000471 0" />
+          <geom pos="-0.002306 0.057344 -0.377156" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Tangan_Kiri_1" />
+          <geom pos="-0.002306 0.057344 -0.377156" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Tangan_Kiri_1" />
+          <geom size="0.005 0.005 0.005" pos="0.005 -0.015 -0.15" type="box" contype="0" conaffinity="0" group="1" rgba="0 0 1 0.5" density="0" />
+        </body>
+      </body>
+    </body>
+    <body name="Konektor_Bahu__1" pos="0.202784 -0.0604 0.495956">
+      <inertial pos="0.00606151 3.10194e-06 -0.00262816" quat="0.707107 0.707107 0 0" mass="0.0133706" diaginertia="5e-06 5e-06 2e-06" />
+      <joint name="Lengan Kanan" range="-3.14159 3.14159" actuatorfrcrange="-10 10" damping="1.5" axis="-1 -0.000471 0" />
+      <geom pos="-0.202784 0.0604 -0.495956" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Konektor_Bahu__1" />
+      <geom pos="-0.202784 0.0604 -0.495956" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Konektor_Bahu__1" />
+      <body name="Lengan_Kanan_1" pos="0.022489 0.022511 -0.016">
+        <inertial pos="0.000121932 -0.0265068 -0.0575298" quat="0.997288 -0.0417453 -0.00390884 -0.0604798" mass="0.171165" diaginertia="0.000371134 0.000362137 3.87284e-05" />
+        <joint name="Bahu Tangan Kanan" range="-3.14159 3.14159" actuatorfrcrange="-10 10" damping="1.5" axis="0.000471 -1 0" />
+        <geom pos="-0.225273 0.037889 -0.479956" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Lengan_Kanan_1" />
+        <geom pos="-0.225273 0.037889 -0.479956" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Lengan_Kanan_1" />
+        <body name="Tangan_Kanan_1" pos="0.023359 -0.019339 -0.1028">
+          <inertial pos="-0.0110655 -0.0154968 -0.0665288" quat="0.992042 -0.00431392 -0.0471969 -0.116651" mass="0.027938" diaginertia="0.000153669 0.000153261 0.000104599" />
+          <joint name="Tangan Kanan" range="-3.14159 3.14159" actuatorfrcrange="-10 10" damping="0.3" axis="-1 -0.000471 0" />
+          <geom pos="-0.248632 0.057228 -0.377156" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Tangan_Kanan_1" />
+          <geom pos="-0.248632 0.057228 -0.377156" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Tangan_Kanan_1" />
+          <geom size="0.005 0.005 0.005" pos="-0.005 -0.015 -0.15" type="box" contype="0" conaffinity="0" group="1" rgba="0 0 1 0.5" density="0" />
+        </body>
+      </body>
+    </body>
+    <body name="Paha_Atas_4" pos="0.078463 -0.069966 0.351036">
+      <inertial pos="3.14757e-07 -0.00375673 -0.00840267" quat="0.707107 0.707107 0 0" mass="0.0230031" diaginertia="1.7e-05 1.6e-05 6e-06" />
+      <joint name="Paha Kiri Putar" range="-3.14159 3.14159" actuatorfrcrange="-40 40" damping="5" />
+      <geom pos="-0.078463 0.069966 -0.351036" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Paha_Atas_4" />
+      <geom pos="-0.078463 0.069966 -0.351036" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Paha_Atas_4" />
+      <body name="Paha_Kiri_1" pos="0 -0.032853 -0.036545">
+        <inertial pos="0.000215426 0.00253712 -0.0148985" quat="0.687888 0.725353 0.0166943 -0.0198503" mass="0.270035" diaginertia="0.000292107 0.000254322 0.000102571" />
+        <joint name="Paha Atas Kiri" range="-3.14159 3.14159" actuatorfrcrange="-40 40" damping="5" axis="0 -1 0" />
+        <geom pos="-0.078463 0.102819 -0.314491" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Paha_Kiri_1" />
+        <geom pos="-0.078463 0.102819 -0.314491" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Paha_Kiri_1" />
+        <body name="Lutut_Kiri__1" pos="0.0253 0.0264 0">
+          <inertial pos="-0.0251129 -3.66526e-05 -0.0996574" quat="0.707042 -0.00954592 -0.00954592 0.707042" mass="0.150079" diaginertia="0.00013 0.000115054 4.0946e-05" />
+          <joint name="Paha Bawah Kiri" range="-3.14159 3.14159" actuatorfrcrange="-55 55" damping="3" axis="-1 0 0" />
+          <geom pos="-0.103763 0.076419 -0.314491" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Lutut_Kiri__1" />
+          <geom pos="-0.103763 0.076419 -0.314491" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Lutut_Kiri__1" />
+          <body name="Betis_2" pos="-0.0002 0 -0.1228">
+            <inertial pos="-0.0255002 0.0100884 -0.0481478" quat="0.703352 -0.0727755 0.0727755 0.703352" mass="0.0537446" diaginertia="0.000104928 8.6e-05 3.50715e-05" />
+            <joint name="Lutut Kiri" range="-3.14159 3.14159" actuatorfrcrange="-55 55" damping="3" axis="-1 0 0" />
+            <geom pos="-0.103563 0.076419 -0.191691" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Betis_2" />
+            <geom pos="-0.103563 0.076419 -0.191691" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Betis_2" />
+            <body name="Mata_Kaki_Kiri_1" pos="0 0 -0.121129">
+              <inertial pos="-0.0250848 -0.0238629 0.0148989" quat="0.725353 0.687888 -0.0198503 0.0166943" mass="0.270035" diaginertia="0.000292107 0.000254322 0.000102571" />
+              <joint name="Kaki Kiri Atas" range="-3.14159 3.14159" actuatorfrcrange="-25 25" damping="1" axis="-1 0 0" />
+              <geom pos="-0.103563 0.076419 -0.070562" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Mata_Kaki_Kiri_1" />
+              <geom pos="-0.103563 0.076419 -0.070562" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Mata_Kaki_Kiri_1" />
+              <body name="Kaki_Kiri_1" pos="-0.0253 -0.0264 0">
+                <inertial pos="-0.0116994 0.0323503 -0.0451628" quat="0.49116 0.495762 -0.502254 0.51061" mass="0.172747" diaginertia="0.000612136 0.000418454 0.000339556" />
+                <joint name="Kaki Kiri Bawah" range="-3.14159 3.14159" actuatorfrcrange="-25 25" damping="1" axis="0 -1 0" />
+                <geom pos="-0.078263 0.102819 -0.070562" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Kaki_Kiri_1" />
+                <geom size="0.05 0.0675 0.00125" pos="-0.014 0.032 -0.0393" type="box" rgba="0.7 0.7 0.7 1" />
+                <geom size="0.005 0.005 0.005" pos="-0.013 0.0325 -0.069" type="box" contype="0" conaffinity="0" group="1" rgba="0 0 1 0.5" density="0" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="Paha_Atas_3" pos="0.172863 -0.069922 0.351036">
+      <inertial pos="3.04289e-07 -0.00375627 -0.00840267" quat="0.707107 0.707107 0 0" mass="0.0230031" diaginertia="1.7e-05 1.6e-05 6e-06" />
+      <joint name="Paha Kanan Putar" range="-3.14159 3.14159" actuatorfrcrange="-40 40" damping="5" />
+      <geom pos="-0.172863 0.069922 -0.351036" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Paha_Atas_3" />
+      <geom pos="-0.172863 0.069922 -0.351036" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Paha_Atas_3" />
+      <body name="Paha_Kanan_1" pos="0 -0.032853 -0.036545">
+        <inertial pos="-0.000214805 0.00253758 -0.0148985" quat="0.687888 0.725353 -0.0166943 0.0198503" mass="0.270035" diaginertia="0.000292107 0.000254322 0.000102571" />
+        <joint name="Paha Atas Kanan" range="-3.14159 3.14159" actuatorfrcrange="-40 40" damping="5" axis="0 -1 0" />
+        <geom pos="-0.172863 0.102775 -0.314491" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Paha_Kanan_1" />
+        <geom pos="-0.172863 0.102775 -0.314491" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Paha_Kanan_1" />
+        <body name="Lutut_Kanan_1" pos="-0.0253 0.0264 0">
+          <inertial pos="0.0251142 -3.61831e-05 -0.0997855" quat="0.707044 0.00941889 0.00941889 0.707044" mass="0.150335" diaginertia="0.000131 0.000116053 4.09467e-05" />
+          <joint name="Paha Bawah Kanan" range="-3.14159 3.14159" actuatorfrcrange="-55 55" damping="3" axis="1 0 0" />
+          <geom pos="-0.147563 0.076375 -0.314491" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Lutut_Kanan_1" />
+          <geom pos="-0.147563 0.076375 -0.314491" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Lutut_Kanan_1" />
+          <body name="Betis_1" pos="0.000201 0 -0.123">
+            <inertial pos="0.0254998 0.0100889 -0.0481478" quat="0.703352 -0.0727755 0.0727755 0.703352" mass="0.0537446" diaginertia="0.000104928 8.6e-05 3.50715e-05" />
+            <joint name="Lutut Kanan" range="-3.14159 3.14159" actuatorfrcrange="-55 55" damping="3" axis="1 0 0" />
+            <geom pos="-0.147764 0.076375 -0.191491" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Betis_1" />
+            <geom pos="-0.147764 0.076375 -0.191491" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Betis_1" />
+            <body name="Mata_Kaki_Kanan_1" pos="0 0 -0.121129">
+              <inertial pos="0.0250844 -0.0238624 0.0148989" quat="0.725353 0.687888 0.0198503 -0.0166943" mass="0.270035" diaginertia="0.000292107 0.000254322 0.000102571" />
+              <joint name="Kaki Kanan Atas" range="-3.14159 3.14159" actuatorfrcrange="-25 25" damping="1" axis="1 0 0" />
+              <geom pos="-0.147764 0.076375 -0.070362" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Mata_Kaki_Kanan_1" />
+              <geom pos="-0.147764 0.076375 -0.070362" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="Mata_Kaki_Kanan_1" />
+              <body name="Kaki_Kanan_1" pos="0.0253 -0.0264 0">
+                <inertial pos="0.011699 0.0323508 -0.0451628" quat="0.51061 0.502254 -0.495762 0.49116" mass="0.172747" diaginertia="0.000612136 0.000418454 0.000339556" />
+                <joint name="Kaki Kanan Bawah" range="-3.14159 3.14159" actuatorfrcrange="-25 25" damping="1" axis="0 -1 0" />
+                <geom pos="-0.173064 0.102775 -0.070362" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" density="0" mesh="Kaki_Kanan_1" />
+                <geom size="0.05 0.0675 0.00125" pos="0.014 0.032 -0.0393" type="box" rgba="0.7 0.7 0.7 1" />
+                <geom size="0.005 0.005 0.005" pos="0.013 0.0325 -0.069" type="box" contype="0" conaffinity="0" group="1" rgba="0 0 1 0.5" density="0" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </body></worldbody>
+<actuator><position name="Leher Putar_act" joint="Leher Putar" kp="6.000" ctrlrange="-3.14159 3.14159" forcerange="-10 10" /><position name="Kepala Putar_act" joint="Kepala Putar" kp="6.000" ctrlrange="-3.14159 3.14159" forcerange="-10 10" /><position name="Lengan Kiri_act" joint="Lengan Kiri" kp="6.000" ctrlrange="-3.14159 3.14159" forcerange="-10 10" /><position name="Bahu Tangan Kiri_act" joint="Bahu Tangan Kiri" kp="6.000" ctrlrange="-3.14159 3.14159" forcerange="-10 10" /><position name="Tangan Kiri_act" joint="Tangan Kiri" kp="6.000" ctrlrange="-3.14159 3.14159" forcerange="-10 10" /><position name="Lengan Kanan_act" joint="Lengan Kanan" kp="6.000" ctrlrange="-3.14159 3.14159" forcerange="-10 10" /><position name="Bahu Tangan Kanan_act" joint="Bahu Tangan Kanan" kp="6.000" ctrlrange="-3.14159 3.14159" forcerange="-10 10" /><position name="Tangan Kanan_act" joint="Tangan Kanan" kp="6.000" ctrlrange="-3.14159 3.14159" forcerange="-10 10" /><position name="Paha Kiri Putar_act" joint="Paha Kiri Putar" kp="24.000" ctrlrange="-3.14159 3.14159" forcerange="-40 40" /><position name="Paha Atas Kiri_act" joint="Paha Atas Kiri" kp="24.000" ctrlrange="-3.14159 3.14159" forcerange="-40 40" /><position name="Paha Bawah Kiri_act" joint="Paha Bawah Kiri" kp="33.000" ctrlrange="-3.14159 3.14159" forcerange="-55 55" /><position name="Lutut Kiri_act" joint="Lutut Kiri" kp="33.000" ctrlrange="-3.14159 3.14159" forcerange="-55 55" /><position name="Kaki Kiri Atas_act" joint="Kaki Kiri Atas" kp="15.000" ctrlrange="-3.14159 3.14159" forcerange="-25 25" /><position name="Kaki Kiri Bawah_act" joint="Kaki Kiri Bawah" kp="15.000" ctrlrange="-3.14159 3.14159" forcerange="-25 25" /><position name="Paha Kanan Putar_act" joint="Paha Kanan Putar" kp="24.000" ctrlrange="-3.14159 3.14159" forcerange="-40 40" /><position name="Paha Atas Kanan_act" joint="Paha Atas Kanan" kp="24.000" ctrlrange="-3.14159 3.14159" forcerange="-40 40" /><position name="Paha Bawah Kanan_act" joint="Paha Bawah Kanan" kp="33.000" ctrlrange="-3.14159 3.14159" forcerange="-55 55" /><position name="Lutut Kanan_act" joint="Lutut Kanan" kp="33.000" ctrlrange="-3.14159 3.14159" forcerange="-55 55" /><position name="Kaki Kanan Atas_act" joint="Kaki Kanan Atas" kp="15.000" ctrlrange="-3.14159 3.14159" forcerange="-25 25" /><position name="Kaki Kanan Bawah_act" joint="Kaki Kanan Bawah" kp="15.000" ctrlrange="-3.14159 3.14159" forcerange="-25 25" /></actuator></mujoco>

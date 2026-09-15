@@ -552,9 +552,9 @@
 
 <!-- LINK KAMERA -->
 <joint name="camera_joint" type="fixed">
-    <parent link="base_link"/>
+    <parent link="Kepala_4"/>
     <child link="camera_link"/>
-    <origin xyz="0.125659 -0.060429 0.6020233" rpy="0 0 1.5707"/>
+    <origin xyz="-0.0225 0.0 0.05379" rpy="0 0 1.5707"/>
   </joint>
 
   <link name="camera_link">
@@ -668,7 +668,11 @@
   <limit lower="-3.14159" upper="3.14159"  effort="40" velocity="6"/>
 </joint>
 
-<joint name="Paha Atas Kanan" type="revolute">
+<!-- Name swapped with "Paha Kanan Putar" below: this joint is proximal
+     (attached to base_link, Z-axis) matching the left leg's "Putar" = rotate
+     convention and physical hardware verification, not the "Atas" naming
+     the original xacro export used. -->
+<joint name="Paha Kanan Putar" type="revolute">
   <origin xyz="0.172863 -0.069922 0.351036" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Paha_Atas_3"/>
@@ -677,7 +681,7 @@
   <limit lower="-3.14159" upper="3.14159"  effort="40" velocity="6"/>
 </joint>
 
-<joint name="Paha Kanan Putar" type="revolute">
+<joint name="Paha Atas Kanan" type="revolute">
   <origin xyz="0.0 -0.032853 -0.036545" rpy="0 0 0"/>
   <parent link="Paha_Atas_3"/>
   <child link="Paha_Kanan_1"/>

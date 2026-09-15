@@ -15,6 +15,7 @@
   <exec_depend>ros2_controllers</exec_depend>
   <exec_depend>ign_ros2_control</exec_depend>
   <exec_depend>python3-pinocchio</exec_depend>
+  <exec_depend>dynamixel_sdk</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
