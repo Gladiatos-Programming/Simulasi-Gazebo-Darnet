@@ -45,6 +45,7 @@ setup(
             'CheckStatusServo = darnet_description.CheckStatusServo:main',
             'ComsROS2OpenRBDARPUT = darnet_description.ComsROS2OpenRBDARPUT:main',
             'ComsROS2U2D2 = darnet_description.ComsROS2U2D2:main',
+            'CaptureEncoderReference = darnet_description.CaptureEncoderReference:main',
             'CalibrateInversion = darnet_description.CalibrateInversion:main',
             'CalibrateZeroOffset = darnet_description.CalibrateZeroOffset:main',
             'MinimalJointTest = darnet_description.MinimalJointTest:main',

@@ -122,6 +122,15 @@ class RosToU2D2(Node):
     def __init__(self):
         super().__init__('ros_to_u2d2_bridge')
 
+        # Explicit opt-in for a short, supervised handoff to a read-only tool.
+        # This does not make the robot safe from falls, overload, or power loss.
+        self.keep_torque_on_exit = self.declare_parameter(
+            'keep_torque_on_exit', False).value
+        if self.keep_torque_on_exit:
+            self.get_logger().warn(
+                'keep_torque_on_exit=true: exiting will leave servos energized. '
+                'Keep the robot supervised and have a support/power cutoff ready.')
+
         self.port = PortHandler(DEVICE_NAME)
         self.packet = PacketHandler(PROTOCOL_VERSION)
 
@@ -197,10 +206,18 @@ class RosToU2D2(Node):
         pos_write.clearParam()
 
     def destroy_node(self):
-        for dxl_id in DXL_IDS.values():
-            self.packet.write1ByteTxRx(self.port, dxl_id, ADDR_TORQUE_ENABLE, 0)
-        self.port.closePort()
-        super().destroy_node()
+        try:
+            if self.keep_torque_on_exit:
+                self.get_logger().warn(
+                    'Leaving torque and existing goals unchanged; closing U2D2. '
+                    'No controller is supervising motion after exit.')
+            else:
+                for dxl_id in DXL_IDS.values():
+                    self.packet.write1ByteTxRx(
+                        self.port, dxl_id, ADDR_TORQUE_ENABLE, 0)
+        finally:
+            self.port.closePort()
+            super().destroy_node()
 
 
 def main(args=None):
