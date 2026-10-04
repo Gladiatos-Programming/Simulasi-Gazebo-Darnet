@@ -1,5 +1,25 @@
 # Encoder reference capture (MX Protocol 1.0 / U2D2)
 
+## Pembaruan 4 Oktober 2026 - gunakan baseline reference terbaru
+
+Untuk reference goal ID8=1946, ID12=2081 dan lainnya=2048, gunakan tool terpisah
+[CenterizedReference](CENTERIZED_REFERENCE.md), bukan Centerized lama melalui
+offset demo. Preview default offline; --inspect read-only; --execute memerlukan
+konfirmasi dan robot dekat reference, ditopang, torque sudah ON, port eksklusif.
+Sesudah pose diperiksa/foto, jalankan CaptureEncoderReference seperti bagian 3.
+
+Capture kini membaca profile v2 extended: firmware/ID/baud, mode inferred dari
+limits, return delay/status return, multi-turn offset/divider, PID, speed/torque
+limit/load, suhu/tegangan/limits dan torque-control khusus MX-64, semuanya RAW
+dan read-only. Snapshot menambah file CenterizedReference/CaptureEncoderReference,
+SHA-256 serta environment Python/ROS terbatas. Tidak mengubah atau menerapkan
+offset demo. Kirim folder reference dan capture beserta foto pose.
+
+Bagian 1-2 di bawah adalah alur bridge LEGACY, bukan rekomendasi menjalankan
+Centerized demo untuk mendapatkan baseline ticks baru. Jangan memakai bridge
+dan tool direct U2D2 bersamaan. Perubahan source harus tersedia di Jetson sebelum
+build; git pull tidak mengambil perubahan lokal yang belum dipush.
+
 Tujuan: merekam ticks aktual dan konfigurasi terpasang sebagai kandidat referensi.
 Script tidak mengkalibrasi, tidak menerapkan offset demo, tidak mengubah mode,
 dan tidak memanggil write servo. Offset demo tetap diarsipkan, bukan disahkan.
