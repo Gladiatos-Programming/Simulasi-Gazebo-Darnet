@@ -2,10 +2,10 @@
 
 ## Consolidated handoff and completion caveats
 
-See [the finalized handoff](../handoff/encoder_reference_20261004/README.md)
+See [the finalized handoff](../README.md)
 for selected raw captures, source snapshots, change history and limitations.
 The current direct reference workflow is documented in
-[TORQUE_REFERENCE_WORKFLOW.md](../TORQUE_REFERENCE_WORKFLOW.md).
+[TORQUE_REFERENCE_WORKFLOW.md](TORQUE_REFERENCE_WORKFLOW.md).
 Capture remains read-only. Run it only after the other serial process exits.
 `completed=True` means the capture loop finished, not that every sample is valid:
 check read_failures, error rows, retries and expected per-ID sample counts.

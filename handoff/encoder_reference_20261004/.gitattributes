@@ -1,0 +1,4 @@
+# Archived evidence/source snapshots must retain exact bytes, including CRLF
+# and historical whitespace. Do not normalize or lint these as newly authored code.
+evidence/** -text -whitespace
+sources/** -text -whitespace

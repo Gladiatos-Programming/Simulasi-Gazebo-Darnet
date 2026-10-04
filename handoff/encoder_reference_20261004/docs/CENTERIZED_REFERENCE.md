@@ -24,9 +24,9 @@ Jangan menjalankan script baru dan bridge/Wizard bersamaan.
 ## Current workflow and consolidated results
 
 For direct mode with checked torque preparation, use
-[TORQUE_REFERENCE_WORKFLOW.md](../TORQUE_REFERENCE_WORKFLOW.md).
+[TORQUE_REFERENCE_WORKFLOW.md](TORQUE_REFERENCE_WORKFLOW.md).
 Selected results and all known limitations are in
-[the finalized handoff](../handoff/encoder_reference_20261004/README.md).
+[the finalized handoff](../README.md).
 The historical near-reference `--execute` procedure below remains available;
 its no-torque-write statements apply to that mode, not `--direct`.
 Direct mode may activate torque and uses verified broadcast Sync Write frames.

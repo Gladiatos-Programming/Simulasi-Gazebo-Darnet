@@ -1,0 +1,161 @@
+Offline validation for 2026-10-04 handoff. No hardware/serial operations.
+
+$ /usr/bin/python3 -B -m unittest discover -s src/darnet_description/test -p test_*reference.py
+...................
+----------------------------------------------------------------------
+Ran 19 tests in 0.082s
+
+OK
+
+exit_code=0
+
+$ /usr/bin/python3 -B -m unittest discover -s src/darnet_description/test -p test_encoder_capture.py
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.023s
+
+OK
+
+exit_code=0
+
+$ /usr/bin/python3 -B -m unittest discover -s src/darnet_description/test -p test_torque_hold.py
+...................................
+----------------------------------------------------------------------
+Ran 35 tests in 0.356s
+
+OK
+
+exit_code=0
+
+$ /usr/bin/python3 -B -m unittest discover -s src/darnet_description/test -p test_direct_center.py
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.885s
+
+OK
+
+exit_code=0
+
+$ /usr/bin/python3 -B -m unittest discover -s src/darnet_description/test -p test_block_sync_transport.py
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.049s
+
+OK
+
+exit_code=0
+
+$ /usr/bin/python3 -B -m unittest discover -s src/darnet_description/test -p test_hold_settling.py
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.039s
+
+OK
+
+exit_code=0
+
+$ /usr/bin/python3 -B src/darnet_description/darnet_description/CenterizedReference.py
+USER-REPORTED RAW GOALS; no demo offsets or ROS bridge conversion.
+ID 01 Lengan Kiri -> 2048
+ID 02 Lengan Kanan -> 2048
+ID 03 Bahu Tangan Kiri -> 2048
+ID 04 Bahu Tangan Kanan -> 2048
+ID 05 Tangan Kiri -> 2048
+ID 06 Tangan Kanan -> 2048
+ID 07 Paha Kanan Putar -> 2048
+ID 08 Paha Kiri Putar -> 1946
+ID 09 Paha Atas Kanan -> 2048
+ID 10 Paha Atas Kiri -> 2048
+ID 11 Paha Bawah Kanan -> 2048
+ID 12 Paha Bawah Kiri -> 2081
+ID 13 Lutut Kanan -> 2048
+ID 14 Lutut Kiri -> 2048
+ID 15 Kaki Kanan Atas -> 2048
+ID 16 Kaki Kiri Atas -> 2048
+ID 17 Kaki Kanan Bawah -> 2048
+ID 18 Kaki Kiri Bawah -> 2048
+ID 19 Leher Putar -> 2048
+ID 20 Kepala Putar -> 2048
+OFFLINE PREVIEW ONLY. No serial port or files opened.
+
+exit_code=0
+
+$ /usr/bin/python3 -B src/darnet_description/darnet_description/CenterizedReference.py --help
+usage: CenterizedReference.py [-h] [--inspect | --execute | --direct]
+                              [--robot-supported] [--exclusive-port-confirmed]
+                              [--port PORT] [--baud BAUD]
+                              [--hold-settle-timeout HOLD_SETTLE_TIMEOUT]
+                              [--output OUTPUT]
+
+Preview or explicitly execute a raw-tick Centerized reference correction.
+Default is offline preview (no SDK import, serial port, or files). --inspect
+is read-only. --execute requires support/exclusive-port acknowledgements and
+an interactive confirmation. --direct instead prepares torque, permits larger
+corrections within configured register limits and omits interactive prompts.
+Never writes EEPROM, torque limit or offsets. Direct mode may write torque
+enable and hold goals. NOT a collision safety certificate or emergency stop.
+
+options:
+  -h, --help            show this help message and exit
+  --inspect             Read-only hardware inspection, no writes
+  --execute             Explicitly request guarded near-reference motion
+  --direct              Prepare torque and ramp to raw targets; allow larger
+                        correction and skip interactive prompts
+  --robot-supported
+  --exclusive-port-confirmed
+                        Operator confirms bridge/Wizard/other writers stopped
+  --port PORT
+  --baud BAUD
+  --hold-settle-timeout HOLD_SETTLE_TIMEOUT
+                        Direct-mode settling seconds per newly activated joint
+                        (0.1..10, default 2)
+  --output OUTPUT       NEW log directory; existing directories are refused
+
+exit_code=0
+
+$ /usr/bin/python3 -B src/darnet_description/darnet_description/PrepareTorqueHold.py
+OFFLINE PREVIEW ONLY. No SDK, serial port or output files opened.
+IDs 1..20; legacy MX profile; preserve existing Torque Limit and ON servo goals.
+OFF servos: speed cap=20, hold-current-pose goal, verify ON or explicitly enable.
+Goal writes may activate torque. Each joint is verified before the next; explicit ON only if needed.
+Use --inspect first. Enabling torque can cause motion; mechanical support required.
+
+exit_code=0
+
+$ /usr/bin/python3 -B src/darnet_description/darnet_description/PrepareTorqueHold.py --help
+usage: PrepareTorqueHold.py [-h] [--inspect | --execute] [--robot-supported]
+                            [--exclusive-port-confirmed] [--port PORT]
+                            [--baud BAUD] [--speed-cap SPEED_CAP]
+                            [--hold-settle-timeout HOLD_SETTLE_TIMEOUT]
+                            [--output OUTPUT]
+
+Guarded torque preparation for legacy MX IDs 1..20; NOT a pose controller.
+Default: offline preview. --inspect: READ only. --execute requires physical
+support, exclusive-port acknowledgement and interactive confirmation. For OFF
+servos only: set nonzero Moving Speed, write Goal to measured Present
+Position, immediately check for torque activation, explicitly enable if still
+OFF, and verify feedback before preparing the next joint. A goal write MAY
+activate torque; do not assume staging is passive. ON goals/speeds unchanged.
+Preserve existing torque limits; never writes EEPROM, offsets or Torque Limit.
+Enabling torque can cause motion under load. Sequential reads are not atomic.
+No automatic rollback/torque-off; partial activation can remain energized.
+
+options:
+  -h, --help            show this help message and exit
+  --inspect
+  --execute
+  --robot-supported
+  --exclusive-port-confirmed
+  --port PORT
+  --baud BAUD
+  --speed-cap SPEED_CAP
+  --hold-settle-timeout HOLD_SETTLE_TIMEOUT
+                        Seconds allowed per newly activated joint (0.1..10,
+                        default 2)
+  --output OUTPUT
+
+exit_code=0
+
+$ git diff --check
+
+exit_code=0

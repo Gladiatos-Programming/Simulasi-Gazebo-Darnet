@@ -1,0 +1,2 @@
+{"utc": "2026-10-04T11:00:43.564680+00:00", "event": "read_retry", "id": 1, "address": 0, "size": 2, "attempt": 1, "result": -3002, "error": "[TxRxResult] Incorrect status packet!"}
+{"utc": "2026-10-04T11:00:43.620132+00:00", "event": "read_retry", "id": 1, "address": 0, "size": 2, "attempt": 2, "result": -3002, "error": "[TxRxResult] Incorrect status packet!"}

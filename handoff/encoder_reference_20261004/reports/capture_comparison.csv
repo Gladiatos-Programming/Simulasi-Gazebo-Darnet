@@ -1,0 +1,61 @@
+capture,id,joint,samples,goal_ticks,present_mean_ticks,present_min_ticks,present_max_ticks,range_ticks,mean_error_ticks,all_samples_within_8_ticks,delta_from_latest_goal_feedback_ticks
+encoder_capture_20261004_180130_557636,1,Lengan Kiri,5,2048,2045.8,2045,2046,1,-2.2,True,
+encoder_capture_20261004_180130_557636,2,Lengan Kanan,5,2048,2053,2053,2053,0,5,True,
+encoder_capture_20261004_180130_557636,3,Bahu Tangan Kiri,5,2048,2046,2046,2046,0,-2,True,
+encoder_capture_20261004_180130_557636,4,Bahu Tangan Kanan,5,2048,2054,2054,2054,0,6,True,
+encoder_capture_20261004_180130_557636,5,Tangan Kiri,5,2048,2043.8,2043,2044,1,-4.2,True,
+encoder_capture_20261004_180130_557636,6,Tangan Kanan,5,2048,2051,2051,2051,0,3,True,
+encoder_capture_20261004_180130_557636,7,Paha Kanan Putar,5,2048,2050,2050,2050,0,2,True,
+encoder_capture_20261004_180130_557636,8,Paha Kiri Putar,5,1946,1942.4,1942,1943,1,-3.6,True,
+encoder_capture_20261004_180130_557636,9,Paha Atas Kanan,5,2048,2042,2042,2042,0,-6,True,
+encoder_capture_20261004_180130_557636,10,Paha Atas Kiri,5,2048,2043,2043,2043,0,-5,True,
+encoder_capture_20261004_180130_557636,11,Paha Bawah Kanan,5,2048,2054,2054,2054,0,6,True,
+encoder_capture_20261004_180130_557636,12,Paha Bawah Kiri,5,2081,2086,2086,2086,0,5,True,
+encoder_capture_20261004_180130_557636,13,Lutut Kanan,5,2048,2053,2053,2053,0,5,True,
+encoder_capture_20261004_180130_557636,14,Lutut Kiri,5,2048,2053.8,2053,2054,1,5.8,True,
+encoder_capture_20261004_180130_557636,15,Kaki Kanan Atas,5,2048,2038,2038,2038,0,-10,False,
+encoder_capture_20261004_180130_557636,16,Kaki Kiri Atas,5,2048,2040.8,2040,2041,1,-7.2,True,
+encoder_capture_20261004_180130_557636,17,Kaki Kanan Bawah,5,2048,2053,2053,2053,0,5,True,
+encoder_capture_20261004_180130_557636,18,Kaki Kiri Bawah,5,2048,2055,2055,2055,0,7,True,
+encoder_capture_20261004_180130_557636,19,Leher Putar,5,2048,2057,2057,2057,0,9,False,
+encoder_capture_20261004_180130_557636,20,Kepala Putar,5,2048,2055,2055,2055,0,7,True,
+encoder_capture_20261004_180349_734853,1,Lengan Kiri,5,2048,2044.8,2044,2045,1,-3.2,True,
+encoder_capture_20261004_180349_734853,2,Lengan Kanan,5,2048,2052.6,2052,2053,1,4.6,True,
+encoder_capture_20261004_180349_734853,3,Bahu Tangan Kiri,5,2048,2046.2,2046,2047,1,-1.8,True,
+encoder_capture_20261004_180349_734853,4,Bahu Tangan Kanan,5,2048,2051,2051,2051,0,3,True,
+encoder_capture_20261004_180349_734853,5,Tangan Kiri,5,2048,2044,2044,2044,0,-4,True,
+encoder_capture_20261004_180349_734853,6,Tangan Kanan,5,2048,2051,2051,2051,0,3,True,
+encoder_capture_20261004_180349_734853,7,Paha Kanan Putar,5,2048,2045.2,2045,2046,1,-2.8,True,
+encoder_capture_20261004_180349_734853,8,Paha Kiri Putar,5,1946,1941.8,1941,1942,1,-4.2,True,
+encoder_capture_20261004_180349_734853,9,Paha Atas Kanan,5,2048,2045,2045,2045,0,-3,True,
+encoder_capture_20261004_180349_734853,10,Paha Atas Kiri,5,2048,2044.8,2044,2045,1,-3.2,True,
+encoder_capture_20261004_180349_734853,11,Paha Bawah Kanan,5,2048,2037.8,2037,2038,1,-10.2,False,
+encoder_capture_20261004_180349_734853,12,Paha Bawah Kiri,5,2081,2090,2090,2090,0,9,False,
+encoder_capture_20261004_180349_734853,13,Lutut Kanan,5,2048,2043,2043,2043,0,-5,True,
+encoder_capture_20261004_180349_734853,14,Lutut Kiri,5,2048,2057,2057,2057,0,9,False,
+encoder_capture_20261004_180349_734853,15,Kaki Kanan Atas,5,2048,2054,2054,2054,0,6,True,
+encoder_capture_20261004_180349_734853,16,Kaki Kiri Atas,5,2048,2042.8,2042,2043,1,-5.2,True,
+encoder_capture_20261004_180349_734853,17,Kaki Kanan Bawah,5,2048,2051,2051,2051,0,3,True,
+encoder_capture_20261004_180349_734853,18,Kaki Kiri Bawah,5,2048,2048.4,2048,2049,1,0.4,True,
+encoder_capture_20261004_180349_734853,19,Leher Putar,5,2048,2057,2057,2057,0,9,False,
+encoder_capture_20261004_180349_734853,20,Kepala Putar,5,2048,2055,2055,2055,0,7,True,
+encoder_capture_20261004_180445_688090,1,Lengan Kiri,5,2048,2050,2050,2050,0,2,True,5
+encoder_capture_20261004_180445_688090,2,Lengan Kanan,5,2048,2050.6,2050,2051,1,2.6,True,-1.4
+encoder_capture_20261004_180445_688090,3,Bahu Tangan Kiri,5,2048,2046,2046,2046,0,-2,True,0
+encoder_capture_20261004_180445_688090,4,Bahu Tangan Kanan,5,2048,2054,2054,2054,0,6,True,3
+encoder_capture_20261004_180445_688090,5,Tangan Kiri,5,2048,2044,2044,2044,0,-4,True,0
+encoder_capture_20261004_180445_688090,6,Tangan Kanan,5,2048,2051,2051,2051,0,3,True,0
+encoder_capture_20261004_180445_688090,7,Paha Kanan Putar,5,2048,2050,2050,2050,0,2,True,5
+encoder_capture_20261004_180445_688090,8,Paha Kiri Putar,5,1946,1943,1943,1943,0,-3,True,1
+encoder_capture_20261004_180445_688090,9,Paha Atas Kanan,5,2048,2042.8,2042,2043,1,-5.2,True,-8.2
+encoder_capture_20261004_180445_688090,10,Paha Atas Kiri,5,2048,2043.8,2043,2044,1,-4.2,True,-8.2
+encoder_capture_20261004_180445_688090,11,Paha Bawah Kanan,5,2048,2054,2054,2054,0,6,True,17
+encoder_capture_20261004_180445_688090,12,Paha Bawah Kiri,5,2081,2084,2084,2084,0,3,True,-6
+encoder_capture_20261004_180445_688090,13,Lutut Kanan,5,2048,2053,2053,2053,0,5,True,10
+encoder_capture_20261004_180445_688090,14,Lutut Kiri,5,2048,2058,2058,2058,0,10,False,1
+encoder_capture_20261004_180445_688090,15,Kaki Kanan Atas,5,2048,2038,2038,2038,0,-10,False,-16
+encoder_capture_20261004_180445_688090,16,Kaki Kiri Atas,5,2048,2037.6,2037,2038,1,-10.4,False,-5.4
+encoder_capture_20261004_180445_688090,17,Kaki Kanan Bawah,5,2048,2054.6,2054,2055,1,6.6,True,3.6
+encoder_capture_20261004_180445_688090,18,Kaki Kiri Bawah,5,2048,2055.4,2055,2056,1,7.4,True,6.4
+encoder_capture_20261004_180445_688090,19,Leher Putar,5,2048,2057,2057,2057,0,9,False,0
+encoder_capture_20261004_180445_688090,20,Kepala Putar,5,2048,2055,2055,2055,0,7,True,0
